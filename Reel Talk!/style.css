@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
 body {
 	font-family: 'Inter';
 	background: #F5F5F5;
@@ -329,6 +333,34 @@ ul.titlebar{
 
 .titlebar li{
 	margin-right: 20px;
+}
+
+.titlebar li a{
+	color: black;
+}
+
+.star-black {
+	position: relative;
+	top: 10px;
+	left: 550px;
+	background: black;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	padding-left: 10px;
+}
+
+.star-gold {
+	position: relative;
+	top: 10px;
+	left: 550px;
+	background: gold;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	padding-left: 10px;
 }
 
 input.comment {
