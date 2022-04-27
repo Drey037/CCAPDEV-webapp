@@ -21,10 +21,17 @@
 					<li><a href="#">Movies</a></li>
 					<li><a href="#">TV Shows</a></li>
 					<li><a href="#">Anime</a></li>
-					<li><a href="#">SIGN UP</a></li>
+					<li><a href="#" onclick="on()">SIGN UP</a></li>
 					<li><a href="#">LOG IN</a></li>
 				</ul>
 			</nav>
+		</div>
+	</div>
+	
+	
+	
+	<div id="darkoverlay">
+		<div id="signup">
 		</div>
 	</div>
 	
@@ -123,6 +130,18 @@
 		</div>
 			
 	</div>
+	
+	<script>
+	
+	function on() {
+		document.getElementById("darkoverlay").style.display = "block";
+	}
+
+	function off() {
+		document.getElementById("darkoverlay").style.display = "none";
+	}
+	
+	</script>
 	
 	</body>
 </html>
