@@ -454,6 +454,22 @@ button.comment {
 	background: #FFFFFF;
 }
 
+#login-success {
+	position: fixed;
+	width: 600px;
+	height: 210px;
+	left: 660px;
+	top: 200px;
+	display: none;
+	border-radius: 8px;
+
+	
+	z-index: 3;
+
+
+	background: #FFFFFF;
+}
+
 p.oops {
 	position: relative;
 	top: 80px;
@@ -697,5 +713,132 @@ button.postpane-overlay:hover {
 	color: black;
 	mix-blend-mode: screen;
 }
+
+
+
+
+
+/* The next attributes are exclusive to when user "Logged In" */
+
+
+/*This is for the profile part at the top right */
+div.profile {
+	position: relative;
+	min-width: 150px;
+	display: inline-block;
+	height: 60px;
+	left: 50px;
+	top: 2px;
+	
+	border-radius: 5px;
+	
+	transition: background-color 0.2s ease-out 50ms;
+}
+
+div.profile:hover {
+	background-color: white;
+}
+
+div.profile:hover p.profile {
+	color: #30475E;
+}
+
+
+p.profile {
+	position: absolute;
+	left: 60px;
+	top: 20px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+
+	letter-spacing: -0.185731px;
+
+	color: #FFFFFF;
+
+
+}
+
+img.profile {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 5px;
+	top: 5px;
+	
+	border-radius: 5px;
+}
+
+
+
+
+/* This is for the watchlist card at the side */
+div.watchlist-pane {
+	resize: vertical;
+	overflow: auto;
+	display: inline-block;
+	
+	position: absolute;
+	width: 250px;
+	min-height: 200px;
+	left: 780px;
+	top: 110px;
+
+	background: #F5F5F5;
+}
+
+h1.watchlist {
+	position: relative;
+	margin-top: 20px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+
+	align-items: center;
+	text-align: center;
+
+	color: #000000;
+}
+
+
+/* This is the divider for each watchlist */
+div.watchlist {
+	position: relative;
+	top: 10px;
+	left: 10px;
+	background: url("Assets/watchlist.png") no-repeat left;
+	background-position: 10px 6px;
+	background-size: 20px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	
+	height: 30px;
+	width: 210px;
+	
+	color: black;
+	
+	transition: background-color 0.1s ease-out 50ms, transform 0.1s ease-out 50ms;
+}
+
+p.watchlist {
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+div.watchlist:hover {
+	background-color: #E8CACA;
+	transform: scale(1.01);
+}
+
+
 
 

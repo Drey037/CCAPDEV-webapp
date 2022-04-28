@@ -102,7 +102,7 @@
 				<input type="password" class="createaccount-area" id="password" name="password"> 
 			</div>
 			
-			<button class="createaccount-area">Log In</button>
+			<button class="createaccount-area" onclick="LoginSuccess()">Log In</button>
 		</div>
 	
 	
@@ -114,9 +114,19 @@
 				<p class="signup-success">You can now create posts, comment, create watchlists, etc.</p>
 				<p class="signup-success">Now, proceed to the log in page to sign in</p>
 				
-			<button class="signup-success">Proceed to Log In</button>
+			<button class="signup-success" onclick="SignUpSuccessClose()">Proceed to Log In</button>
 	</div>
 	
+	
+	<!-- The Successful Log In Pop Up -->
+	<div id="login-success">
+			<h1 class="createaccount">Successfully Logged In!</h1>
+			
+				<p class="signup-success">You can now create posts, comment, create watchlists, etc.</p>
+				<p class="signup-success">Now, proceed to the main page</p>
+				
+			<button class="signup-success" onclick="location.href = 'Logged In.html';">Proceed to Main Page</button>
+	</div>
 	
 	
 	
@@ -137,7 +147,7 @@
 			
 			<!-- First post -->
 			<div class="postpane">
-				<button class="postpane-overlay" onclick="oops()">+</button>
+				<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
 				<img src="Assets/Movie Posters/shrek.jpg" class="reviewpic">
 				
 				<!-- Review Bar -->
@@ -176,7 +186,7 @@
 			
 			<!-- Second post -->
 			<div class="postpane">
-				<button class="postpane-overlay" onclick="oops()">+</button>
+				<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
 				<img src="Assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 				
 				<!-- Review Bar -->
@@ -241,6 +251,11 @@
 		document.getElementById("signup-success").style.display = "block";
 	}
 	
+	function SignUpSuccessClose() {
+		document.getElementById("signup-success").style.display = "none";
+		document.getElementById("login").style.display = "block";
+	}
+	
 	function LoginOverlayOn() {
 		document.getElementById("oops").style.display = "none";
 		document.getElementById("darkoverlay").style.display = "block";
@@ -250,6 +265,11 @@
 	function LoginOverlayOff() {
 		document.getElementById("darkoverlay").style.display = "none";
 		document.getElementById("login").style.display = "none";
+	}
+	
+	function LoginSuccess() {
+		document.getElementById("login").style.display = "none";
+		document.getElementById("login-success").style.display = "block";
 	}
 	
 	function oops() {
