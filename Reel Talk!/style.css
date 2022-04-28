@@ -391,17 +391,174 @@ button.comment {
 	animation-duration: 150ms;
 }
 
+#oops {
+	position: fixed;
+	width: 600px;
+	height: 370px;
+	left: 660px;
+	top: 200px;
+	display: none;
+	border-radius: 8px;
+
+	
+	z-index: 3;
+
+
+	background: #FFFFFF;
+}
+
+
 #signup {
-	position: absolute;
+	position: fixed;
 	width: 600px;
 	height: 500px;
 	left: 660px;
 	top: 200px;
+	display: none;
+	border-radius: 8px;
+	
 	
 	z-index: 3;
 
 	background: #FFFFFF;
 }
+
+
+#login {
+	position: fixed;
+	width: 600px;
+	height: 340px;
+	left: 660px;
+	top: 200px;
+	display: none;
+	border-radius: 8px;
+	
+	z-index: 3;
+
+	background: #FFFFFF;
+}
+
+#signup-success {
+	position: fixed;
+	width: 600px;
+	height: 210px;
+	left: 660px;
+	top: 200px;
+	display: none;
+	border-radius: 8px;
+
+	
+	z-index: 3;
+
+
+	background: #FFFFFF;
+}
+
+p.oops {
+	position: relative;
+	top: 80px;
+	padding-bottom: 5px;
+	width: 600px;
+	text-align: center;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+p.oops-p {
+	position: relative;
+	top: 80px;
+	padding-bottom: 5px;
+	width: 600px;
+	text-align: center;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+hr.oops1 {
+	position: relative;
+	width: 240px;
+	top: 65px;
+	left: 40px;
+	margin-right: 20px;
+
+	border: 1px solid #818181;
+	transform: rotate(180deg);
+}
+
+hr.oops2 {
+	position: relative;
+	width: 240px;
+	top: 62px;
+	left: 320px;
+	margin-right: 20px;
+
+	border: 1px solid #818181;
+	transform: rotate(180deg);
+}
+
+button.oops {
+	position: relative;
+	width: 520px;
+	height: 50px;
+	left: 40px;
+	top: 80px;
+	margin-bottom: 20px;
+
+	border: none;
+	background: #30475E;
+	border-radius: 5px;
+	outline: none;
+	text-decoration: none;
+	
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+
+button.signup-success {
+	position: absolute;
+	width: 520px;
+	height: 50px;
+	left: 40px;
+	bottom: 30px;
+
+	border: none;
+	background: #F05454;
+	border-radius: 5px;
+	outline: none;
+	text-decoration: none;
+	
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+p.signup-success {
+	position: relative;
+	top: 80px;
+	padding-bottom: 5px;
+	width: 600px;
+	text-align: center;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+}
+
 
 a.cancelbutton {
 	position: absolute;
@@ -422,9 +579,9 @@ a.cancelbutton {
 
 h1.createaccount {
 	position: absolute;
-	width: 376px;
-	height: 58px;
-	left: 120px;
+	width: 600px;
+	height: 320px;
+	text-align: center;
 	top: 30px;
 
 	font-family: 'Inter';
@@ -481,7 +638,7 @@ button.createaccount-area {
 	width: 150px;
 	height: 40px;
 	left: 225px;
-	top: 421px;
+	bottom: 30px;
 
 	border: none;
 	background: #F05454;

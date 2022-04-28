@@ -23,19 +23,39 @@
 					<li><a href="#">Movies</a></li>
 					<li><a href="#">TV Shows</a></li>
 					<li><a href="#">Anime</a></li>
-					<li><a href="#" onclick="on()">SIGN UP</a></li>
-					<li><a href="#">LOG IN</a></li>
+					<li><a href="#" onclick="SignUpOverlayOn()">SIGN UP</a></li>
+					<li><a href="#" onclick="LoginOverlayOn()">LOG IN</a></li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 	
 	
+	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
+	<div id="darkoverlay"></div>
+	
+	<!-- The "Oops...get an account first" Pop Up -->
+	<div id="oops">
+			<h1 class="createaccount">Oops... You need to log in first</h1>
+			<h1><a class="cancelbutton" href="#" onclick="oopsoff()">X</a></h1>
+				<p class="oops">In order to enjoy the full features</p><br>
+				<p class="oops-p">Already have an account?</p>
+				<button class="oops" onclick="LoginOverlayOn()">Log In</button>
+				<p class="oops-p">OR</p>
+				<hr class="oops1">
+				<hr class="oops2">
+				
+				<p class="oops-p">Don’t have an account yet? </p>
+				<button class="oops" onclick="SignUpOverlayOn()">Sign Up</button>
+	</div>
+	
+	
+	
+	
 	<!-- The SignUp overlay when signup button is pressed -->
-	<div id="darkoverlay">
 		<div id="signup">
 			<h1 class="createaccount">Create a new account</h1>
-			<h1><a class="cancelbutton" href="#" onclick="off()">X</a></h1>
+			<h1><a class="cancelbutton" href="#" onclick="SignUpOverlayOff()">X</a></h1>
 			
 			<!-- Email Address -->
 			<div class="createaccount-area">
@@ -61,10 +81,50 @@
 				<input type="password" class="createaccount-area" id="repassword" name="repassword"> 
 			</div>
 			
-			<button class="createaccount-area">Sign Up</button>
-			
+			<button class="createaccount-area" onclick="SignUpSuccess()">Sign Up</button>
 		</div>
+	
+	
+	<!-- The Log in overlay when Log in button is pressed -->
+		<div id="login">
+			<h1 class="createaccount">Sign in to your account</h1>
+			<h1><a class="cancelbutton" href="#" onclick="LoginOverlayOff()">X</a></h1>
+			
+			<!-- Email Address -->
+			<div class="createaccount-area">
+				<p class="createaccount-area">Email Address:</p>
+				<input type="text" class="createaccount-area" id="email" name="email"> 
+			</div>
+			
+			<!-- Password -->
+			<div class="createaccount-area">
+				<p class="createaccount-area">Password:</p>
+				<input type="password" class="createaccount-area" id="password" name="password"> 
+			</div>
+			
+			<button class="createaccount-area">Log In</button>
+		</div>
+	
+	
+	
+	<!-- The Successful Registration Pop Up -->
+	<div id="signup-success">
+			<h1 class="createaccount">Thank you for registering</h1>
+			
+				<p class="signup-success">You can now create posts, comment, create watchlists, etc.</p>
+				<p class="signup-success">Now, proceed to the log in page to sign in</p>
+				
+			<button class="signup-success">Proceed to Log In</button>
 	</div>
+	
+	
+	
+	
+	
+	
+	<!-- THE END OF ALL OVERLAYS --!>
+	
+	
 	
 	
 	<!-- This part is the main page where the posts and stuff are located -->
@@ -77,7 +137,7 @@
 			
 			<!-- First post -->
 			<div class="postpane">
-				<button class="postpane-overlay">+</button>
+				<button class="postpane-overlay" onclick="oops()">+</button>
 				<img src="Assets/Movie Posters/shrek.jpg" class="reviewpic">
 				
 				<!-- Review Bar -->
@@ -106,7 +166,7 @@
 					<li><a href="#">Adventure</a></li> <!-- Genre 2 -->
 					<li><a href="#">Family</a></li> <!-- Genre 3 -->
 				
-					<button class="comment">Write a Comment</button>
+					<button class="comment" onclick="oops()">Write a Comment</button>
 				</div>
 			
 			</div>
@@ -116,7 +176,7 @@
 			
 			<!-- Second post -->
 			<div class="postpane">
-				<button class="postpane-overlay">+</button>
+				<button class="postpane-overlay" onclick="oops()">+</button>
 				<img src="Assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 				
 				<!-- Review Bar -->
@@ -145,7 +205,7 @@
 					<li><a href="#">Dark Fantasy</a></li> <!-- Genre 2 -->
 					<li><a href="#">Action</a></li> <!-- Genre 3 -->
 				
-					<button class="comment">Write a Comment</button>
+					<button class="comment" onclick="oops()">Write a Comment</button>
 				</div>
 			
 			</div>
@@ -158,19 +218,48 @@
 			<h1 class="createnewpost">Create an account</h1>
 			<p class="createnewpost">Create an account to review, comment, and add movies to a watchlist!</p>
 			
-			<button type="button" class="createpost" onclick="on()">Create Account</button>
+			<button type="button" class="createpost" onclick="SignUpOverlayOn()">Create Account</button>
 		</div>
 			
 	</div>
 	
 	<script>
 	
-	function on() {
+	function SignUpOverlayOn() {
+		document.getElementById("oops").style.display = "none";
 		document.getElementById("darkoverlay").style.display = "block";
+		document.getElementById("signup").style.display = "block";
 	}
 
-	function off() {
+	function SignUpOverlayOff() {
 		document.getElementById("darkoverlay").style.display = "none";
+		document.getElementById("signup").style.display = "none";
+	}
+	
+	function SignUpSuccess() {
+		document.getElementById("signup").style.display = "none";
+		document.getElementById("signup-success").style.display = "block";
+	}
+	
+	function LoginOverlayOn() {
+		document.getElementById("oops").style.display = "none";
+		document.getElementById("darkoverlay").style.display = "block";
+		document.getElementById("login").style.display = "block";
+	}
+
+	function LoginOverlayOff() {
+		document.getElementById("darkoverlay").style.display = "none";
+		document.getElementById("login").style.display = "none";
+	}
+	
+	function oops() {
+		document.getElementById("darkoverlay").style.display = "block";
+		document.getElementById("oops").style.display = "block";
+	}
+	
+	function oopsoff() {
+		document.getElementById("darkoverlay").style.display = "none";
+		document.getElementById("oops").style.display = "none";
 	}
 	
 	</script>
