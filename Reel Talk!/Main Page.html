@@ -77,7 +77,8 @@
 			
 			<!-- First post -->
 			<div class="postpane">
-				<a href="#"><img src="Assets/Movie Posters/shrek.jpg" class="reviewpic"></a>
+				<button class="postpane-overlay">+</button>
+				<img src="Assets/Movie Posters/shrek.jpg" class="reviewpic">
 				
 				<!-- Review Bar -->
 				<div class="review">
@@ -105,7 +106,7 @@
 					<li><a href="#">Adventure</a></li> <!-- Genre 2 -->
 					<li><a href="#">Family</a></li> <!-- Genre 3 -->
 				
-					<input type="text" class="comment" placeholder="Write a reply...">
+					<button class="comment">Write a Comment</button>
 				</div>
 			
 			</div>
@@ -115,6 +116,7 @@
 			
 			<!-- Second post -->
 			<div class="postpane">
+				<button class="postpane-overlay">+</button>
 				<img src="Assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 				
 				<!-- Review Bar -->
@@ -143,7 +145,7 @@
 					<li><a href="#">Dark Fantasy</a></li> <!-- Genre 2 -->
 					<li><a href="#">Action</a></li> <!-- Genre 3 -->
 				
-					<input type="text" class="comment" placeholder="Write a reply...">
+					<button class="comment">Write a Comment</button>
 				</div>
 			
 			</div>
@@ -151,12 +153,12 @@
 		</div>
 		
 		
-		<!-- This part is the "Create a New Post" pane -->
+		<!-- This part is the "Create a New Account" pane -->
 		<div class="createnewpost">
 			<h1 class="createnewpost">Create an account</h1>
 			<p class="createnewpost">Create an account to review, comment, and add movies to a watchlist!</p>
 			
-			<button type="button" class="createpost">Create Account</button>
+			<button type="button" class="createpost" onclick="on()">Create Account</button>
 		</div>
 			
 	</div>
