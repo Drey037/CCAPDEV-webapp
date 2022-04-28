@@ -28,8 +28,6 @@ nav {
 	height: 70px;
 	align-items: center;
 	display: flex;
-	justify-content: space-between;
-
 }
 
 /* Navigation bar background*/
@@ -58,14 +56,14 @@ nav {
 /* The list in navigation bar*/
 nav ul {
 	display: flex;
-	margin-left: -60px;
-    margin-right: -109px;
+	margin-left: 150px;
 }
 
 /* The items in the list */
 .nav-items li{
 	list-style: none;
-	margin-right: 70px;
+	margin-right: 26px;
+    margin-left: 31px;
 }
 
 /* Specifically the links put in the items */
@@ -83,7 +81,8 @@ nav ul {
 
 /* This bad boy is the design for the annoying search bar DONT TOUCH */
 .search-bar {
-	padding-left: 40px;
+	position: relative;
+    left: 130px;
 	background: url("Assets/search.png") no-repeat left;
 	background-position: 10px 6px;
 	background-size: 20px;
@@ -138,7 +137,7 @@ nav ul {
 div.createnewpost {
 	position : fixed;
 	width: 220px;
-	height: 240px;
+	height: 200px;
 	left: 1190px;
 	top: 180px;
 
@@ -405,14 +404,105 @@ input.comment {
 	width: 600px;
 	height: 500px;
 	left: 660px;
-	top: 290px;
+	top: 200px;
 	
 	z-index: 3;
 
 	background: #FFFFFF;
+}
+
+a.cancelbutton {
+	position: absolute;
+	width: 11px;
+	height: 8px;
+	left: 574px;
+	top: 16px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+
+	letter-spacing: -0.185731px;
+
+	color: #F05454;
+}
+
+h1.createaccount {
+	position: absolute;
+	width: 376px;
+	height: 58px;
+	left: 120px;
+	top: 30px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 36px;
+
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+div.createaccount-area {
+	position: relative;
+	left: 50px;
+	top: 90px;
+	padding-bottom: 70px;
+	margin-bottom: 10px;
 	
+	height: 60px;
+	width: 500px;
+
+	color: #000000;
+}
+
+p.createaccount-area {
+	position: absolute;
+	top: 10px;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+input.createaccount-area {
+	position: absolute;
+	width: 500px;
+	height: 30px;
+	bottom: 0px;
+
+	background: #FFFFFF;
+	border: 1px solid #888888;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding-left: 10px;
+	outline: none;
+	
+	font-family: 'Inter';
+}
+
+button.createaccount-area {
+	position: absolute;
+	width: 150px;
+	height: 40px;
+	left: 225px;
+	top: 421px;
+
+	border: none;
+	background: #F05454;
+	border-radius: 5px;
+	outline: none;
+	text-decoration: none;
 	
 
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	color: #FFFFFF;
 }
 
 

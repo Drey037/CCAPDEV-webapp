@@ -31,9 +31,38 @@
 	</div>
 	
 	
-	
+	<!-- The SignUp overlay when signup button is pressed -->
 	<div id="darkoverlay">
 		<div id="signup">
+			<h1 class="createaccount">Create a new account</h1>
+			<h1><a class="cancelbutton" href="#" onclick="off()">X</a></h1>
+			
+			<!-- Email Address -->
+			<div class="createaccount-area">
+				<p class="createaccount-area">Email Address:</p>
+				<input type="text" class="createaccount-area" id="email" name="email"> 
+			</div>
+			
+			<!-- Username -->
+			<div class="createaccount-area">
+				<p class="createaccount-area">Username:</p>
+				<input type="text" class="createaccount-area" id="username" name="username"> 
+			</div>
+			
+			<!-- Password -->
+			<div class="createaccount-area">
+				<p class="createaccount-area">Password:</p>
+				<input type="password" class="createaccount-area" id="password" name="password"> 
+			</div>
+			
+			<!-- Retype Password -->
+			<div class="createaccount-area">
+				<p class="createaccount-area">Retype Password:</p>
+				<input type="password" class="createaccount-area" id="repassword" name="repassword"> 
+			</div>
+			
+			<button class="createaccount-area">Sign Up</button>
+			
 		</div>
 	</div>
 	
@@ -124,11 +153,10 @@
 		
 		<!-- This part is the "Create a New Post" pane -->
 		<div class="createnewpost">
-			<h1 class="createnewpost">Create a new Post</h1>
-			<p class="createnewpost">Write about your thoughts on a movie, TV show, or anime. You can also create a collection of your favorite things to watch</p>
+			<h1 class="createnewpost">Create an account</h1>
+			<p class="createnewpost">Create an account to review, comment, and add movies to a watchlist!</p>
 			
-			<button type="button" class="createpost">Create Post</button>
-			<button type="button" class="createcollec">Create Collection</button>
+			<button type="button" class="createpost">Create Account</button>
 		</div>
 			
 	</div>
