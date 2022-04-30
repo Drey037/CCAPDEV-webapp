@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Reel na real Talk!</title>
+		<title>Reel Talk!</title>
 		<link rel="stylesheet" href="style.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
@@ -20,14 +20,46 @@
 				</div>
 				
 				<ul class="nav-items">
-					<li><a href="#">Movies</a></li>
-					<li><a href="#">TV Shows</a></li>
-					<li><a href="#">Anime</a></li>
+					<li id="movies" onclick="showDropdown(this.id)">Movies</li>
+					<li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
+					<li id="anime" onclick="showDropdown(this.id)">Anime</li>
 					<li><a href="#" onclick="SignUpOverlayOn()">SIGN UP</a></li>
 					<li><a href="#" onclick="LoginOverlayOn()">LOG IN</a></li>
 				</ul>
 			</nav>
 		</div>
+
+		<div id="nav-dropdown-wrapper">
+			<div class="dropdown-pane genre-pane">
+				<p>Genres:</p>
+				<div class="nav-dropdown">
+					<div class="genre-col">
+						<a href="#">Action</a>
+						<a href="#">Comedy</a>
+						<a href="#">Drama</a>
+						<a href="#">Fantasy</a>
+					</div>
+					<div class="genre-col">
+						<a href="#">Thriller</a>
+						<a href="#">Romance</a>
+						<a href="#">Mystery</a>
+						<a href="#">Horror</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="dropdown-pane sortby-pane">
+				<p>Sort by:</p>
+				<div class="nav-dropdown">
+					<div>
+						<a id="dropdown-top-something" href="#">Top Movies</a>
+						<a href="#">Trending</a>
+						<a href="#">New Releases</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	
 	
@@ -125,7 +157,7 @@
 				<p class="signup-success">You can now create posts, comment, create watchlists, etc.</p>
 				<p class="signup-success">Now, proceed to the main page</p>
 				
-			<button class="signup-success" onclick="location.href = 'Logged In.html';">Proceed to Main Page</button>
+			<button class="signup-success" onclick="location.href = 'logged-in.html';">Proceed to Main Page</button>
 	</div>
 	
 	
@@ -281,6 +313,19 @@
 		document.getElementById("darkoverlay").style.display = "none";
 		document.getElementById("oops").style.display = "none";
 	}
+
+	function showDropdown(elem_id) {
+		let dropdown_menu = document.getElementById(elem_id);
+		let dropdown_box = document.getElementById("nav-dropdown-wrapper");
+		let dropdown_name = dropdown_menu.innerHTML;
+		let elem_bounds = dropdown_menu.getBoundingClientRect();
+
+		dropdown_box.style.right = (screen.width - elem_bounds.right) + "px";
+		dropdown_box.style.display = "inline-block";
+		document.getElementById("dropdown-top-something").innerHTML = "Top " + dropdown_name;
+	}
+
+	// Lila's To Do: Make dropdown go to appropriate links
 	
 	</script>
 	

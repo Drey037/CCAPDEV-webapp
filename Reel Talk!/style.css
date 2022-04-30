@@ -32,15 +32,14 @@ nav {
 
 /* Navigation bar background*/
 .nav-bar-bg {
-	overflow: hidden;
 	position: fixed;
 	background: #F05454;
 	width: 1920px;
 	height: 70px;
 	left: 0px;
 	top: 0px;
-	border-radius: 0px;
-	z-index:1;
+	/* border-radius: 0px; */
+	z-index: 1;
 }
 
 /* Logo */
@@ -60,23 +59,20 @@ nav ul {
 }
 
 /* The items in the list */
-.nav-items li{
+.nav-items li {
 	list-style: none;
 	margin-right: 26px;
     margin-left: 31px;
-}
-
-/* Specifically the links put in the items */
-.nav-items li a{
 	font-weight: 400;
 	font-size: 15px;
 	line-height: 58px;
-	text-decoration: none;
-
 	letter-spacing: -0.185731px;
-
 	color: #FFFFFF;
+	cursor: pointer;
+}
 
+.nav-items a {
+	color: #FFFFFF;
 }
 
 /* This bad boy is the design for the annoying search bar DONT TOUCH */
@@ -96,6 +92,44 @@ nav ul {
 	
 	font-family: 'Inter';
 	font-style: bold;
+}
+
+
+/* nav bar dropdown */
+#nav-dropdown-wrapper {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    display: none;
+    padding: 23px;
+	position: absolute;
+}
+
+.dropdown-pane {
+    display: inline-block;
+}
+
+.dropdown-pane p {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sortby-pane {
+    margin-left: 10px;
+}
+
+.nav-dropdown {
+    display: flex;
+}
+
+.nav-dropdown a {
+    color: #606060;
+    display: block;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.genre-col{
+    margin-right: 15px;
 }
 
 
