@@ -54,4 +54,17 @@ function showDropdown(elem_id) {
     dropdown_box.style.right = (screen.width - elem_bounds.right) + "px";
     dropdown_box.style.display = "inline-block";
     document.getElementById("dropdown-top-something").innerHTML = "Top " + dropdown_name;
+
+    
+}
+
+function hideDropdown() {
+    document.getElementById("nav-dropdown-wrapper").style.display = "none";
+}
+
+// Takes care of hiding dropdown
+document.onclick = function(e) {
+    if(!document.getElementsByClassName("nav-items")[0].contains(e.target)) {
+        hideDropdown();
+    }
 }

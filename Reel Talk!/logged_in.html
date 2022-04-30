@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>Reel na real Talk!</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
 	
@@ -13,26 +13,57 @@
 	<div class="nav-bar-bg">
 		<div class="wrapper">
 			<nav>
-				<a href="#"><img src="Assets/1.png" class="logo" alt="logo" /></a>
+				<a href="#"><img src="assets/1.png" class="logo" alt="logo" /></a>
 				
 				<div class="searchbar">
 					<input type="text" class="search-bar" id="search" name="search">
 				</div>
 				
 				<ul class="nav-items">
-					<li><a href="#">Movies</a></li>
-					<li><a href="#">TV Shows</a></li>
-					<li><a href="#">Anime</a></li>
+					<li id="movies" onclick="showDropdown(this.id)">Movies</li>
+					<li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
+					<li id="anime" onclick="showDropdown(this.id)">Anime</li>
 					
 					<!-- This is the profile at the top right" -->
 					<a href="#">
 						<div class="profile">
-							<img src="Assets/sample.jpg" class="profile" alt="profile">
+							<img src="assets/sample.jpg" class="profile" alt="profile">
 							<p class="profile">user_name</p>
 						</div>
 					</a>
 				</ul>
 			</nav>
+		</div>
+
+		<div id="nav-dropdown-wrapper">
+			<div class="dropdown-pane genre-pane">
+				<p>Genres:</p>
+				<div class="nav-dropdown">
+					<div class="genre-col">
+						<a href="#">Action</a>
+						<a href="#">Comedy</a>
+						<a href="#">Drama</a>
+						<a href="#">Fantasy</a>
+					</div>
+					<div class="genre-col">
+						<a href="#">Thriller</a>
+						<a href="#">Romance</a>
+						<a href="#">Mystery</a>
+						<a href="#">Horror</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="dropdown-pane sortby-pane">
+				<p>Sort by:</p>
+				<div class="nav-dropdown">
+					<div>
+						<a id="dropdown-top-something" href="#">Top Movies</a>
+						<a href="#">Trending</a>
+						<a href="#">New Releases</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 		
@@ -48,7 +79,7 @@
 			<!-- First post -->
 			<div class="postpane">
 				<button class="postpane-overlay" onclick="" title="Add to Watchlist">+</button> <!-- To be inserted, onclick action to open the list of watchlists -->
-				<img src="Assets/Movie Posters/shrek.jpg" class="reviewpic">
+				<img src="assets/Movie Posters/shrek.jpg" class="reviewpic">
 				
 				<!-- Review Bar -->
 				<div class="review">
@@ -87,7 +118,7 @@
 			<!-- Second post -->
 			<div class="postpane">
 				<button class="postpane-overlay" onclick="" title="Add to Watchlist">+</button> <!-- To be inserted, onclick action to open the list of watchlists -->
-				<img src="Assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
+				<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 				
 				<!-- Review Bar -->
 				<div class="review">
@@ -146,10 +177,7 @@
 			
 	</div>
 	
-	<script>
-	
-	</script>
-	
+	<script src="main.js"></script>
 	</body>
 </html>
 		

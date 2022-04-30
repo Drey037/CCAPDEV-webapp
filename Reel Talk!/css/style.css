@@ -65,7 +65,7 @@ nav ul {
     margin-left: 31px;
 	font-weight: 400;
 	font-size: 15px;
-	line-height: 58px;
+	/* line-height: 58px; */
 	letter-spacing: -0.185731px;
 	color: #FFFFFF;
 	cursor: pointer;
@@ -79,7 +79,7 @@ nav ul {
 .search-bar {
 	position: relative;
     left: 130px;
-	background: url("Assets/search.png") no-repeat left;
+	background: url("../assets/search.png") no-repeat left;
 	background-position: 10px 6px;
 	background-size: 20px;
 	background-color: white;
@@ -807,7 +807,6 @@ img.profile {
 
 
 
-
 /* This is for the watchlist card at the side */
 div.watchlist-pane {
 	resize: vertical;
@@ -843,7 +842,7 @@ div.watchlist {
 	position: relative;
 	top: 10px;
 	left: 10px;
-	background: url("Assets/watchlist.png") no-repeat left;
+	background: url("../assets/watchlist.png") no-repeat left;
 	background-position: 10px 6px;
 	background-size: 20px;
 	border-radius: 5px;
