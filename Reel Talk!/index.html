@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>Reel Talk!</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
 	
@@ -254,7 +254,6 @@
 			
 		</div>
 		
-		
 		<!-- This part is the "Create a New Account" pane -->
 		<div class="createnewpost">
 			<h1 class="createnewpost">Create an account</h1>
@@ -265,70 +264,7 @@
 			
 	</div>
 	
-	<script>
-	
-	function SignUpOverlayOn() {
-		document.getElementById("oops").style.display = "none";
-		document.getElementById("darkoverlay").style.display = "block";
-		document.getElementById("signup").style.display = "block";
-	}
-
-	function SignUpOverlayOff() {
-		document.getElementById("darkoverlay").style.display = "none";
-		document.getElementById("signup").style.display = "none";
-	}
-	
-	function SignUpSuccess() {
-		document.getElementById("signup").style.display = "none";
-		document.getElementById("signup-success").style.display = "block";
-	}
-	
-	function SignUpSuccessClose() {
-		document.getElementById("signup-success").style.display = "none";
-		document.getElementById("login").style.display = "block";
-	}
-	
-	function LoginOverlayOn() {
-		document.getElementById("oops").style.display = "none";
-		document.getElementById("darkoverlay").style.display = "block";
-		document.getElementById("login").style.display = "block";
-	}
-
-	function LoginOverlayOff() {
-		document.getElementById("darkoverlay").style.display = "none";
-		document.getElementById("login").style.display = "none";
-	}
-	
-	function LoginSuccess() {
-		document.getElementById("login").style.display = "none";
-		document.getElementById("login-success").style.display = "block";
-	}
-	
-	function oops() {
-		document.getElementById("darkoverlay").style.display = "block";
-		document.getElementById("oops").style.display = "block";
-	}
-	
-	function oopsoff() {
-		document.getElementById("darkoverlay").style.display = "none";
-		document.getElementById("oops").style.display = "none";
-	}
-
-	function showDropdown(elem_id) {
-		let dropdown_menu = document.getElementById(elem_id);
-		let dropdown_box = document.getElementById("nav-dropdown-wrapper");
-		let dropdown_name = dropdown_menu.innerHTML;
-		let elem_bounds = dropdown_menu.getBoundingClientRect();
-
-		dropdown_box.style.right = (screen.width - elem_bounds.right) + "px";
-		dropdown_box.style.display = "inline-block";
-		document.getElementById("dropdown-top-something").innerHTML = "Top " + dropdown_name;
-	}
-
-	// Lila's To Do: Make dropdown go to appropriate links
-	
-	</script>
-	
+	<script src="main.js"></script>
 	</body>
 </html>
 		
