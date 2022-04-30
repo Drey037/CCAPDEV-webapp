@@ -1,3 +1,14 @@
+var logged_in = false;
+
+function login() {
+    logged_in = true;
+    location.href = 'logged_in.html';
+}
+
+function logout() {
+    logged_in = false;
+}
+
 function SignUpOverlayOn() {
     document.getElementById("oops").style.display = "none";
     document.getElementById("darkoverlay").style.display = "block";
@@ -54,15 +65,24 @@ function showDropdown(elem_id) {
     dropdown_box.style.right = (screen.width - elem_bounds.right) + "px";
     dropdown_box.style.display = "inline-block";
     document.getElementById("dropdown-top-something").innerHTML = "Top " + dropdown_name;
+}
 
-    
+function showUserDropdown() {
+    console.log("uhhh");
+    let user_dropdown = document.getElementById("user-dropdown");
+    let profile_box = document.getElementsByClassName("profile")[0].getBoundingClientRect();
+    user_dropdown.style.display = "inline-block";
+    user_dropdown.style.left = profile_box.left + "px";
 }
 
 function hideDropdown() {
     document.getElementById("nav-dropdown-wrapper").style.display = "none";
+    if(logged_in) {
+        document.getElementById("user-dropdown").style.display = "none";
+    }
 }
 
-// Takes care of hiding dropdown
+// Takes care of hiding dropdown when something outside it is clicked
 document.onclick = function(e) {
     if(!document.getElementsByClassName("nav-items")[0].contains(e.target)) {
         hideDropdown();

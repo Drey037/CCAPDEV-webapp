@@ -65,7 +65,7 @@ nav ul {
     margin-left: 31px;
 	font-weight: 400;
 	font-size: 15px;
-	/* line-height: 58px; */
+	line-height: 58px;
 	letter-spacing: -0.185731px;
 	color: #FFFFFF;
 	cursor: pointer;
@@ -805,7 +805,24 @@ img.profile {
 	border-radius: 5px;
 }
 
+#user-dropdown {
+	background-color: tan;
+	/* display: inline-block; */
+	padding: 15px 15px 0 15px;
+	background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    display: none;
+	position: relative;
 
+}
+
+#user-dropdown a {
+	color: black;
+	display: block;
+	font-weight: 400;
+	font-size: 14px;
+	padding-bottom: 15px;
+}
 
 /* This is for the watchlist card at the side */
 div.watchlist-pane {

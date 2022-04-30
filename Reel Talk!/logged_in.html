@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Reel na real Talk!</title>
+		<title>Reel Talk!</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
@@ -26,7 +26,7 @@
 					
 					<!-- This is the profile at the top right" -->
 					<a href="#">
-						<div class="profile">
+						<div class="profile" onclick="showUserDropdown()">
 							<img src="assets/sample.jpg" class="profile" alt="profile">
 							<p class="profile">user_name</p>
 						</div>
@@ -64,6 +64,12 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<div id="user-dropdown">
+			<a href="#">View Profile</a>
+			<a href="#">Account Settings</a>
+			<a href="index.html" onclick="logout()">Log Out</a>
 		</div>
 	</div>
 		
