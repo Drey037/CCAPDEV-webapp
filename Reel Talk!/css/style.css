@@ -348,3 +348,119 @@ button.postpane-overlay:hover {
 	background-color: #E8CACA;
 	transform: scale(1.01);
 }
+
+h1.youraccountlist
+{
+	position: absolute;
+	width: 348px;
+	height: 58px;
+	left: 540px;
+	top: 127px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 58px;
+	/* identical to box height, or 181% */
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+div.accsetbox
+{
+	position: absolute;
+	width: 722px;
+	height: 737px;
+	left: 599px;
+	top: 221px;
+	background-color: white;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
+}
+
+div.usersettingsheader
+{
+	position: absolute;
+
+
+left: 60px;
+top: 50px;
+
+
+color: #000000;
+
+}
+
+h2.usersettingsheader
+{
+	position: relative;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 58px;
+/* identical to box height, or 289% */
+
+letter-spacing: -0.185731px;
+
+color: #000000;
+}
+
+.usersettings-line
+{
+	position: absolute;
+width: 600px;
+height: 0px;
+
+
+
+border: 1.0351px solid #767676;
+}
+
+.editsettingsbutton
+{
+	position: relative;
+	width: 220px;
+	height: 41px;
+	left: 260px;
+	top: 800px;
+
+	background: #30475E;
+	border-radius: 5px;
+
+	color: #FFFFFF;
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.accsetprevpic
+{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	top: -4px;
+	left: 200px;
+
+	border-radius: 3px;
+}
+
+.accsetedittextbox
+{
+	position: relative;
+	bottom: 5px;
+	width: 600px;
+
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+
+	border: 1px solid #888888;
+	border-radius: 7px;
+	outline: none;
+	padding-left: 10px;
+}
