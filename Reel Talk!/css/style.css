@@ -76,8 +76,8 @@ button {
 	line-height: 19px;
 	margin: 20px 0;
 }
-/* Could be renamed to .createnewpost button for consistency */
-.createpost{
+
+.createnewpost button{
 	width: 160px;
 	height: 30px;
 	border: none;
@@ -225,7 +225,7 @@ ul.titlebar{
 	padding-left: 10px;
 }
 
-button.comment {
+.titlebar button {
 	position: absolute;
     width: 130px;
     height: 40px;
@@ -243,10 +243,15 @@ button.comment {
 }
 
 
-
+.postpane-overlay-buttons {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: flex;
+	flex-direction: column;
+}
 
 button.postpane-overlay {
-	position: absolute;
 	width: 50px;
 	height: 50px;
 	cursor: pointer;
@@ -256,11 +261,7 @@ button.postpane-overlay {
 	display: none;
 	
 	z-index: 1;
-	
-	/* Mittig */
-	top: 130px;
-    left: 300px;
-	
+
 	font-family: 'Inter';
 	color: white;
 	font-size: 45px;

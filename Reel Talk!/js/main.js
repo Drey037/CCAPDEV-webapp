@@ -45,6 +45,16 @@ function oopsoff() {
     document.getElementById("oops").style.display = "none";
 }
 
+function NewReviewOverlayOn() {
+    document.getElementById("darkoverlay").style.display = "block";
+    document.getElementById("new-review").style.display = "inline-block";
+}
+
+function NewReviewOverlayOff() {
+    document.getElementById("darkoverlay").style.display = "none";
+    document.getElementById("new-review").style.display = "none";    
+}
+
 function showDropdown(elem_id) {
     let dropdown_menu = document.getElementById(elem_id);
     let dropdown_box = document.getElementById("nav-dropdown-wrapper");

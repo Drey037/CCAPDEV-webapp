@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="css/navbar.css">
 		<link rel="stylesheet" href="css/overlays.css">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<!-- For icons from Font Awesome website -->
+		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
 	</head>
 	
 	<body>
@@ -74,6 +76,29 @@
 			<a href="index.html">Log Out</a>
 		</div>
 	</div>
+
+	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
+	<div id="darkoverlay"></div>
+
+	<!-- Create new review Pop Up -->
+	<div id="new-review">
+		<h1>Create a New Review</h1>
+		<div class="poster-selection">
+			<a href="#"><img src="assets/Movie Posters/your_name_1.jpg" alt="Poster option 1"></a>
+			<a href="#"><img src="assets/Movie Posters/your_name_2.jpg" alt="Poster option 2"></a>
+			<a href="#"><img src="assets/Movie Posters/your_name_3.jpg" alt="Poster option 3"></a>
+			
+		</div>
+        <h2>Your Name (2016)</h2>
+        <div class="genres">
+            <p>Drama</p>
+            <p>Fantasy</p>
+            <p>Romance</p>
+        </div>
+		<textarea name="review-narrative" id="review-narrative">Write a review here...</textarea>
+        <button id="reel-it" onclick="location.href = 'logged_in.html'">Reel It!</button>
+        <button class="cancel-review" onclick="NewReviewOverlayOff()">Cancel</button>
+	</div>
 		
 
 	<!-- This part is the main page where the posts and stuff are located -->
@@ -86,7 +111,10 @@
 				<div class="postarea">
 					<!-- First post -->
 					<div class="postpane">
-						<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
+						<div class="postpane-overlay-buttons">
+							<button class="postpane-overlay" onclick="" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+							<button class="postpane-overlay" onclick="NewReviewOverlayOn()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+						</div>
 						<img src="assets/Movie Posters/shrek.jpg" class="reviewpic">
 						
 						<!-- Review Bar -->
@@ -125,7 +153,10 @@
 					
 					<!-- Second post -->
 					<div class="postpane">
-						<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
+						<div class="postpane-overlay-buttons">
+							<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+							<button class="postpane-overlay" onclick="oops()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+						</div>
 						<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 						
 						<!-- Review Bar -->

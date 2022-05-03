@@ -93,6 +93,8 @@
 	background: #FFFFFF;
 }
 
+
+
 p.oops {
 	position: relative;
 	top: 80px;
@@ -291,4 +293,78 @@ button.createaccount-area {
 	font-weight: 400;
 	font-size: 20px;
 	color: #FFFFFF;
+}
+
+
+
+/* New review popup */
+#new-review {
+    text-align: center;
+	display: none;
+	background-color: #F5F5F5;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	z-index: 3;
+    padding: 30px 0;
+}
+
+#new-review h1 {
+    font-weight: 700;
+    font-size: 28px;
+}
+
+#new-review h2 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.poster-selection {
+    background-color: rgba(79, 79, 79, 0.2);
+	display: flex;
+	justify-content: space-evenly;
+    padding: 20px 0;
+    margin: 15px 0;
+}
+
+.poster-selection img {
+	width: 210px;
+    height: 300px;
+}
+
+.genres {
+    margin-bottom: 15px;
+}
+
+.genres p {
+    display: inline;
+    margin: 0 5px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+#review-narrative {
+    width: 670px;
+    height: 170px;
+    margin: 0 15px 15px;
+    border: none;
+    padding: 10px;
+	resize: none;
+	overflow-y: scroll;
+}
+
+#new-review button {
+    display: block;
+    margin: 5px auto;
+    background-color: #F05454;
+    color: #FFFFFF;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 14px;
 }

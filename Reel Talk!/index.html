@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="css/overlays.css">
 		<link rel="stylesheet" href="css/style.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<!-- For icons from Font Awesome website -->
+		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
 	</head>
 	
 	<body>
@@ -165,7 +167,6 @@
 	
 	
 	
-	
 	<!-- THE END OF ALL OVERLAYS -->
 	
 	
@@ -183,7 +184,10 @@
 			<div class="postarea">
 				<!-- First post -->
 				<div class="postpane">
-					<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+						<button class="postpane-overlay" onclick="oops()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+					</div>
 					<img src="assets/Movie Posters/shrek.jpg" class="reviewpic">
 					
 					<!-- Review Bar -->
@@ -222,7 +226,10 @@
 				
 				<!-- Second post -->
 				<div class="postpane">
-					<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+						<button class="postpane-overlay" onclick="oops()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+					</div>
 					<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 					
 					<!-- Review Bar -->

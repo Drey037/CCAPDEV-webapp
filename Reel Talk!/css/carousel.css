@@ -68,7 +68,7 @@
     padding: 15px;
 }
 
-.carousel-control-prev {
+.carousel-control-prev, .carousel-control-next {
     top: 50%;
     bottom: 50%;
 }
