@@ -70,9 +70,10 @@ nav ul {
 	width: 370px;
 	height: 30px;
 	border-radius: 10px;
-	
-	font-family: 'Inter';
+
 	font-style: bold;
+
+	padding-left: 45px;
 }
 
 
