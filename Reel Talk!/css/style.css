@@ -17,250 +17,84 @@ button {
 	cursor:pointer;
 }
 
-.wrapper {
-	margin-right: 420px;
-	margin-left: 420px;
-	max-width: 1080px;
+/* Needed to add another wrapper to center properly */
+#main-center {
+	display:flex;
+	width: 100%;
+	margin-top: 70px;
 }
 
-/*Everything about the Navigation Bar */
-nav {
-	height: 70px;
-	align-items: center;
-	display: flex;
+.main-wrapper {
+	padding-top: 50px;
+	display: inline-block;
+	margin: 0 auto;
+	background: #FFFFFF;
 }
 
-/* Navigation bar background*/
-.nav-bar-bg {
-	position: fixed;
-	background: #F05454;
-	width: 1920px;
-	height: 70px;
-	left: 0px;
-	top: 0px;
-	/* border-radius: 0px; */
-	z-index: 1;
-}
-
-/* Logo */
-.logo {
-	position: absolute;
-	width: 97px;
-    height: 59px;
-    left: 4px;
-    top: 7px;
-	margin-left: 420px;
-}
-
-/* The list in navigation bar*/
-nav ul {
-	display: flex;
-	margin-left: 150px;
-}
-
-/* The items in the list */
-.nav-items li {
-	list-style: none;
-	margin-right: 26px;
-    margin-left: 31px;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 58px;
-	letter-spacing: -0.185731px;
-	color: #FFFFFF;
-	cursor: pointer;
-}
-
-.nav-items a {
-	color: #FFFFFF;
-}
-
-/* This bad boy is the design for the annoying search bar DONT TOUCH */
-.search-bar {
-	position: relative;
-    left: 130px;
-	background: url("../assets/search.png") no-repeat left;
-	background-position: 10px 6px;
-	background-size: 20px;
-	background-color: white;
-	border: 0px;
-	outline: none;
-	
-	width: 370px;
-	height: 30px;
-	border-radius: 10px;
-	
-	font-family: 'Inter';
-	font-style: bold;
-}
-
-
-/* nav bar dropdown */
-#nav-dropdown-wrapper {
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-    display: none;
-    padding: 23px;
-	position: absolute;
-}
-
-.dropdown-pane {
-    display: inline-block;
-}
-
-.dropdown-pane p {
-    font-weight: 700;
-    font-size: 15px;
-}
-
-.sortby-pane {
-    margin-left: 10px;
-}
-
-.nav-dropdown {
-    display: flex;
-}
-
-.nav-dropdown a {
-    color: #606060;
-    display: block;
-    font-weight: 300;
-    text-decoration: none;
-}
-
-.genre-col{
-    margin-right: 15px;
+.header-texts {
+	font-weight: 700;
+	font-size: 32px;
+	color: #000000;
+	padding-left: 80px;
 }
 
 
 /* The design for the main page */
 .main {
-	position: absolute;
-	width: 1080px;
-	height: 1980px;
-	left: 420px;
-	margin-top: 70px;
-
-	background: #FFFFFF;
-}
-
-.header-texts {
-	position: absolute;
-	left: 80px;
-	top: 38px;
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 32px;
-	line-height: 58px;
-
-
 	display: flex;
-	align-items: center;
-	letter-spacing: -0.185731px;
-
-	color: #000000;
+	justify-content: space-between;
+	width: 1080px;
+	padding: 20px 80px 80px 80px;
 }
 
-
+/* There is no post-frames class */
 .post-frames {
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-div.createnewpost {
-	position : fixed;
+.createnewpost {
+	/* position : fixed; */
 	width: 220px;
 	height: 200px;
-	left: 1190px;
-	top: 180px;
+	text-align: center;
 
 	background: #F5F5F5;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
-	
-	display: flex;
+	padding: 25px;
 }
 
-h1.createnewpost {
-	position: absolute;
-	left: 40px;
-	top: 23px;
-
+.createnewpost h1 {
 	font-weight: 700;
 	font-size: 16px;
-
-	display: flex;
-	align-items: center;
-
 	color: #000000;
 }
 
-p.createnewpost {
-	position: absolute;
+.createnewpost p {
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 19px;
-	
-	align-items: center;
-	
-	width: 177.31px;
-	height: 58px;
-	left: 21px;
-	top: 50px;
+	margin: 20px 0;
 }
-
-button.createpost {
-	position: absolute;
+/* Could be renamed to .createnewpost button for consistency */
+.createpost{
 	width: 160px;
 	height: 30px;
-	left: 30px;
-	top: 140px;
 	border: none;
 	background: #30475E;
 	border-radius: 5px;
 	text-decoration: none;
 	
 	color: #FFFFFF;
-	font-family: 'Inter';
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 14px;
-	line-height: 19px;
-	/* identical to box height, or 136% */
-}
-
-button.createcollec {
-	position: absolute;
-	width: 160px;
-	height: 30px;
-	left: 30px;
-	top: 180px;
-
-	background: #FFFFFF;
-	border: 1px solid #30475E;
-	box-sizing: border-box;
-	border-radius: 5px;
-	
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	line-height: 19px;
-	color: #30475E;
 }
 
 div.postarea {
-	position: absolute;
-	left: 79px;
-	top: 110px;
 	width: 650px;
-	height: 1640px;
-	
-	/*background: #00FFFF;*/
 }
 
 div.postpane {
-	position: relative;
 	padding-bottom: 70px;
 	height: 360px;
 	width: 650px;
@@ -409,300 +243,7 @@ button.comment {
 }
 
 
-#darkoverlay {
-	position: fixed;
-	display: none;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0,0,0,0.5);
-	z-index: 2;
-	
-	animation-timing-function: ease-out;
-	animation-duration: 150ms;
-}
 
-#oops {
-	position: fixed;
-	width: 600px;
-	height: 370px;
-	left: 660px;
-	top: 200px;
-	display: none;
-	border-radius: 8px;
-
-	
-	z-index: 3;
-
-
-	background: #FFFFFF;
-}
-
-
-#signup {
-	position: fixed;
-	width: 600px;
-	height: 500px;
-	left: 660px;
-	top: 200px;
-	display: none;
-	border-radius: 8px;
-	
-	
-	z-index: 3;
-
-	background: #FFFFFF;
-}
-
-
-#login {
-	position: fixed;
-	width: 600px;
-	height: 340px;
-	left: 660px;
-	top: 200px;
-	display: none;
-	border-radius: 8px;
-	
-	z-index: 3;
-
-	background: #FFFFFF;
-}
-
-#signup-success {
-	position: fixed;
-	width: 600px;
-	height: 210px;
-	left: 660px;
-	top: 200px;
-	display: none;
-	border-radius: 8px;
-
-	
-	z-index: 3;
-
-
-	background: #FFFFFF;
-}
-
-#login-success {
-	position: fixed;
-	width: 600px;
-	height: 210px;
-	left: 660px;
-	top: 200px;
-	display: none;
-	border-radius: 8px;
-
-	
-	z-index: 3;
-
-
-	background: #FFFFFF;
-}
-
-p.oops {
-	position: relative;
-	top: 80px;
-	padding-bottom: 5px;
-	width: 600px;
-	text-align: center;
-	
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-}
-
-p.oops-p {
-	position: relative;
-	top: 80px;
-	padding-bottom: 5px;
-	width: 600px;
-	text-align: center;
-	
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 300;
-	font-size: 15px;
-}
-
-hr.oops1 {
-	position: relative;
-	width: 240px;
-	top: 65px;
-	left: 40px;
-	margin-right: 20px;
-
-	border: 1px solid #818181;
-	transform: rotate(180deg);
-}
-
-hr.oops2 {
-	position: relative;
-	width: 240px;
-	top: 62px;
-	left: 320px;
-	margin-right: 20px;
-
-	border: 1px solid #818181;
-	transform: rotate(180deg);
-}
-
-button.oops {
-	position: relative;
-	width: 520px;
-	height: 50px;
-	left: 40px;
-	top: 80px;
-	margin-bottom: 20px;
-
-	border: none;
-	background: #30475E;
-	border-radius: 5px;
-	outline: none;
-	text-decoration: none;
-	
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	color: #FFFFFF;
-}
-
-
-button.signup-success {
-	position: absolute;
-	width: 520px;
-	height: 50px;
-	left: 40px;
-	bottom: 30px;
-
-	border: none;
-	background: #F05454;
-	border-radius: 5px;
-	outline: none;
-	text-decoration: none;
-	
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	color: #FFFFFF;
-}
-
-p.signup-success {
-	position: relative;
-	top: 80px;
-	padding-bottom: 5px;
-	width: 600px;
-	text-align: center;
-	
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-}
-
-
-a.cancelbutton {
-	position: absolute;
-	width: 11px;
-	height: 8px;
-	left: 574px;
-	top: 16px;
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 18px;
-
-	letter-spacing: -0.185731px;
-
-	color: #F05454;
-}
-
-h1.createaccount {
-	position: absolute;
-	width: 600px;
-	height: 320px;
-	text-align: center;
-	top: 30px;
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 36px;
-
-	letter-spacing: -0.185731px;
-
-	color: #000000;
-}
-
-div.createaccount-area {
-	position: relative;
-	left: 50px;
-	top: 90px;
-	padding-bottom: 70px;
-	margin-bottom: 10px;
-	
-	height: 60px;
-	width: 500px;
-
-	color: #000000;
-}
-
-p.createaccount-area {
-	position: absolute;
-	top: 10px;
-	
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-}
-
-input.createaccount-area {
-	position: absolute;
-	width: 500px;
-	height: 30px;
-	bottom: 0px;
-
-	background: #FFFFFF;
-	border: 1px solid #888888;
-	box-sizing: border-box;
-	border-radius: 5px;
-	padding-left: 10px;
-	outline: none;
-	
-	font-family: 'Inter';
-}
-
-button.createaccount-area {
-	position: absolute;
-	width: 150px;
-	height: 40px;
-	left: 225px;
-	bottom: 30px;
-
-	border: none;
-	background: #F05454;
-	border-radius: 5px;
-	outline: none;
-	text-decoration: none;
-	
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	color: #FFFFFF;
-}
 
 button.postpane-overlay {
 	position: absolute;
@@ -748,98 +289,17 @@ button.postpane-overlay:hover {
 	mix-blend-mode: screen;
 }
 
-
-
-
-
-/* The next attributes are exclusive to when user "Logged In" */
-
-
-/*This is for the profile part at the top right */
-div.profile {
-	position: relative;
-	min-width: 150px;
-	display: inline-block;
-	height: 60px;
-	left: 50px;
-	top: 2px;
-	
-	border-radius: 5px;
-	
-	transition: background-color 0.2s ease-out 50ms;
-}
-
-div.profile:hover {
-	background-color: white;
-}
-
-div.profile:hover p.profile {
-	color: #30475E;
-}
-
-
-p.profile {
-	position: absolute;
-	left: 60px;
-	top: 20px;
-
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-
-	letter-spacing: -0.185731px;
-
-	color: #FFFFFF;
-
-
-}
-
-img.profile {
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	left: 5px;
-	top: 5px;
-	
-	border-radius: 5px;
-}
-
-#user-dropdown {
-	background-color: tan;
-	/* display: inline-block; */
-	padding: 15px 15px 0 15px;
-	background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-    display: none;
-	position: relative;
-
-}
-
-#user-dropdown a {
-	color: black;
-	display: block;
-	font-weight: 400;
-	font-size: 14px;
-	padding-bottom: 15px;
-}
-
 /* This is for the watchlist card at the side */
-div.watchlist-pane {
+.watchlist-pane {
 	resize: vertical;
 	overflow: auto;
 	display: inline-block;
-	
-	position: absolute;
 	width: 250px;
 	min-height: 200px;
-	left: 780px;
-	top: 110px;
-
 	background: #F5F5F5;
 }
 
-h1.watchlist {
+.watchlist-pane h1 {
 	position: relative;
 	margin-top: 20px;
 	font-family: 'Inter';
@@ -855,7 +315,7 @@ h1.watchlist {
 
 
 /* This is the divider for each watchlist */
-div.watchlist {
+.watchlist {
 	position: relative;
 	top: 10px;
 	left: 10px;
@@ -873,7 +333,7 @@ div.watchlist {
 	transition: background-color 0.1s ease-out 50ms, transform 0.1s ease-out 50ms;
 }
 
-p.watchlist {
+.watchlist p {
 	position: absolute;
 	top: 5px;
 	left: 50px;
@@ -884,11 +344,7 @@ p.watchlist {
 	font-size: 16px;
 }
 
-div.watchlist:hover {
+.watchlist:hover {
 	background-color: #E8CACA;
 	transform: scale(1.01);
 }
-
-
-
-/* Search results styles */

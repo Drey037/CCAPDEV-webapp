@@ -1,0 +1,186 @@
+/*Everything about the Navigation Bar */
+.wrapper {
+	margin-right: 420px;
+	margin-left: 420px;
+	max-width: 1080px;
+}
+
+nav {
+	height: 70px;
+	align-items: center;
+	display: flex;
+}
+
+/* Navigation bar background*/
+.nav-bar-bg {
+	position: fixed;
+	background: #F05454;
+	width: 1920px;
+	height: 70px;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+    /* visibility: hidden; */
+}
+
+/* Logo */
+.logo {
+	position: absolute;
+	width: 97px;
+    height: 59px;
+    left: 4px;
+    top: 7px;
+	margin-left: 420px;
+}
+
+/* The list in navigation bar*/
+nav ul {
+	display: flex;
+	margin-left: 150px;
+}
+
+/* The items in the list */
+.nav-items li {
+	list-style: none;
+	margin-right: 26px;
+    margin-left: 31px;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 58px;
+	letter-spacing: -0.185731px;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.nav-items a {
+	color: #FFFFFF;
+}
+
+/* This bad boy is the design for the annoying search bar DONT TOUCH */
+.search-bar {
+	position: relative;
+    left: 130px;
+	background: url("../assets/search.png") no-repeat left;
+	background-position: 10px 6px;
+	background-size: 20px;
+	background-color: white;
+	border: 0px;
+	outline: none;
+	
+	width: 370px;
+	height: 30px;
+	border-radius: 10px;
+	
+	font-family: 'Inter';
+	font-style: bold;
+}
+
+
+/* nav bar dropdown */
+#nav-dropdown-wrapper {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    display: none;
+    padding: 23px;
+	position: absolute;
+}
+
+.dropdown-pane {
+    display: inline-block;
+}
+
+.dropdown-pane p {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sortby-pane {
+    margin-left: 10px;
+}
+
+.nav-dropdown {
+    display: flex;
+}
+
+.nav-dropdown a {
+    color: #606060;
+    display: block;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.genre-col{
+    margin-right: 15px;
+}
+
+/* The next attributes are exclusive to when user "Logged In" */
+
+
+/*This is for the profile part at the top right */
+div.profile {
+	position: relative;
+	min-width: 150px;
+	display: inline-block;
+	height: 60px;
+	left: 50px;
+	top: 2px;
+	
+	border-radius: 5px;
+	
+	transition: background-color 0.2s ease-out 50ms;
+}
+
+div.profile:hover {
+	background-color: white;
+}
+
+div.profile:hover p.profile {
+	color: #30475E;
+}
+
+
+p.profile {
+	position: absolute;
+	left: 60px;
+	top: 20px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+
+	letter-spacing: -0.185731px;
+
+	color: #FFFFFF;
+
+
+}
+
+img.profile {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 5px;
+	top: 5px;
+	
+	border-radius: 5px;
+}
+
+#user-dropdown {
+	background-color: tan;
+	/* display: inline-block; */
+	padding: 15px 15px 0 15px;
+	background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    display: none;
+	position: relative;
+
+}
+
+#user-dropdown a {
+	color: black;
+	display: block;
+	font-weight: 400;
+	font-size: 14px;
+	padding-bottom: 15px;
+}

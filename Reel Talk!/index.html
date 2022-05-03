@@ -3,6 +3,8 @@
 <html>
 	<head>
 		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/overlays.css">
 		<link rel="stylesheet" href="css/style.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
@@ -164,107 +166,111 @@
 	
 	
 	
-	<!-- THE END OF ALL OVERLAYS --!>
+	<!-- THE END OF ALL OVERLAYS -->
 	
 	
 	
 	
 	<!-- This part is the main page where the posts and stuff are located -->
-	<div class="main">
+	<div id="main-center">
+	<div class="main-wrapper">
 		<h1 class="header-texts">See What's Trending</h1>
-		
-		<!-- This part is the area where the posts will be placed-->
-		<div class="postarea">
+		<div class="main">
 			
 			
-			<!-- First post -->
-			<div class="postpane">
-				<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
-				<img src="assets/Movie Posters/shrek.jpg" class="reviewpic">
+			
+			<!-- This part is the area where the posts will be placed-->
+			<div class="postarea">
+				<!-- First post -->
+				<div class="postpane">
+					<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
+					<img src="assets/Movie Posters/shrek.jpg" class="reviewpic">
+					
+					<!-- Review Bar -->
+					<div class="review">
+						<h1 class="review">ShrekLover:</h1>
+						
+						<!-- Star Ratings -->
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						
+						<!-- The review of the post -->
+						<p class="review">THE MEME, THE LEGEND!!! JOIN THE OGRE CULT. LONG LIVE SHREK!</p>
+						
+					</div>
+					
+					
+					<!-- Title Bar of the review -->
+					<div class="titlebar">
+						<h1 class="titlebar">Shrek</h1>
+						
+						<ul class="titlebar">
+						<li><a href="#">Comedy</a></li> <!-- Genre 1 -->
+						<li><a href="#">Adventure</a></li> <!-- Genre 2 -->
+						<li><a href="#">Family</a></li> <!-- Genre 3 -->
+					
+						<button class="comment" onclick="oops()">Write a Comment</button>
+					</div>
 				
-				<!-- Review Bar -->
-				<div class="review">
-					<h1 class="review">ShrekLover:</h1>
+				</div>
+				<br>
+				<br>
+				
+				
+				<!-- Second post -->
+				<div class="postpane">
+					<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
+					<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 					
-					<!-- Star Ratings -->
-					<div class="star-gold"></div>
-					<div class="star-gold"></div>
-					<div class="star-gold"></div>
-					<div class="star-gold"></div>
-					<div class="star-gold"></div>
+					<!-- Review Bar -->
+					<div class="review">
+						<h1 class="review">ErensWife:</h1>
+						
+						<!-- Star Ratings -->
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-black"></div>
+						
+						<!-- The review of the post -->
+						<p class="review">The characters are just so 😩 Eren please marry me!!!</p>
+						
+					</div>
 					
-					<!-- The review of the post -->
-					<p class="review">THE MEME, THE LEGEND!!! JOIN THE OGRE CULT. LONG LIVE SHREK!</p>
 					
+					<!-- Title Bar of the review -->
+					<div class="titlebar">
+						<h1 class="titlebar">Attack on Titan</h1>
+						
+						<ul class="titlebar">
+						<li><a href="#">Horror</a></li> <!-- Genre 1 -->
+						<li><a href="#">Dark Fantasy</a></li> <!-- Genre 2 -->
+						<li><a href="#">Action</a></li> <!-- Genre 3 -->
+					
+						<button class="comment" onclick="oops()">Write a Comment</button>
+					</div>
+				
 				</div>
 				
-				
-				<!-- Title Bar of the review -->
-				<div class="titlebar">
-					<h1 class="titlebar">Shrek</h1>
-					
-					<ul class="titlebar">
-					<li><a href="#">Comedy</a></li> <!-- Genre 1 -->
-					<li><a href="#">Adventure</a></li> <!-- Genre 2 -->
-					<li><a href="#">Family</a></li> <!-- Genre 3 -->
-				
-					<button class="comment" onclick="oops()">Write a Comment</button>
-				</div>
-			
 			</div>
-			<br>
-			<br>
 			
-			
-			<!-- Second post -->
-			<div class="postpane">
-				<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist">+</button>
-				<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
+			<!-- This part is the "Create a New Account" pane -->
+			<div class="createnewpost">
+				<h1>Create an account</h1>
+				<p>Create an account to review, comment, and add movies to a watchlist!</p>
 				
-				<!-- Review Bar -->
-				<div class="review">
-					<h1 class="review">ErensWife:</h1>
-					
-					<!-- Star Ratings -->
-					<div class="star-gold"></div>
-					<div class="star-gold"></div>
-					<div class="star-gold"></div>
-					<div class="star-gold"></div>
-					<div class="star-black"></div>
-					
-					<!-- The review of the post -->
-					<p class="review">The characters are just so 😩 Eren please marry me!!!</p>
-					
-				</div>
-				
-				
-				<!-- Title Bar of the review -->
-				<div class="titlebar">
-					<h1 class="titlebar">Attack on Titan</h1>
-					
-					<ul class="titlebar">
-					<li><a href="#">Horror</a></li> <!-- Genre 1 -->
-					<li><a href="#">Dark Fantasy</a></li> <!-- Genre 2 -->
-					<li><a href="#">Action</a></li> <!-- Genre 3 -->
-				
-					<button class="comment" onclick="oops()">Write a Comment</button>
-				</div>
-			
+				<button type="button" class="createpost" onclick="SignUpOverlayOn()">Create Account</button>
 			</div>
-			
-		</div>
-		
-		<!-- This part is the "Create a New Account" pane -->
-		<div class="createnewpost">
-			<h1 class="createnewpost">Create an account</h1>
-			<p class="createnewpost">Create an account to review, comment, and add movies to a watchlist!</p>
-			
-			<button type="button" class="createpost" onclick="SignUpOverlayOn()">Create Account</button>
-		</div>
-			
+				
+		</div>		
 	</div>
+</div>
 	
-	<script src="main.js"></script>
+	<script src="js/main.js"></script>
 	</body>
 </html>
 		

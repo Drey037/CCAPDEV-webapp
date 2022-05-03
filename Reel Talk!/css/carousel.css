@@ -1,15 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter';
-}
-
-a {
-    text-decoration: none;
-}
-
 .carousel-background {
     background-color: #ECECEC;
+    padding: 20px 80px;
     /* display: flex;
     justify-content: center; */
 }
