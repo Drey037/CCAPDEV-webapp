@@ -467,12 +467,12 @@ border: 1.0351px solid #767676;
 }
 div.watchlistcard
 {
-	
-/*	position: relative;*/
+	position: relative;
 	width: 665px;
 	height: 320px;
-	left: 84px;
-/*	top: 24px;*/
+	top: 0px;
+	margin-bottom: 50px;
+	
 	margin-right: 0px;
 	padding-right: 0px;
 	border-right: 0px;
@@ -497,7 +497,7 @@ div.watchlistcardinfo
 	position: absolute;
 	width: 661.3px;
 	height: 58.31px;
-	top: 327.22px;
+	top: 260px;
 
 	background: #F5F5F5;
 	border-radius: 0px 0px 5px 5px;
@@ -552,7 +552,6 @@ div.watchlistcardposterholder
 	position: absolute;
 	width: 662px;
 	background-color: gray;
-	top: 67px;
 	height: 260px;
 
  	text-align: center;
@@ -811,4 +810,15 @@ p.userwindowcomments
 
 	letter-spacing: -0.185731px;
 
+}
+
+div.usertab {
+	width: 1920px;
+	height: 50px;
+	background-color: #F5F5F5;
+	
+	position: fixed;
+	top: 50px;
+	
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
