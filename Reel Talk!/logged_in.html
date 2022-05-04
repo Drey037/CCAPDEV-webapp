@@ -84,10 +84,24 @@
 	<div id="new-review">
 		<h1>Create a New Review</h1>
 		<div class="poster-selection">
-			<a href="#"><img src="assets/Movie Posters/your_name_1.jpg" alt="Poster option 1"></a>
-			<a href="#"><img src="assets/Movie Posters/your_name_2.jpg" alt="Poster option 2"></a>
-			<a href="#"><img src="assets/Movie Posters/your_name_3.jpg" alt="Poster option 3"></a>
-			
+			<div class="poster-selection-wrapper">
+				<img src="assets/Movie Posters/your_name_1.jpg" alt="Poster option 1">
+				<div class="poster-selection-overlay">
+					<div>Choose</div>
+				</div>
+			</div>
+			<div class="poster-selection-wrapper">
+				<img src="assets/Movie Posters/your_name_2.jpg" alt="Poster option 2">
+				<div class="poster-selection-overlay">
+					<div>Choose</div>
+				</div>
+			</div>
+			<div class="poster-selection-wrapper">
+				<img src="assets/Movie Posters/your_name_3.jpg" alt="Poster option 3">
+				<div class="poster-selection-overlay">
+					<div>Choose</div>
+				</div>
+			</div>
 		</div>
         <h2>Your Name (2016)</h2>
         <div class="genres">
@@ -155,7 +169,7 @@
 					<div class="postpane">
 						<div class="postpane-overlay-buttons">
 							<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
-							<button class="postpane-overlay" onclick="oops()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+							<button class="postpane-overlay" onclick="NewReviewOverlayOn()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
 						</div>
 						<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
 						
