@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/navbar.css" />
+
+
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+	
+	<!-- This part is all about the navigation bar -->
+	<div class="nav-bar-bg">
+		<div class="wrapper">
+			<nav>
+				<a href="#"><img src="assets/1.png" class="logo" alt="logo" /></a>
+				
+				<div class="searchbar">
+					<input type="text" class="search-bar" id="search" name="search">
+				</div>
+				
+				<ul class="nav-items">
+					<li id="movies" onclick="showDropdown(this.id)">Movies</li>
+					<li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
+					<li id="anime" onclick="showDropdown(this.id)">Anime</li>
+					
+					<!-- This is the profile at the top right" -->
+					<a href="#">
+						<div class="profile" onclick="showUserDropdown()">
+							<img src="assets/sample.jpg" class="profile" alt="profile">
+							<p class="profile">user_name</p>
+						</div>
+					</a>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="nav-dropdown-wrapper">
+			<div class="dropdown-pane genre-pane">
+				<p>Genres:</p>
+				<div class="nav-dropdown">
+					<div class="genre-col">
+						<a href="#">Action</a>
+						<a href="#">Comedy</a>
+						<a href="#">Drama</a>
+						<a href="#">Fantasy</a>
+					</div>
+					<div class="genre-col">
+						<a href="#">Thriller</a>
+						<a href="#">Romance</a>
+						<a href="#">Mystery</a>
+						<a href="#">Horror</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="dropdown-pane sortby-pane">
+				<p>Sort by:</p>
+				<div class="nav-dropdown">
+					<div>
+						<a id="dropdown-top-something" href="#">Top Movies</a>
+						<a href="#">Trending</a>
+						<a href="#">New Releases</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="user-dropdown">
+			<a href="#">View Profile</a>
+			<a href="#">Account Settings</a>
+			<a href="index.html" onclick="logout()">Log Out</a>
+		</div>
+	</div>
+	
+		<div class="usertab"></div>
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+	<div class="main-wrapper">
+	<div class="main">
+		<!-- user window pane -->
+
+		<!-- end of user window pane -->
+		<div class="postarea">
+				<!-- First post -->
+				<div class="postpane">
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+						<button class="postpane-overlay" onclick="NewReviewOverlayOn()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+					</div>
+					<img src="assets/Movie Posters/shrek.jpg" class="reviewpic">
+					
+					<!-- Review Bar -->
+					<div class="review">
+						<h1 class="review">ShrekLover:</h1>
+						
+						<!-- Star Ratings -->
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						
+						<!-- The review of the post -->
+						<p class="review">THE MEME, THE LEGEND!!! JOIN THE OGRE CULT. LONG LIVE SHREK!</p>
+						
+					</div>
+					
+					
+					<!-- Title Bar of the review -->
+					<div class="titlebar">
+						<h1 class="titlebar">Shrek</h1>
+						
+						<ul class="titlebar">
+						<li><a href="#">Comedy</a></li> <!-- Genre 1 -->
+						<li><a href="#">Adventure</a></li> <!-- Genre 2 -->
+						<li><a href="#">Family</a></li> <!-- Genre 3 -->
+					
+						<button class="comment" onclick="oops()">Write a Comment</button>
+					</div>
+				
+				</div>
+				<br>
+				<br>
+				
+				
+				<!-- Second post -->
+				<div class="postpane">
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+						<button class="postpane-overlay" onclick="NewReviewOverlayOn()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+					</div>
+					<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />
+					
+					<!-- Review Bar -->
+					<div class="review">
+						<h1 class="review">ErensWife:</h1>
+						
+						<!-- Star Ratings -->
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-gold"></div>
+						<div class="star-black"></div>
+						
+						<!-- The review of the post -->
+						<p class="review">The characters are just so 😩 Eren please marry me!!!</p>
+						
+					</div>
+					
+					
+					<!-- Title Bar of the review -->
+					<div class="titlebar">
+						<h1 class="titlebar">Attack on Titan</h1>
+						
+						<ul class="titlebar">
+						<li><a href="#">Horror</a></li> <!-- Genre 1 -->
+						<li><a href="#">Dark Fantasy</a></li> <!-- Genre 2 -->
+						<li><a href="#">Action</a></li> <!-- Genre 3 -->
+					
+						<button class="comment" onclick="oops()">Write a Comment</button>
+					</div>
+				
+				</div>
+				
+			</div>
+		</div>
+
+
+		<!-- userwindow -->
+		<div class="userwindow">
+			<div class="userwindowbp">
+				<img src="Assets/Movie Posters/bp.png" class="userwindowbp">
+			</div>
+			<div class="userwindowpp">
+				<img src="Assets/Movie Posters/pp.jpg" class="userwindowpp">
+			</div>
+			<div class = "userwindowinfo">
+				<h1 class="userwindowname">
+					bane
+				</h1>
+				<p class = "userwindowgender">
+					Gender: Male
+				</p>
+
+				<p class = "userwindowbirthday">
+					Birthday: 11/07/20
+				</p>
+
+				<p class ="userwindowposts">
+						Posts: 10		
+				</p>
+
+				<p class ="userwindowcomments">
+						Comments: 25		
+				</p>
+				<button class = "editprofilebutton" onclick="location.href='User Settings Edit.html'"> 
+					Edit Profile
+				</button>
+
+			</div>
+		</div>
+		<!-- end of user window -->
+	</div>
+	</div>
+</div>
+</body>
+
+</html>
