@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/edit_watchlist.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+	
+	<!-- This part is all about the navigation bar -->
+	<div class="nav-bar-bg">
+		<div class="wrapper">
+			<nav>
+				<a href="#"><img src="assets/1.png" class="logo" alt="logo" /></a>
+				
+				<div class="searchbar">
+					<input type="text" class="search-bar" id="search" name="search">
+				</div>
+				
+				<ul class="nav-items">
+					<li id="movies" onclick="showDropdown(this.id)">Movies</li>
+					<li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
+					<li id="anime" onclick="showDropdown(this.id)">Anime</li>
+					
+					<!-- This is the profile at the top right" -->
+					<a href="#">
+						<div class="profile" onclick="showUserDropdown()">
+							<img src="assets/sample.jpg" class="profile" alt="profile">
+							<p class="profile">user_name</p>
+						</div>
+					</a>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="nav-dropdown-wrapper">
+			<div class="dropdown-pane genre-pane">
+				<p>Genres:</p>
+				<div class="nav-dropdown">
+					<div class="genre-col">
+						<a href="#">Action</a>
+						<a href="#">Comedy</a>
+						<a href="#">Drama</a>
+						<a href="#">Fantasy</a>
+					</div>
+					<div class="genre-col">
+						<a href="#">Thriller</a>
+						<a href="#">Romance</a>
+						<a href="#">Mystery</a>
+						<a href="#">Horror</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="dropdown-pane sortby-pane">
+				<p>Sort by:</p>
+				<div class="nav-dropdown">
+					<div>
+						<a id="dropdown-top-something" href="#">Top Movies</a>
+						<a href="#">Trending</a>
+						<a href="#">New Releases</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="user-dropdown">
+			<a href="#">View Profile</a>
+			<a href="User Settings.html">Account Settings</a>
+			<a href="index.html">Log Out</a>
+		</div>
+	</div>
+	</body>
+
+    <!-- To add reviews/watchlist tab -->
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+		<div class="main-wrapper">
+			<div class="main">
+
+				<div class="edit-watchlist-wrapper">
+
+                    <h1>Edit Your Watchlist</h1>
+                    <form action="#" id="edit-watchlist-text">
+                        <p>Watchlist Name:</p>
+                        <input type="text" name="watchlist-name" id="watchlist-name">
+                        <p>Watchlist Description (optional):</p>
+                        <textarea name="watchlist-description" id="watchlist-description"></textarea>
+                    
+                        <h1>In Your Watchlist</h1>
+
+                        <!-- Item in watchlist 1 -->
+                        <div class="in-watchlist">
+                            <div class="in-watchlist-img-wrapper">
+                                <img src="assets/Movie Posters/attack on titan.jpg" alt="">
+                                <div class="in-watchlist-overlay">
+                                    <div>Remove</div>
+                                </div>
+                            </div>
+
+                            <div class="in-watchlist-info">
+                                <h2>Attack on Titan (2013)</h2>
+                                <div class="in-watchlist-genres">
+                                    <p>Horror</p>
+                                    <p>Drama</p>
+                                    <p>Fantasy</p>
+                                </div>
+                                <p>It is set in a world where humanity lives inside cities surrounded by three enormous walls that protect them from the gigantic man-eating humanoids referred to as Titans; the story follows Eren Yeager, who vows to exterminate the Titans after a Titan brings about the destruction of his hometown and the death of his mother.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item in watchlist 2 -->
+                        <div class="in-watchlist">
+                            <div class="in-watchlist-img-wrapper">
+                                <img src="assets/Movie Posters/shrek.jpg" alt="">
+                                <div class="in-watchlist-overlay">
+                                    <div>Remove</div>
+                                </div>
+                            </div>
+
+                            <div class="in-watchlist-info">
+                                <h2>Shrek (2001)</h2>
+                                <div class="in-watchlist-genres">
+                                    <p>Comedy</p>
+                                    <p>Fantasy</p>
+                                </div>
+                                <p>A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item in watchlist 3 -->
+                        <div class="in-watchlist">
+                            <div class="in-watchlist-img-wrapper">
+                                <img src="assets/Movie Posters/your_name_1.jpg" alt="">
+                                <div class="in-watchlist-overlay">
+                                    <div>Remove</div>
+                                </div>
+                            </div>
+
+                            <div class="in-watchlist-info">
+                                <h2>Your Name (2016)</h2>
+                                <div class="in-watchlist-genres">
+                                    <p>Drama</p>
+                                    <p>Fantasy</p>
+                                    <p>Romance</p>
+                                </div>
+                                <p>Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.</p>
+                            </div>
+                        </div>                        
+
+
+                        <div class="edit-watchlist-save"><button type="submit">Save</button></div>
+                    </form>
+                    <button class="edit-watchlist-cancel" onclick="location.href='#'">Cancel</button>
+
+                </div>
+					
+			</div>		
+	</div>
+	</div>
+
+	<script src="js/main.js"></script>
+</html>

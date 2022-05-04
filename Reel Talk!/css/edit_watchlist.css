@@ -1,0 +1,124 @@
+.edit-watchlist-wrapper {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    padding: 50px;
+    margin: 0 60px;
+}
+
+.edit-watchlist-wrapper h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+#edit-watchlist-text input[type=text], #edit-watchlist-text textarea {
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#edit-watchlist-text p {
+    margin-bottom: 5px;
+}
+
+#watchlist-name {
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+#watchlist-description {
+    height: 150px;
+    margin-bottom: 40px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.in-watchlist {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: flex;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+}
+
+.in-watchlist-info {
+    margin: 10px 25px;
+}
+
+.in-watchlist img {
+    width: 130px;
+    height: 210px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.in-watchlist-info h2 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.in-watchlist-info p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.in-watchlist-genres {
+    display: flex;
+    margin: 3px 0 2px 0;
+}
+
+.in-watchlist-genres p {
+    margin-right: 8px;
+    font-size: 12px;
+}
+.edit-watchlist-wrapper button {
+    display: block;
+    margin: 5px auto;
+    background-color: #30475E;
+    color: #FFFFFF;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.edit-watchlist-save {
+    margin-top: 50px;
+}
+
+/* For the overlay when hovering over poster */
+.in-watchlist-img-wrapper {
+    position: relative;
+}
+
+.in-watchlist-overlay {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.in-watchlist-img-wrapper:hover .in-watchlist-overlay {
+    opacity: 1;
+}
+
+.in-watchlist-overlay div {
+    background-color: #F05454;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.in-watchlist-overlay div:hover {
+    cursor: pointer;
+}
