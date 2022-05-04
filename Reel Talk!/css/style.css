@@ -465,12 +465,12 @@ border: 1.0351px solid #767676;
 	outline: none;
 	padding-left: 10px;
 }
+
 div.watchlistcard
 {
 	position: relative;
 	width: 665px;
 	height: 320px;
-	top: 0px;
 	margin-bottom: 50px;
 	
 	margin-right: 0px;
@@ -812,13 +812,16 @@ p.userwindowcomments
 
 }
 
+/*This is the user tab where you can check the user reviews and collections */
+
 div.usertab {
 	width: 1920px;
-	height: 50px;
+	height: 40px;
 	background-color: #F5F5F5;
+	z-index: 1;
 	
 	position: fixed;
-	top: 50px;
+	top: 70px;
 	
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
