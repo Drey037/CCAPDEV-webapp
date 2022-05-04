@@ -465,3 +465,359 @@ border: 1.0351px solid #767676;
 	outline: none;
 	padding-left: 10px;
 }
+div.watchlistcard
+{
+	
+/*	position: relative;*/
+	width: 665px;
+	height: 361.54px;
+	left: 84px;
+/*	top: 24px;*/
+	margin-right: 0px;
+	padding-right: 0px;
+	border-right: 0px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
+}
+
+img.watchlistcard
+{
+	position: relative;
+	width: 162px;
+	height: 260px;
+
+	border-right: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+	margin-bottom: 0px;
+}
+
+
+div.watchlistcardinfo
+{
+	position: absolute;
+	width: 661.3px;
+	height: 58.31px;
+	top: 327.22px;
+
+	background: #F5F5F5;
+	border-radius: 0px 0px 5px 5px;
+}
+
+h1.watchlistcardinfo
+{
+	position: absolute;
+	width: 661.3px;
+	height: 16px;
+	top: 10px;
+	left: 25px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 58px;
+	/* or 361% */
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+h2.watchlistcardinfo
+{
+	position: absolute;
+	width: 662px;
+	height: 12px;
+	top: 35px;
+	left: 25px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 12px;
+	/* identical to box height, or 98% */
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+div.watchlistcardposterholder
+{
+	position: absolute;
+	width: 662px;
+	background-color: gray;
+	top: 67px;
+	height: 260px;
+
+ 	text-align: center;
+ 	align-items: center;
+ 	align-content: center;
+}
+
+div.watchlistcardcomment
+{
+	position: absolute;
+	width: 662px;
+	height: 63px;
+	background: rgba(0, 0, 0, .5);
+	top: 200px;
+}
+
+h1.watchlistcardname
+{
+	/*left: 25px;
+	position: absolute;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 58px;
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #FFFFFF;*/
+
+	position: absolute;
+width: 495px;
+height: 16px;
+left: 25px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 11px;
+line-height: 58px;
+/* or 525% */
+
+display: flex;
+align-items: center;
+letter-spacing: -0.185731px;
+
+color: #FFFFFF;
+
+}
+
+h2.watchlistcardcomment
+{
+top: 20px;
+left: 25px;
+position: absolute;
+width: 602px;
+height: 40px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 11px;
+line-height: 12px;
+/* or 105% */
+text-align: left;
+display: flex;
+
+letter-spacing: -0.185731px;
+
+color: #FFFFFF;
+}
+
+div.rating
+{
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	left: 535px;
+	color: orange;
+}
+
+
+
+div.userwindow
+{
+	position: fixed;
+	width: 220px;
+	height: 300px;
+	left: 1200px;
+	top: 160px;
+
+	background: #F5F5F5;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 3px;
+}
+
+div.userwindowpp
+{
+/*	position: absolute;*/
+	top: 20px;
+	width: 100px;
+	height: 100px;
+	left: 60px;
+	top: 35px;
+}
+
+img.userwindowpp
+{
+	/*position: absoulte;*/
+	width: 100px;
+	height: 100px;
+	
+
+	border: 5px solid #FFFFFF;
+	box-sizing: border-box;
+	border-radius: 50px;
+/*	left: 30px;
+	margin: 0px;
+	margin-left: 30px;*/
+}
+
+div.userwindowbp
+{
+/*	position: fixed;*/
+	width: 221px;
+	height: 90px;
+	left: 1200px;
+/*	top: 160px;*/
+}
+
+img.userwindowbp
+{
+/*	position: fixed;*/
+	width: 221px;
+	height: 90px;
+}
+
+div.userwindowinfo
+{
+	top: 310px;
+/*	position: fixed;*/
+	width: 220px;
+	height: 150px;
+}
+
+h1.userwindowname
+{
+	top: -5px;
+/*	position: relative;*/
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+	margin-top: 7px;
+
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+p.userwindowgender
+{
+/*	position: absolute;*/
+	width: 73px;
+	height: 15px;
+	left: 20px;
+	top: 5px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 58px;
+	/* or 578% */
+
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+
+}
+
+p.userwindowbirthday
+{
+/*	position: absolute;*/
+	width: 83px;
+	height: 15px;
+	left: 118px;
+	top: 5px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 58px;
+	/* or 578% */
+
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+p.userwindowposts
+{
+/*	position: absolute;*/
+	width: 73px;
+	height: 15px;
+	left: 20px;
+	top: 25px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 58px;
+	/* or 578% */
+
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+p.userwindowcomments
+{
+/*	position: absolute;*/
+	width: 83px;
+	height: 15px;
+	left: 118px;
+	top: 25px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 58px;
+	/* or 578% */
+
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+.editprofilebutton
+{
+
+	position: absolute;
+	width: 160px;
+	height: 30px;
+	left: 30px;
+	top: 80px;
+
+	background: #F05454;
+	border-radius: 5px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	color: white;
+	border: none;
+	/* identical to box height, or 413% */
+
+	letter-spacing: -0.185731px;
+
+}
