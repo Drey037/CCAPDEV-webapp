@@ -470,7 +470,7 @@ div.watchlistcard
 	
 /*	position: relative;*/
 	width: 665px;
-	height: 361.54px;
+	height: 320px;
 	left: 84px;
 /*	top: 24px;*/
 	margin-right: 0px;
@@ -663,7 +663,7 @@ div.userwindowpp
 
 img.userwindowpp
 {
-	/*position: absoulte;*/
+	position: absolute;
 	width: 100px;
 	height: 100px;
 	
@@ -671,9 +671,9 @@ img.userwindowpp
 	border: 5px solid #FFFFFF;
 	box-sizing: border-box;
 	border-radius: 50px;
-/*	left: 30px;
-	margin: 0px;
-	margin-left: 30px;*/
+
+    top: 40px;
+    left: 60px;
 }
 
 div.userwindowbp
@@ -702,15 +702,13 @@ div.userwindowinfo
 
 h1.userwindowname
 {
-	top: -5px;
-/*	position: relative;*/
+	position: relative;
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 600;
 	font-size: 14px;
-	line-height: 25px;
 	text-align: center;
-	margin-top: 7px;
+	margin-top: -50px;
 
 	letter-spacing: -0.185731px;
 
@@ -719,18 +717,16 @@ h1.userwindowname
 
 p.userwindowgender
 {
-/*	position: absolute;*/
-	width: 73px;
+	position: relative;
+	width: 110px;
 	height: 15px;
-	left: 20px;
+	left: 10px;
 	top: 5px;
 
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 10px;
-	line-height: 58px;
-	/* or 578% */
+	font-size: 12px;
 
 	letter-spacing: -0.185731px;
 
@@ -740,18 +736,16 @@ p.userwindowgender
 
 p.userwindowbirthday
 {
-/*	position: absolute;*/
-	width: 83px;
+	position: relative;
+	width: 150px;
 	height: 15px;
-	left: 118px;
-	top: 5px;
+	left: 110px;
+    top: -10px;
 
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 10px;
-	line-height: 58px;
-	/* or 578% */
+	font-size: 12px;
 
 	letter-spacing: -0.185731px;
 
@@ -760,18 +754,17 @@ p.userwindowbirthday
 
 p.userwindowposts
 {
-/*	position: absolute;*/
-	width: 73px;
+	position: relative;
+	width: 110px;
 	height: 15px;
-	left: 20px;
-	top: 25px;
+	left: 10px;
+
+
 
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 10px;
-	line-height: 58px;
-	/* or 578% */
+	font-size: 12px;
 
 	letter-spacing: -0.185731px;
 
@@ -780,18 +773,16 @@ p.userwindowposts
 
 p.userwindowcomments
 {
-/*	position: absolute;*/
-	width: 83px;
+	position: relative;
+	width: 110px;
 	height: 15px;
-	left: 118px;
-	top: 25px;
+	left: 110px;
+	top: -15px;
 
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 10px;
-	line-height: 58px;
-	/* or 578% */
+	font-size: 12px;
 
 	letter-spacing: -0.185731px;
 
@@ -805,7 +796,7 @@ p.userwindowcomments
 	width: 160px;
 	height: 30px;
 	left: 30px;
-	top: 80px;
+	top: 250px;
 
 	background: #F05454;
 	border-radius: 5px;
