@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/navbar.css" />
 		<link rel="stylesheet" href="css/post page.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -94,7 +95,7 @@
 
 					<!--Title and ratings-->
 					<div class="review-title">
-						<h1>Shrek, 2001</h1>
+						<h1>Shrek, (2001)</h1>
 					</div>
 					
 					<!--The actual review-->
@@ -120,13 +121,168 @@
 					</div>
 				</div>
 
-				<!--The actual review-->
+				<!--User will enter the comment here-->
 				<div class="review-comments-container">
+					<div class="user-comment">
+						<img src="Assets/sample.jpg" class="user-comment-pp">
+						<textarea class="review-comment-textbox" placeholder="Write a reply..." name="user-comment" id="user-comment"></textarea>
+						
+						<button class="reply-comment">Reply</button>
+					</div>
+
+				</div>
 
 
+				<!-- Random Comment 1-->
+				<div class="review-comments">
+
+					<!-- Profile Pic-->
+					<img src="Assets/users/animeface.jpg" class="user-comment-pp">
+
+					<!-- Text Area -->
+					<div class="review-comment-area">
+
+						<!-- Username and Date Commented-->
+						<p class="comment-username">OnichanPlsLoveme</p> <p class="comment-date">01/07/2022</p>
+						<br>
+
+						<!-- User's Comment -->
+						<p class="review-comment"> I totally agree with this review. Although this movie became
+							a meme, you can't deny that this is a huge classic. The amount of dirty jokes that
+							I missed as a kid tho (ʘロʘ)
+						</p>
+						<br>
+						
+
+						<div class="rating-thumbs">
+							<!-- Thumbs up -->
+							  <i class="fa fa-thumbs-up fa-3x like" onclick="clickrating('up1')" aria-hidden="true" id="upbutton1"></i></a> <input type="text" class="rating-numbers" id="up1" value="0" readonly/>
+							<!-- Thumbs down -->
+							  <i class="fa fa-thumbs-down fa-3x like" onclick="clickrating('down1')" aria-hidden="true" id="downbutton1"></i> <input type="text" class="rating-numbers" id="down1" value="0" readonly/>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Random Comment 2-->
+				<div class="review-comments">
+
+					<!-- Profile Pic-->
+					<img src="Assets/users/fat.jpg" class="user-comment-pp">
+
+					<!-- Text Area -->
+					<div class="review-comment-area">
+
+						<!-- Username and Date Commented-->
+						<p class="comment-username">pmat</p> <p class="comment-date">01/07/2022</p>
+						<br>
+						
+
+						<!-- User's Comment -->
+						<p class="review-comment">This movie sucks
+						</p>
+						<br>
+
+						<div class="rating-thumbs">
+							<!-- Thumbs up -->
+							  <i class="fa fa-thumbs-up fa-3x like" onclick="clickrating('up2')" aria-hidden="true" id="upbutton2"></i></a> <input type="text" class="rating-numbers" id="up2" value="0" readonly/>
+							<!-- Thumbs down -->
+							  <i class="fa fa-thumbs-down fa-3x like" onclick="clickrating('down2')" aria-hidden="true" id="downbutton2"></i> <input type="text" class="rating-numbers" id="down2" value="0" readonly/>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Random Comment 3-->
+				<div class="review-comments">
+
+					<!-- Profile Pic-->
+					<img src="Assets/users/tyler.jpg" class="user-comment-pp">
+
+					<!-- Text Area -->
+					<div class="review-comment-area">
+
+						<!-- Username and Date Commented-->
+						<p class="comment-username">tylerTheExplorer</p> <p class="comment-date">02/07/2022</p>
+						<br>
+						
+
+						<!-- User's Comment -->
+						<p class="review-comment">Watching this movie religiously just gives me the right spiritual awakening.
+						</p>
+						<br>
+
+						<div class="rating-thumbs">
+							<!-- Thumbs up -->
+							  <i class="fa fa-thumbs-up fa-3x like" onclick="clickrating('up3')" aria-hidden="true" id="upbutton3"></i></a> <input type="text" class="rating-numbers" id="up3" value="0" readonly/>
+							<!-- Thumbs down -->
+							  <i class="fa fa-thumbs-down fa-3x like" onclick="clickrating('down3')" aria-hidden="true" id="downbutton3"></i> <input type="text" class="rating-numbers" id="down3" value="0" readonly/>
+						</div>
+
+					</div>
 				</div>
 
 
 			</div>
 		</div>
 	</div>
+
+	<script>
+	function ratingincrement(id) {
+    	var value = parseInt(document.getElementById(id).value, 10);
+    	value = isNaN(value) ? 0 : value;
+    	value++;
+    	document.getElementById(id).value = value;
+	}
+
+	function ratingdecrement(id) {
+    	var value = parseInt(document.getElementById(id).value, 10);
+    	value = isNaN(value) ? 0 : value;
+    	value--;
+    	document.getElementById(id).value = value;
+	}
+
+	function clickrating (id) { 
+		if (id.charAt(0) === 'u') {
+			var idbutton = "upbutton" + id.substring(2);
+			var string = "down" + id.substring(2);
+			var opbutton = "downbutton" + id.substring(2);
+		}
+		else {
+			var idbutton = "downbutton" + id.substring(4);
+			var string = "up" + id.substring(4);
+			var opbutton = "upbutton" + id.substring(4);
+		}
+
+		//Checks if the opposite thumb is active, it disables if so
+		if (document.getElementById(opbutton).classList.contains("active")) {
+			ratingInactive (string);
+			ratingInactive(opbutton)
+			ratingdecrement(string);
+		}
+
+		//Checks if the thumb pressed is active, it disables if so
+		if (document.getElementById(idbutton).classList.contains("active")) {
+			ratingInactive (idbutton);
+			ratingInactive(id)
+			ratingdecrement(id);
+		}
+		else {
+			ratingActive (idbutton);
+			ratingActive (id);
+			ratingincrement(id);
+		}
+	}
+
+	function ratingActive (id) {
+		document.getElementById(id).classList.add("active");
+	}
+
+	function ratingInactive (id) {
+		document.getElementById(id).classList.remove("active");
+	}
+		
+	</script>
+
+	</body>
+</html>
