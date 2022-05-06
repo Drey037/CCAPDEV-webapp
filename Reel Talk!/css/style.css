@@ -13,6 +13,10 @@ body {
 	background: #F5F5F5;
 }
 
+.break {
+	width: 100%;
+}
+
 button {
 	cursor:pointer;
 }
@@ -43,6 +47,7 @@ button {
 .main {
 	display: flex;
 	justify-content: space-between;
+	flex-flow: row wrap;
 	width: 1080px;
 	padding: 20px 80px 80px 80px;
 }

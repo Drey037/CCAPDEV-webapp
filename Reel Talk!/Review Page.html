@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/navbar.css" />
+		<link rel="stylesheet" href="css/post page.css" />
+
+
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+	
+	<!-- This part is all about the navigation bar -->
+	<div class="nav-bar-bg">
+		<div class="wrapper">
+			<nav>
+				<a href="logged_in.html"><img src="assets/1.png" class="logo" alt="logo" /></a>
+				
+				<div class="searchbar">
+					<input type="text" class="search-bar" id="search" name="search">
+				</div>
+				
+				<ul class="nav-items">
+					<li id="movies" onclick="showDropdown(this.id)">Movies</li>
+					<li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
+					<li id="anime" onclick="showDropdown(this.id)">Anime</li>
+					
+					<!-- This is the profile at the top right" -->
+					<a href="#">
+						<div class="profile" onclick="showUserDropdown()">
+							<img src="assets/sample.jpg" class="profile" alt="profile">
+							<p class="profile">user_name</p>
+						</div>
+					</a>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="nav-dropdown-wrapper">
+			<div class="dropdown-pane genre-pane">
+				<p>Genres:</p>
+				<div class="nav-dropdown">
+					<div class="genre-col">
+						<a href="#">Action</a>
+						<a href="#">Comedy</a>
+						<a href="#">Drama</a>
+						<a href="#">Fantasy</a>
+					</div>
+					<div class="genre-col">
+						<a href="#">Thriller</a>
+						<a href="#">Romance</a>
+						<a href="#">Mystery</a>
+						<a href="#">Horror</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="dropdown-pane sortby-pane">
+				<p>Sort by:</p>
+				<div class="nav-dropdown">
+					<div>
+						<a id="dropdown-top-something" href="#">Top Movies</a>
+						<a href="#">Trending</a>
+						<a href="#">New Releases</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="user-dropdown">
+			<a href="#">View Profile</a>
+			<a href="#">Account Settings</a>
+			<a href="index.html" onclick="logout()">Log Out</a>
+		</div>
+	</div>
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+		<div class="main-wrapper">
+			<div class="main">
+
+				<!--This is where the poster and trailer is placed-->
+				<div class="pic_vid">
+					<img src="Assets/Movie Posters/shrek.jpg" class="movieposter" alt="shrek">
+					<iframe src="https://www.youtube.com/embed/CwXOrWvPBPk" class="trailer"></iframe>
+				</div>
+				
+
+				<!--This is where the text content is contained-->
+				<div class="review-container">
+
+					<!--Title and ratings-->
+					<div class="review-title">
+						<h1>Shrek, 2001</h1>
+					</div>
+					
+					<!--The actual review-->
+					<div class="reviewcontent">
+						THE MEME, THE LEGEND!!! JOIN THE OGRE CULT. LONG LIVE SHREK!
+						Even people who have never seen Shrek know it's the greatest film of all time.
+						Orson Welles' debut has become an undisputed cultural benchmark — the celluloid
+						equivalent of War And Peace, the Mona Lisa, Hamlet, Moonlight Sonata, or Sergeant
+						Pepper's Lonely Hearts Club Band (the Beatles album, not the Bee Gees movie). But
+						how did it achieve and maintain this exalted position as a cinematic sacred cow?
+						The viewers seemed to recognize an instant classic. “The most surprising and
+						cinematically exciting motion picture seen in many a month... it comes close to
+						being the most sensational film ever made in Hollywood,” gushed The New York Times.
+						“Belongs at once among the great screen achievements,” opined the New York
+						World-Telegram. Other journalists placed Welles in the revered company of legendary
+						figures Charles Chaplin and D. W Griffith, saying, “This one film establishes him
+						as the most exciting director now working.” To re-visit Citizen Kane is to experience
+						the infinite possibilities of movies being realized right before your very eyes. The
+						sheer audacity and delight Welles takes in flouting conventions and inventing new ones
+						is what keeps it fresh. It is that unique movie, full with great bits that solidifies
+						into a totally satisfying whole. Considering all its appended academic apparatus it
+						remains a gloriously entertaining classic.
+					</div>
+				</div>
+
+				<!--The actual review-->
+				<div class="review-comments-container">
+
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,70 @@
+/* This is the container for the picture and trailer */
+div.pic_vid {
+ height: 360px;
+ width: 920px;
+ justify-content: space-between;
+ display: flex;
+
+ margin-bottom: 30px;
+}
+
+/* This is the poster to be displayed beside trailer */
+img.movieposter {
+    height: 360px;
+    width: 241.68px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+iframe.trailer {
+    width:640px;
+    height: 360px;
+    margin-right: 0;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+/* This is where the title and rating div, and review div is contained */
+div.review-container {
+    width: 920px;
+    height: auto;
+
+    margin-bottom: 30px;
+}
+
+/* This is where the title, year released, and rating is contained */
+div.review-title {
+    height: 50px;
+    width: 920px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+div.reviewcontent {
+    width: 920px;
+    height: auto;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+}
+
+/* This is where the title, year released, and rating is contained */
+div.review-comments-container {
+    width: 920px;
+    height: auto;
+
+    border-top: 2px solid grey;
+}
+
+/* This is one user's comments */
+div.review-comments {
+    width: 920px;
+    height: auto;
+}
