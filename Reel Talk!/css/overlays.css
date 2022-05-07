@@ -353,6 +353,8 @@ button.createaccount-area {
     padding: 10px;
 	resize: none;
 	overflow-y: scroll;
+
+	font-family: 'Inter';
 }
 
 #new-review button {

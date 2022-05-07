@@ -57,7 +57,7 @@ nav ul {
 }
 
 /* This bad boy is the design for the annoying search bar DONT TOUCH */
-.search-bar {
+#search {
 	position: relative;
     left: 130px;
 	background: url("../assets/search.png") no-repeat left;
@@ -74,6 +74,12 @@ nav ul {
 	font-style: bold;
 
 	padding-left: 45px;
+}
+
+/* INVISIBLE SEARCH BUTTON */
+button.searchbutton {
+	width: 0;
+	height: 0;
 }
 
 

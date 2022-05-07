@@ -1,0 +1,129 @@
+.settings-main {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	width: 1080px;
+	padding: 20px 80px 80px 80px;
+}
+
+/* Header for the Account settings page */
+h1.youraccountlist
+{
+	position: absolute;
+	width: 348px;
+	height: 58px;
+	left: 540px;
+	top: 127px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+div.accsetbox
+{
+	width: 720px;
+	height: 760px;
+	background-color: white;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
+
+    border: 1px solid #767676;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+div.user-info-container {
+    width: 600px;
+    height: auto;
+	margin-bottom: 50px;
+}
+
+h2.usersettingsheader
+{
+	position: relative;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 58px;
+
+
+letter-spacing: -0.185731px;
+
+color: #000000;
+}
+
+.usersettings-line
+{
+	position: absolute;
+    width: 600px;
+    height: 0px;
+
+    border: 1px solid #767676;
+}
+
+.editsettingsbutton
+{
+	width: 220px;
+	height: 40px;
+    margin-top: 30px;
+
+	background: #30475E;
+	border-radius: 5px;
+    border: none;
+
+	color: #FFFFFF;
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.accsetprevpic
+{
+    margin-top: 50px;
+	width: 200px;
+	height: 200px;
+
+	border-radius: 3px;
+}
+
+button.choose-photo {
+	width: 110px;
+	height: 20px;
+	margin-left: 305px;
+	margin-right: 305px;
+
+	background: #FFFFFF;
+	border: 1px solid #8F8F8F;
+	border-radius: 3px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 11px;
+}
+
+.accsetedittextbox
+{
+	position: relative;
+	bottom: 5px;
+	width: 600px;
+
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+
+	border: 1px solid #888888;
+	border-radius: 7px;
+	outline: none;
+	padding-left: 10px;
+}

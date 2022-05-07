@@ -86,3 +86,11 @@ document.onclick = function(e) {
         hideDropdown();
     }
 }
+
+var search = document.getElementById("search");
+search.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("searchbutton").click();
+  }
+});
