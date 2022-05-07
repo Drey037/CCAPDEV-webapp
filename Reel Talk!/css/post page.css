@@ -160,11 +160,18 @@ p.comment-date {
     margin-left: 20px;
 }
 
-p.review-comment {
+/* This is the actual comment */
+.review-comment {
     width: 800px;
     font-family: 'Inter';
     font-weight: 300;
     font-size: 14px;
+
+    width: 800px;
+    height: auto;
+
+    border: none;
+    overflow: visible; 
 }
 
 div.review-comment-area {
