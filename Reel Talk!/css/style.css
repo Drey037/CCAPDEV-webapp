@@ -5,8 +5,9 @@
 	box-sizing: border-box;
 }
 
-ul {
-	margin-bottom: 0;
+ul, ol, hr, p, h1 {
+	margin: 0;
+	padding: 0;
 }
 
 a {
