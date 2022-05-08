@@ -1,9 +1,12 @@
-
 /* Default Styles for all pages */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+ul {
+	margin-bottom: 0;
 }
 
 a {
@@ -182,7 +185,7 @@ h1.titlebar {
 	position: absolute;
 	left: 20px;
 	bottom: 30px;
-	
+	top: 6px;
 	
 	font-family: 'Inter';
 	font-style: normal;
