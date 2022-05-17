@@ -80,8 +80,8 @@
     <!-- To add reviews/watchlist tab -->
 
     <div class="usertab">
-			<button class = "usertabbutton" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
-			<button class = "usertabbutton" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
+			<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
+			<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
 	</div>
 
 	<!-- This part is the main page where the posts and stuff are located -->
@@ -94,9 +94,9 @@
                     <h1>Edit Your Watchlist</h1>
                     <form action="#" id="edit-watchlist-text">
                         <p>Watchlist Name:</p>
-                        <input type="text" name="watchlist-name" id="watchlist-name">
+                        <input type="text" name="watchlist-name" id="watchlist-name" placeholder="Nostalgic ಥ_ಥ">
                         <p>Watchlist Description (optional):</p>
-                        <textarea name="watchlist-description" id="watchlist-description"></textarea>
+                        <textarea name="watchlist-description" id="watchlist-description" placeholder="Some nostalgic movies I loved when I was younger"></textarea>
                     
                         <h1>In Your Watchlist</h1>
 
@@ -160,9 +160,9 @@
                         </div>                        
 
 
-                        <div class="edit-watchlist-save"><button type="submit">Save</button></div>
+                        <div class="edit-watchlist-save"><button type="submit" onclick="location.href='User Profile Collections.html'">Save</button></div>
                     </form>
-                    <button class="edit-watchlist-cancel" onclick="location.href='#'">Cancel</button>
+                    <button class="edit-watchlist-cancel" onclick="location.href='User Profile Collections.html'">Cancel</button>
 
                 </div>
 					

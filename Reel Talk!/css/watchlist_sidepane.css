@@ -1,0 +1,61 @@
+/* This is for the watchlist pane at the side */
+.watchlist-pane {
+	resize: vertical;
+	overflow: auto;
+	display: inline-block;
+	width: 250px;
+	min-height: 200px;
+	background: #F5F5F5;
+}
+
+.watchlist-pane h1 {
+	position: relative;
+	margin-top: 20px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+
+	align-items: center;
+	text-align: center;
+
+	color: #000000;
+}
+
+
+/* This is the divider for each watchlist */
+button.watchlist {
+	position: relative;
+	top: 10px;
+	left: 10px;
+	background: url("../assets/watchlist.png") no-repeat left;
+	background-position: 10px 6px;
+	background-size: 20px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	outline: none;
+	border: none;
+	
+	height: 30px;
+	width: 210px;
+	
+	color: black;
+	
+	transition: background-color 0.1s ease-out 50ms, transform 0.1s ease-out 50ms;
+}
+
+.watchlist p {
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.watchlist:hover {
+	background-color: #E8CACA;
+	transform: scale(1.01);
+}

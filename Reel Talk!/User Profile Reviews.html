@@ -5,7 +5,10 @@
 		<title>Reel Talk!</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/navbar.css" />
+		<link rel="stylesheet" href="css/overlays.css">
+		<link rel="stylesheet" href="css/review_card.css" />
 		<link rel="stylesheet" href="css/watchlist_card.css" />
+		<link rel="stylesheet" href="css/profile_card.css" />
 
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
@@ -87,10 +90,7 @@
 	<div id="main-center">
 	<div class="main-wrapper">
 	<div class="main">
-		<!-- user window pane -->
 
-
-		<!-- end of user window pane -->
 		<div class="postarea">
 			
 
@@ -104,7 +104,7 @@
 					
 					<!-- Review Bar -->
 					<div class="review">
-						<h1 class="review">ShrekLover:</h1>
+						<h1 class="review">user_name:</h1>
 						
 						<!-- Star Ratings -->
 						<div class="star-gold"></div>
@@ -128,7 +128,7 @@
 						<li><a href="#">Adventure</a></li> <!-- Genre 2 -->
 						<li><a href="#">Family</a></li> <!-- Genre 3 -->
 					
-						<button class="comment" onclick="oops()">Write a Comment</button>
+						<button class="comment" onclick="location.href = 'Review Page.html'">Write a Comment</button>
 					</div>
 				
 				</div>
@@ -146,7 +146,7 @@
 					
 					<!-- Review Bar -->
 					<div class="review">
-						<h1 class="review">ErensWife:</h1>
+						<h1 class="review">user_name:</h1>
 						
 						<!-- Star Ratings -->
 						<div class="star-gold"></div>
@@ -185,22 +185,22 @@
 				<img src="Assets/Movie Posters/bp.png" class="userwindowbp">
 			</div>
 			<div class="userwindowpp">
-				<img src="Assets/Movie Posters/pp.jpg" class="userwindowpp">
+				<img src="Assets/sample.jpg" class="userwindowpp">
 			</div>
 			<div class = "userwindowinfo">
 				<h1 class="userwindowname">
-					bane
+					user_name
 				</h1>
 				<p class = "userwindowgender">
-					Gender: Male
+					Gender: Female
 				</p>
 
 				<p class = "userwindowbirthday">
-					Birthday: 11/07/20
+					Birthday: 11/07/22
 				</p>
 
 				<p class ="userwindowposts">
-						Posts: 10		
+						Posts: 2		
 				</p>
 
 				<p class ="userwindowcomments">
@@ -209,13 +209,14 @@
 				<button class = "editprofilebutton" onclick="location.href='User Settings Edit.html'"> 
 					Edit Profile
 				</button>
-
 			</div>
 		</div>
 		<!-- end of user window -->
 	</div>
 	</div>
 </div>
+
+<script src="js/main.js"></script>
 </body>
 
 </html>

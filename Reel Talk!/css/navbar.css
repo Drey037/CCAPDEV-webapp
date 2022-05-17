@@ -19,7 +19,7 @@ nav {
 	height: 70px;
 	left: 0px;
 	top: 0px;
-	z-index: 1;
+	z-index: 2;
     /* visibility: hidden; */
 }
 
@@ -90,6 +90,8 @@ button.searchbutton {
     display: none;
     padding: 23px;
 	position: absolute;
+
+	z-index:2;
 }
 
 .dropdown-pane {
@@ -182,6 +184,7 @@ img.profile {
     display: none;
 	position: relative;
 
+	z-index: 3;
 }
 
 #user-dropdown a {

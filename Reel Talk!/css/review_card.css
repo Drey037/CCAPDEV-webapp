@@ -1,0 +1,204 @@
+div.postpane {
+	padding-bottom: 70px;
+	height: 360px;
+	width: 650px;
+	
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	
+	transition: outline, transform 0.3s;
+}
+
+div.postpane:hover {
+	outline: 5px solid white;
+	border-radius: 8px;
+	
+	transform: scale(1.01);
+}
+
+img.reviewpic {
+	width: 650px;
+	height: 300px;
+	object-fit: cover;
+	object-position: 0 87%;
+	border-radius: 8px 8px 0px 0px;
+	transition: object-position 1s ease-out 50ms, filter 0.5s ease-out 50ms;
+}
+
+div.review {
+	position: absolute;
+	width: 650px;
+	height: 70px;
+	top: 230px;
+
+	background: rgba(65, 65, 65, 0.6);
+	mix-blend-mode: normal;
+}
+
+h1.review {
+	position: absolute;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	top: 10px;
+	left: 20px;
+	letter-spacing: -0.185731px;
+	
+	color: #FFFFFF;
+}
+
+p.review {
+	font-family: 'Inter';
+	position: absolute;
+	left: 20px;
+	top: 30px;
+
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+	
+	color: #FFFFFF;
+}
+
+div.titlebar {
+	position: absolute;
+	width: 650px;
+	height: 60px;
+	top: 300px;
+
+	background: #F5F5F5;
+	border-radius: 0px 0px 8px 8px;
+}
+
+h1.titlebar {
+	position: absolute;
+	left: 20px;
+	bottom: 30px;
+	top: 6px;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+ul.titlebar{
+	position: absolute;
+	display: flex;
+	width: 270px;
+	list-style: none;
+	
+	bottom: 10px;
+	left: 20px;
+	font-weight: 300;
+}
+
+.titlebar li{
+	margin-right: 20px;
+}
+
+.titlebar li a{
+	color: black;
+}
+
+.star-black {
+	position: relative;
+	top: 10px;
+	left: 550px;
+	background: black;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	padding-left: 10px;
+}
+
+.star-gold {
+	position: relative;
+	top: 10px;
+	left: 550px;
+	background: gold;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	padding-left: 10px;
+}
+
+.titlebar button {
+	position: absolute;
+    width: 130px;
+    height: 40px;
+    right: -340px;
+    bottom: 0px;
+	
+    background: #30475E;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+	
+    font-family: 'Inter';
+	font-size: 12px;
+	color: white;
+}
+
+
+.postpane-overlay-buttons {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+button.postpane-overlay {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background-color: rgb(0,0,0,0);
+	border: 2px solid #FFFFFF;
+	text-decoration: none;
+	display: none;
+	
+	z-index: 1;
+
+	font-family: 'Inter';
+	color: white;
+	font-size: 45px;
+	font-weight: 500;
+	line-height: 20px;
+	
+	transition: background-color 0.1s ease-out 5ms, color 0.1s ease-out 5ms;
+}
+
+div.postpane:hover button.postpane-overlay{
+	display: block;
+}
+
+div.postpane:hover img.reviewpic{
+	object-position: 0 83.5%;
+	
+	filter: brightness(50%);
+	background-color: rgba(65, 65, 65, 0.6);
+	mix-blend-mode: normal;
+}
+
+button.postpane-overlay:hover {
+	background-color: white;
+	opacity: 0.8;
+	color: black;
+	mix-blend-mode: screen;
+}
+
+div.rating
+{
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	left: 535px;
+	color: orange;
+}
