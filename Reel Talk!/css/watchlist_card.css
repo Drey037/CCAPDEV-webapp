@@ -1,0 +1,220 @@
+div.watchlistcard
+{
+	position: relative;
+	width: 665px;
+	height: 320px;
+	margin-bottom: 50px;
+	
+	margin-right: 0px;
+	padding-right: 0px;
+	border-right: 0px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
+}
+
+img.watchlistcard
+{
+	position: relative;
+	width: 162px;
+	height: 260px;
+
+	border-right: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+	margin-bottom: 0px;
+}
+
+
+div.watchlistcardinfo
+{
+	position: absolute;
+	width: 661.3px;
+	height: 58.31px;
+	top: 260px;
+
+	background: #F5F5F5;
+	border-radius: 0px 0px 5px 5px;
+}
+
+h1.watchlistcardinfo
+{
+	position: absolute;
+	width: 661.3px;
+	height: 16px;
+	top: 10px;
+	left: 25px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 58px;
+	/* or 361% */
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+h2.watchlistcardinfo
+{
+	position: absolute;
+	width: 662px;
+	height: 12px;
+	top: 35px;
+	left: 25px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 12px;
+	/* identical to box height, or 98% */
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #000000;
+}
+
+div.watchlistcardposterholder
+{
+	position: absolute;
+	width: 662px;
+	background-color: gray;
+	height: 260px;
+
+ 	text-align: center;
+ 	align-items: center;
+ 	align-content: center;
+ 	transition: filter 0.3s ease-out 5ms;
+}
+
+div.watchlistcardcomment
+{
+	position: absolute;
+	width: 662px;
+	height: 63px;
+	background: rgba(0, 0, 0, .5);
+	top: 200px;
+}
+
+h1.watchlistcardname
+{
+	/*left: 25px;
+	position: absolute;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 58px;
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.185731px;
+
+	color: #FFFFFF;*/
+
+	position: absolute;
+width: 495px;
+height: 16px;
+left: 25px;
+top: 5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 11px;
+line-height: 58px;
+/* or 525% */
+
+display: flex;
+align-items: center;
+letter-spacing: -0.185731px;
+
+color: #FFFFFF;
+
+}
+
+h2.watchlistcardcomment
+{
+top: 20px;
+left: 25px;
+position: absolute;
+width: 602px;
+height: 40px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 11px;
+line-height: 12px;
+/* or 105% */
+text-align: left;
+display: flex;
+
+letter-spacing: -0.185731px;
+
+color: #FFFFFF;
+}
+
+/*overlay stuff*/
+
+div.watchlistcard:hover {
+	outline: 5px solid white;
+	border-radius: 8px;
+	
+	transform: scale(1.01);
+}
+
+.postpane-overlay-buttons {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+button.postpane-overlay {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background-color: rgb(0,0,0,0);
+	border: 2px solid #FFFFFF;
+	text-decoration: none;
+	display: none;
+	
+	z-index: 1;
+
+	font-family: 'Inter';
+	color: white;
+	font-size: 45px;
+	font-weight: 500;
+	line-height: 20px;
+	
+	transition: background-color 0.1s ease-out 5ms, color 0.1s ease-out 5ms;
+}
+
+div.watchlistcard:hover button.postpane-overlay{
+	display: block;
+}
+
+div.watchlistcard:hover div.watchlistcardposterholder{
+	object-position: 0 83.5%;
+	
+	filter: brightness(50%);
+	background-color: rgba(65, 65, 65, 0.6);
+	mix-blend-mode: normal;
+}
+
+button.watchlistcard-overlay:hover {
+	background-color: white;
+	opacity: 0.8;
+	color: black;
+	mix-blend-mode: screen;
+}
+
+
+
+
