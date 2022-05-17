@@ -209,18 +209,43 @@ div.usertab {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.usertabbutton
+#usertabbutton-reviews
 {
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-left: 80px;
 	margin-right: 80px;
-	/*margin-left: 740px;
-	align-content: center;*/
+	
+
 	font-weight: 600;
 	font-size: 17px;
 	line-height: 35px;
-	border: none;
 	outline: none;
 	background-color: #F5F5F5;
+}
+
+#usertabbutton-collections
+{
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 80px;
+	margin-right: 80px;
+
+
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 35px;
+	outline: none;
+	background-color: #F5F5F5;
+}
+
+.inactive {
+	border: none;
+}
+
+.active {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 2px solid #30475E;
 }
