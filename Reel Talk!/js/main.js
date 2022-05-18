@@ -94,3 +94,60 @@ search.addEventListener("keypress", function(event) {
     document.getElementById("searchbutton").click();
   }
 });
+
+
+
+//The rating functions in Review Page
+function ratingincrement(id) {
+    var value = parseInt(document.getElementById(id).value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById(id).value = value;
+}
+
+function ratingdecrement(id) {
+    var value = parseInt(document.getElementById(id).value, 10);
+    value = isNaN(value) ? 0 : value;
+    value--;
+    document.getElementById(id).value = value;
+}
+
+function clickrating (id) { 
+    if (id.charAt(0) === 'u') {
+        var idbutton = "upbutton" + id.substring(2);
+        var string = "down" + id.substring(2);
+        var opbutton = "downbutton" + id.substring(2);
+    }
+    else {
+        var idbutton = "downbutton" + id.substring(4);
+        var string = "up" + id.substring(4);
+        var opbutton = "upbutton" + id.substring(4);
+    }
+
+    //Checks if the opposite thumb is active, it disables if so
+    if (document.getElementById(opbutton).classList.contains("active")) {
+        ratingInactive (string);
+        ratingInactive(opbutton)
+        ratingdecrement(string);
+    }
+
+    //Checks if the thumb pressed is active, it disables if so
+    if (document.getElementById(idbutton).classList.contains("active")) {
+        ratingInactive (idbutton);
+        ratingInactive(id)
+        ratingdecrement(id);
+    }
+    else {
+        ratingActive (idbutton);
+        ratingActive (id);
+        ratingincrement(id);
+    }
+}
+
+function ratingActive (id) {
+    document.getElementById(id).classList.add("active");
+}
+
+function ratingInactive (id) {
+    document.getElementById(id).classList.remove("active");
+}
