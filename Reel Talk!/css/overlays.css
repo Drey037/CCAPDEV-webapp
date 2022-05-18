@@ -401,3 +401,17 @@ button.createaccount-area {
 .poster-selection-overlay div:hover {
     cursor: pointer;
 }
+
+
+/* This part is for the "View Watchlist" pop up */
+div.viewWatchlist {
+	position: fixed;
+	width: 650px;
+	height: 350px;
+
+	margin-right: 635px;
+
+	background-color: #3b5b7c;
+}
+
+/* This part is for the "Add this show to Which Watchlist" pop up */

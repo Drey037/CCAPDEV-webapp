@@ -81,10 +81,34 @@
 		</div>
 	</div>
 	
-		<div class="usertab">
-			<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
-			<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
-		</div>
+	<!-- The User Tab -->
+	<div class="usertab">
+		<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
+		<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
+	</div>
+
+
+	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
+	<div id="darkoverlay"></div>
+	
+	<!-- The "Oops...get an account first" Pop Up -->
+	<div id="oops">
+			<h1 class="createaccount">Oops... You need to log in first</h1>
+			<h1><a class="cancelbutton" href="#" onclick="oopsoff()">X</a></h1>
+				<p class="oops">In order to enjoy the full features</p><br>
+				<p class="oops-p">Already have an account?</p>
+				<button class="oops" onclick="LoginOverlayOn()">Log In</button>
+				<p class="oops-p">OR</p>
+				<hr class="oops1">
+				<hr class="oops2">
+				
+				<p class="oops-p">Don’t have an account yet? </p>
+				<button class="oops" onclick="SignUpOverlayOn()">Sign Up</button>
+	</div>
+
+	<!-- END OF ALL OVERLAYS -->
+
+
 
 	<!-- This part is the main page where the posts and stuff are located -->
 	<div id="main-center">
@@ -94,7 +118,7 @@
 		<div class="postarea">
 
 		<!-- Watchlist card 1-->
-		<div class="watchlistcard">
+		<div class="watchlistcard" onclick=""> <!--To add the view shows in watchlist thingy pop up-->
 			<div class="postpane-overlay-buttons">
 				<button class="postpane-overlay" onclick="location.href='edit_watchlist.html'" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
 			</div>
