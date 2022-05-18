@@ -9,7 +9,7 @@
     text-align: center;
     font-weight: 700;
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 #edit-watchlist-text input[type=text], #edit-watchlist-text textarea {
@@ -20,6 +20,7 @@
 }
 
 #edit-watchlist-text p {
+    margin-top: 15px;
     margin-bottom: 5px;
 }
 
@@ -121,4 +122,12 @@
 
 .in-watchlist-overlay div:hover {
     cursor: pointer;
+}
+
+#edit-watchlist-text h3 {
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+
 }
