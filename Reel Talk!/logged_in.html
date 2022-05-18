@@ -118,6 +118,46 @@
         <button id="reel-it" onclick="location.href = 'logged_in.html'">Reel It!</button>
         <button class="cancel-review" onclick="NewReviewOverlayOff()">Cancel</button>
 	</div>
+
+
+	<!-- Add to Watchlist -->
+	<div id="add-to-watchlist">
+		<h1>Add to Watchlist:</h1>
+
+		<div id="watchlist-container">
+			<!-- First watchlist -->
+			<ul>
+				<l1><button class="watchlist" onclick="AddOverlayOff()">
+					<p>Nostalgic ಥ_ಥ</p>
+				</button></l1>
+
+				<!-- Second watchlist -->
+				<l1><button class="watchlist" onclick="AddOverlayOff()">
+					<p>Old but Gold ⚜️✨</p>
+				</button></l1>
+				
+				<!-- Third watchlist -->
+				<li><button class="watchlist" onclick="AddOverlayOff()">
+					<p>Sad Boi (づ─⍘─)づ</p>
+				</button></l1>
+				
+				<!-- Fourth watchlist -->
+				<li><button class="watchlist" onclick="AddOverlayOff()">
+					<p>Litty🔥🔥🔥</p>
+				</button></l1>
+				
+				<!-- Fifth watchlist -->
+				<li><button class="watchlist" onclick="AddOverlayOff()">
+					<p>Good Vibes✨💿</p>
+				</button></l1>
+
+			</ul>
+		</div>
+
+		<button id="add-to-watchlist-cancel" onclick="AddOverlayOff()">Cancel</button>
+	</div>
+
+	<!-- END OF ALL OVERLAYS -->
 		
 
 	<!-- This part is the main page where the posts and stuff are located -->
@@ -133,7 +173,7 @@
 					<!-- First post -->
 					<div class="postpane">
 						<div class="postpane-overlay-buttons">
-							<button class="postpane-overlay" onclick="" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+							<button class="postpane-overlay" onclick="AddOverlayOn()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
 							<button class="postpane-overlay" onclick="NewReviewOverlayOn()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
 						</div>
 						<img src="assets/Movie Posters/shrek.jpg" class="reviewpic">
@@ -175,7 +215,7 @@
 					<!-- Second post -->
 					<div class="postpane">
 						<div class="postpane-overlay-buttons">
-							<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
+							<button class="postpane-overlay" onclick="AddOverlayOn()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
 							<button class="postpane-overlay" onclick="NewReviewOverlayOn()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
 						</div>
 						<img src="assets/Movie Posters/attack on titan.jpg" class="reviewpic" />

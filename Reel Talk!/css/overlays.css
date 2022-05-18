@@ -403,15 +403,60 @@ button.createaccount-area {
 }
 
 
-/* This part is for the "View Watchlist" pop up */
-div.viewWatchlist {
+/* This part is for the "Add this show to Which Watchlist" pop up */
+#add-to-watchlist {
+	margin-left: 845px;
+	margin-top: 200px;
+
+	width: 290px;
+	height: 330px;
+	background: #F5F5F5;
+
 	position: fixed;
-	width: 650px;
-	height: 350px;
+	z-index:3;
+	display: none;
 
-	margin-right: 635px;
-
-	background-color: #3b5b7c;
+	border-radius: 5px;
 }
 
-/* This part is for the "Add this show to Which Watchlist" pop up */
+#watchlist-container {
+	overflow-y: auto;
+	width: 250px;
+	height: 230px;
+	border-radius:5px;
+	margin-left:20px;
+
+	display: flex;
+
+	background-color: white;
+}
+
+#add-to-watchlist h1 {
+	margin-top: 20px;
+	margin-bottom: 10px; 
+
+	font-weight: 700;
+	font-size: 16px;
+
+	color: #000000;
+
+	text-align:center;
+}
+
+#add-to-watchlist-cancel {
+	width: 70px;
+	height: 30px;
+    margin-top: 10px;
+
+	margin-left: 110px;
+	
+
+	background: #30475E;
+	border-radius: 5px;
+    border: none;
+
+	color: #FFFFFF;
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;	
+}

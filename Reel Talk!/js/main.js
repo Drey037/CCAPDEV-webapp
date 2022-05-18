@@ -87,6 +87,9 @@ document.onclick = function(e) {
     }
 }
 
+
+
+// The Search Function (MIGHT CHANGE LATER)
 var search = document.getElementById("search");
 search.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -150,4 +153,16 @@ function ratingActive (id) {
 
 function ratingInactive (id) {
     document.getElementById(id).classList.remove("active");
+}
+
+
+//This is to activate the Add to Watchlist Pop Up
+function AddOverlayOn() {
+    document.getElementById("darkoverlay").style.display = "block";
+    document.getElementById("add-to-watchlist").style.display = "block";
+}
+
+function AddOverlayOff() {
+    document.getElementById("darkoverlay").style.display = "none";
+    document.getElementById("add-to-watchlist").style.display = "none";
 }
