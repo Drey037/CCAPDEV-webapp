@@ -209,13 +209,9 @@ div.watchlistcard:hover div.watchlistcardposterholder{
 	mix-blend-mode: normal;
 }
 
-button.watchlistcard-overlay:hover {
+button.postpane-overlay:hover {
 	background-color: white;
 	opacity: 0.8;
 	color: black;
 	mix-blend-mode: screen;
 }
-
-
-
-
