@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/navbar.css" />
+		<link rel="stylesheet" href="../css/overlays.css">
+		<link rel="stylesheet" href="../css/watchlist_card.css" />
+		<link rel="stylesheet" href="../css/profile_card.css" />
+
+
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
+	</head>
+	
+	<body>
+	
+	<!-- This part is all about the navigation bar -->
+	<div class="nav-bar-bg">
+		<div class="wrapper">
+			<nav>
+				<a href="../logged_in.html"><img src="../assets/1.png" class="logo" alt="logo" /></a>
+				
+				<div class="searchbar">
+					<input type="text" class="search-bar" id="search" name="search">
+				</div>
+				<button class="searchbutton" id="searchbutton" onclick="location.href='../search_results.html'"></button>
+				
+				<ul class="nav-items">
+					<li id="movies" onclick="showDropdown(this.id)">Movies</li>
+					<li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
+					<li id="anime" onclick="showDropdown(this.id)">Anime</li>
+					
+					<!-- This is the profile at the top right" -->
+					<a href="#">
+						<div class="profile" onclick="showUserDropdown()">
+							<img src="../assets/sample.jpg" class="profile" alt="profile">
+							<p class="profile">aud_one</p>
+						</div>
+					</a>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="nav-dropdown-wrapper">
+			<div class="dropdown-pane genre-pane">
+				<p>Genres:</p>
+				<div class="nav-dropdown">
+					<div class="genre-col">
+						<a href="#">Action</a>
+						<a href="#">Comedy</a>
+						<a href="#">Drama</a>
+						<a href="#">Fantasy</a>
+					</div>
+					<div class="genre-col">
+						<a href="#">Thriller</a>
+						<a href="#">Romance</a>
+						<a href="#">Mystery</a>
+						<a href="#">Horror</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="dropdown-pane sortby-pane">
+				<p>Sort by:</p>
+				<div class="nav-dropdown">
+					<div>
+						<a id="dropdown-top-something" href="#">Top Movies</a>
+						<a href="#">Trending</a>
+						<a href="#">New Releases</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="user-dropdown">
+			<a href="#">View Profile</a>
+			<a href="#">Account Settings</a>
+			<a href="../index.html" onclick="logout()">Log Out</a>
+		</div>
+	</div>
+	
+	<!-- The User Tab -->
+	<div class="usertab">
+		<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'profile-review-aud_one.html'">Reviews</button>
+		<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'profile-collections-aud_one.html'">Watchlists</button>
+	</div>
+
+
+	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
+	<div id="darkoverlay"></div>
+	
+	<!-- The "Oops...get an account first" Pop Up -->
+	<div id="oops">
+			<h1 class="createaccount">Oops... You need to log in first</h1>
+			<h1><a class="cancelbutton" href="#" onclick="oopsoff()">X</a></h1>
+				<p class="oops">In order to enjoy the full features</p><br>
+				<p class="oops-p">Already have an account?</p>
+				<button class="oops" onclick="LoginOverlayOn()">Log In</button>
+				<p class="oops-p">OR</p>
+				<hr class="oops1">
+				<hr class="oops2">
+				
+				<p class="oops-p">Don’t have an account yet? </p>
+				<button class="oops" onclick="SignUpOverlayOn()">Sign Up</button>
+	</div>
+
+	<!-- END OF ALL OVERLAYS -->
+
+
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+		<div class="main-wrapper">
+			<div class="main">
+
+				<div class="postarea">
+
+				<!-- Watchlist card 1-->
+				<div class="watchlistcard" onclick="location.href='../view_watchlist.html'"> <!--To add the view shows in watchlist thingy pop up-->
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="location.href='../edit_watchlist.html'" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
+					</div>
+					<div class="watchlistcardposterholder"> 
+						<img src="../assets/Movie Posters/shrek.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/attack on titan.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/your_name_1.jpg" class="watchlistcard"></img>
+					</div>
+					
+					<div class = "watchlistcardinfo">
+						<h1 class = "watchlistcardinfo">
+							Nostalgic ಥ_ಥ <span class="watchlistcardinfo-divider">|</span> <span class="watchlist-count" value="3">In Watchlist: 3</span>
+						</h1>
+						<h2 class = "watchlistcardinfo">
+							Some nostalgic movies I loved when I was younger
+						</h2>
+					</div>
+				</div>
+
+
+				<!-- Watchlist card 2-->
+				<div class="watchlistcard">
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
+					</div>
+					<div class="watchlistcardposterholder"> 
+						<img src="../assets/Movie Posters/Breakfast at Tiffany's.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Jaws.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/ET.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/The Breakfast Club.jpg" class="watchlistcard"></img>
+					</div>
+					
+					<div class = "watchlistcardinfo">
+						<h1 class = "watchlistcardinfo">
+							Old but Gold ⚜️✨ <span class="watchlistcardinfo-divider">|</span> <span class="watchlist-count" value="4">In Watchlist: 4</span>
+						</h1>
+						<h2 class = "watchlistcardinfo">
+							Classics I wanna watch
+						</h2>
+
+					</div>
+				</div>
+
+				<!-- Watchlist card 3-->
+				<div class="watchlistcard">
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
+					</div>
+					<div class="watchlistcardposterholder"> 
+						<img src="../assets/Movie Posters/Inside Out.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Edward Scissorhands.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Titanic.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Up.jpg" class="watchlistcard"></img>
+					</div>
+					
+					<div class = "watchlistcardinfo">
+						<h1 class = "watchlistcardinfo">
+							Sad Boi (づ─⍘─)づ <span class="watchlistcardinfo-divider">|</span> <span class="watchlist-count" value="8">In Watchlist: 8</span>
+						</h1>
+						<h2 class = "watchlistcardinfo">
+							Bruhhhh my emotions
+						</h2>
+
+					</div>
+				</div>
+
+				<!-- Watchlist card 4-->
+				<div class="watchlistcard">
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
+					</div>
+					<div class="watchlistcardposterholder"> 
+						<img src="../assets/Movie Posters/hunger_games_1.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Titanic.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Penguins of Madagascar.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Elf.jpg" class="watchlistcard"></img>
+					</div>
+					
+					<div class = "watchlistcardinfo">
+						<h1 class = "watchlistcardinfo">
+							Litty🔥🔥🔥 <span class="watchlistcardinfo-divider">|</span> <span class="watchlist-count" value="6">In Watchlist: 6</span>
+						</h1>
+						<h2 class = "watchlistcardinfo">
+							Never let go of these movies
+						</h2>
+
+					</div>
+				</div>
+
+				<!-- Watchlist card 5-->
+				<div class="watchlistcard">
+					<div class="postpane-overlay-buttons">
+						<button class="postpane-overlay" onclick="" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
+					</div>
+					<div class="watchlistcardposterholder"> 
+						<img src="../assets/Movie Posters/Dumb and Dumber.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Madagascar 2.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Team America.jpg" class="watchlistcard"></img>
+						<img src="../assets/Movie Posters/Shaun of the Dead.jpg" class="watchlistcard"></img>
+					</div>
+					
+					<div class = "watchlistcardinfo">
+						<h1 class = "watchlistcardinfo">
+							Good Vibes✨💿 <span class="watchlistcardinfo-divider">|</span> <span class="watchlist-count" value="11">In Watchlist: 11</span>
+						</h1>
+						<h2 class = "watchlistcardinfo">
+							Pampa-good vibes lang
+						</h2>
+
+					</div>
+				</div>
+
+				</div>
+				<!-- userwindow -->
+				<div class="userwindow">
+					<div class="userwindowbp">
+						<img src="../assets/Movie Posters/bp.png" class="userwindowbp">
+					</div>
+					<div class="userwindowpp">
+						<img src="../assets/users/aud_one.jpg" class="userwindowpp">
+					</div>
+					<div class = "userwindowinfo">
+						<h1 class="userwindowname">
+							aud_one
+						</h1>
+						<p class = "userwindowgender">
+							Gender: Female
+						</p>
+
+						<p class = "userwindowbirthday">
+							Birthday: 03/07/05
+						</p>
+
+						<p class ="userwindowposts">
+								Posts: 2		
+						</p>
+
+						<p class ="userwindowcomments">
+								Comments: 111		
+						</p>
+					</div>
+				</div>
+				<!-- end of user window -->
+			</div>
+		</div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+
+</html>
