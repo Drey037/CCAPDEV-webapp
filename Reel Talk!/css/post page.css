@@ -225,3 +225,13 @@ div.review-comment-area {
   .active {
     color: #F05454;
   }
+
+  h2.movie_info {
+      font-size: 20px;
+      font-weight: 400;
+  }
+
+.info_header {
+    color: grey;
+    font-weight: 200;
+}
