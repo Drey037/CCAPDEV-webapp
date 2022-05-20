@@ -1,8 +1,7 @@
 div.userwindow
 {
 	position: relative;
-	width: 220px;
-	height: 300px;
+	/* height: 300px; */
 
 	background: #F5F5F5;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -53,9 +52,7 @@ img.userwindowbp
 div.userwindowinfo
 {
 	top: 310px;
-/*	position: fixed;*/
-	width: 220px;
-	height: 150px;
+	padding-bottom: 20px;
 }
 
 h1.userwindowname
@@ -148,24 +145,20 @@ p.userwindowcomments
 
 .editprofilebutton
 {
-
-	position: absolute;
 	width: 160px;
 	height: 30px;
-	left: 30px;
-	top: 250px;
 
 	background: #F05454;
 	border-radius: 5px;
 
 	font-family: 'Inter';
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 14px;
 	color: white;
 	border: none;
-	/* identical to box height, or 413% */
 
-	letter-spacing: -0.185731px;
+	display: block;
+	margin: 0 auto;
 
 }

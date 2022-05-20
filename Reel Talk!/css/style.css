@@ -55,8 +55,10 @@ button {
 	display: flex;
 	justify-content: space-between;
 	flex-flow: row wrap;
+	align-items: flex-start;
 	width: 1080px;
 	padding: 20px 80px 80px 80px;
+	min-height: 100vh;
 }
 
 /* There is no post-frames class */
