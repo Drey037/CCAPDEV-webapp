@@ -1,16 +1,19 @@
 /* This is for the watchlist pane at the side */
 .watchlist-pane {
 	resize: vertical;
-	overflow: auto;
+	/* overflow: auto; */
 	display: inline-block;
 	width: 250px;
-	min-height: 200px;
+	/* min-height: 200px; */
+	padding: 20px 0;
 	background: #F5F5F5;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 110px;
 }
 
 .watchlist-pane h1 {
 	position: relative;
-	margin-top: 20px;
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
@@ -58,4 +61,20 @@ button.watchlist {
 .watchlist:hover {
 	background-color: #E8CACA;
 	transform: scale(1.01);
+}
+
+#to-watchlists {
+	width: 220px;
+	height: 30px;
+	border: none;
+	background: #F05454;
+	border-radius: 5px;
+	text-decoration: none;
+	
+	color: #FFFFFF;
+	font-weight: 500;
+	font-size: 14px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
 }
