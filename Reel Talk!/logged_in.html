@@ -114,7 +114,7 @@
             <p>Adventure</p>
             <p>Family</p>
         </div>
-		<textarea name="review-narrative" id="review-narrative">Write a review here...</textarea>
+		<textarea name="review-narrative" id="review-narrative" placeholder="Write a review here...">Write a review here...</textarea>
         <button id="reel-it" onclick="location.href = 'logged_in.html'">Reel It!</button>
         <button class="cancel-review" onclick="NewReviewOverlayOff()">Cancel</button>
 	</div>
@@ -154,7 +154,17 @@
 			</ul>
 		</div>
 
+		<button id="add-to-watchlist-new" onclick="NewWatchlistOn();">New Watchlist</button>
 		<button id="add-to-watchlist-cancel" onclick="AddOverlayOff()">Cancel</button>
+	</div>
+
+	<div id="new-watchlist">
+		<h1>Create New Watchlist</h1>
+		<p>Collection Name:</p>
+		<input type="text" placeholder="Collection name">
+		<textarea name="new-watchlist-textarea" id="new-watchlist-textarea" cols="30" rows="10" placeholder="Enter a description here..."></textarea>
+		<button id="new-watchlist-save" onclick="NewWatchlistOff()">Save</button>
+		<button id="new-watchlist-cancel" onclick="NewWatchlistOff()">Cancel</button>
 	</div>
 
 	<!-- END OF ALL OVERLAYS -->

@@ -409,7 +409,7 @@ button.createaccount-area {
 	margin-top: 200px;
 
 	width: 290px;
-	height: 330px;
+	/* height: 330px; */
 	background: #F5F5F5;
 
 	position: fixed;
@@ -443,13 +443,13 @@ button.createaccount-area {
 	text-align:center;
 }
 
-#add-to-watchlist-cancel {
-	width: 70px;
+#add-to-watchlist-new, #add-to-watchlist-cancel {
+	width: 150px;
 	height: 30px;
-    margin-top: 10px;
-
-	margin-left: 110px;
-	
+	display: block;
+	margin: 0 auto;
+	margin-top: 8px;
+	margin-bottom: 9px;
 
 	background: #30475E;
 	border-radius: 5px;
@@ -458,5 +458,64 @@ button.createaccount-area {
 	color: #FFFFFF;
 	font-family: 'Inter';
 	font-weight: 400;
-	font-size: 14px;	
+	font-size: 14px;
+}
+
+/* NEW WATCHLIST OVERLAY */
+#new-watchlist {
+	background-color: #F5F5F5;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	z-index: 3;
+    padding: 30px;
+	display: none;
+}
+
+#new-watchlist h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#new-watchlist p {
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+#new-watchlist input, #new-watchlist textarea, #new-watchlist button {
+	display: block;
+	margin: 0 auto;
+}
+
+#new-watchlist input, #new-watchlist textarea {
+	width: 600px;
+	margin-bottom: 20px;
+	border-style: none;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#new-watchlist button {
+	font-family: 'Inter';
+	width: 150px;
+	margin-bottom: 8px;
+	background-color: #30475E;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 0;
+	font-weight: 600;
+}
+
+#new-watchlist textarea {
+	resize: none;
+	overflow-y: scroll;
+}
+
+#new-watchlist-cancel {
+	background-color: white;
+	color:#30475E;
+	border: 1px solid #30475E;
 }

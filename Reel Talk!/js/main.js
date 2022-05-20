@@ -166,3 +166,14 @@ function AddOverlayOff() {
     document.getElementById("darkoverlay").style.display = "none";
     document.getElementById("add-to-watchlist").style.display = "none";
 }
+
+function NewWatchlistOn() {
+    AddOverlayOff();
+    document.getElementById("darkoverlay").style.display = "block";
+    document.getElementById("new-watchlist").style.display = "block";
+}
+
+function NewWatchlistOff() {
+    document.getElementById("darkoverlay").style.display = "none";
+    document.getElementById("new-watchlist").style.display = "none";
+}
