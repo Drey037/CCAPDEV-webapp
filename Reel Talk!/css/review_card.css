@@ -22,7 +22,7 @@ img.reviewpic {
 	object-fit: cover;
 	object-position: 0 87%;
 	border-radius: 8px 8px 0px 0px;
-	transition: object-position 1s ease-out 50ms, filter 0.5s ease-out 50ms;
+	transition: object-position 6s ease-out 50ms, filter 0.5s ease-out 50ms;
 }
 
 div.review {
@@ -185,7 +185,7 @@ div.postpane:hover button.postpane-overlay{
 }
 
 div.postpane:hover img.reviewpic{
-	object-position: 0 83.5%;
+	object-position: 0 20%;
 	
 	filter: brightness(50%);
 	background-color: rgba(65, 65, 65, 0.6);
