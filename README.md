@@ -23,3 +23,8 @@ Use the following command and wait for 'Node server is running on port 3000' to 
 ### How to install new modules added to the project by another member
 Install the new modules (automatically checks the list of modules in the 'package.json' file and installs modules that are not yet installed on your computer) <br/>
 `npm install`
+
+---
+### Current project status:
+- Bare minimum backend code is there
+- Only renders index.html so far
