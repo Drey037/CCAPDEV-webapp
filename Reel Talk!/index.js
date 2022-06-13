@@ -20,6 +20,8 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '\\' + 'index.html');
 });
 
+
+
 var port = 3000;
 var server = app.listen(port, function() {
     console.log('Node server is running on port ' + port + '...');
