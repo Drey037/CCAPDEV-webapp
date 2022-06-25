@@ -1,0 +1,21 @@
+{{!-- IN THE FOLLOWING FILES: --}}
+{{!-- index.hbs --}}
+
+<div id="login">
+    <h1 class="createaccount">Sign in to your account</h1>
+    <h1><a class="cancelbutton" href="#" onclick="LoginOverlayOff()">X</a></h1>
+    
+    <!-- Email Address -->
+    <div class="createaccount-area">
+        <p class="createaccount-area">Email Address:</p>
+        <input type="text" class="createaccount-area" id="email" name="email"> 
+    </div>
+    
+    <!-- Password -->
+    <div class="createaccount-area">
+        <p class="createaccount-area">Password:</p>
+        <input type="password" class="createaccount-area" id="password" name="password"> 
+    </div>
+    
+    <button class="createaccount-area" onclick="LoginSuccess()">Log In</button>
+</div>

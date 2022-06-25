@@ -1,0 +1,33 @@
+{{!-- IN THE FOLLOWING FILES: --}}
+{{!-- index.hbs --}}
+
+<div id="signup">
+    <h1 class="createaccount">Create a new account</h1>
+    <h1><a class="cancelbutton" onclick="SignUpOverlayOff()">X</a></h1>
+    
+    <!-- Email Address -->
+    <div class="createaccount-area">
+        <p class="createaccount-area">Email Address:</p>
+        <input type="text" class="createaccount-area" id="email" name="email"> 
+    </div>
+    
+    <!-- Username -->
+    <div class="createaccount-area">
+        <p class="createaccount-area">Username:</p>
+        <input type="text" class="createaccount-area" id="username" name="username"> 
+    </div>
+    
+    <!-- Password -->
+    <div class="createaccount-area">
+        <p class="createaccount-area">Password:</p>
+        <input type="password" class="createaccount-area" id="password" name="password"> 
+    </div>
+    
+    <!-- Retype Password -->
+    <div class="createaccount-area">
+        <p class="createaccount-area">Retype Password:</p>
+        <input type="password" class="createaccount-area" id="repassword" name="repassword"> 
+    </div>
+    
+    <button class="createaccount-area" onclick="SignUpSuccess()">Sign Up</button>
+</div>

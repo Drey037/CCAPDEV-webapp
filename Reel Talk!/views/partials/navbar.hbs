@@ -1,0 +1,55 @@
+{{!-- IN THE FOLLOWING FILES: --}}
+{{!-- index.hbs --}}
+
+<div class="nav-bar-bg">
+    <div class="wrapper">
+        <nav>
+            <a href="#"><img src="assets/1.png" class="logo" alt="logo" /></a>
+            
+            <div class="searchbar">
+                <input type="text" class="search-bar" id="search" name="search">
+            </div>
+            <button class="searchbutton" id="searchbutton" onclick="location.href='search_results.html'"></button>
+            
+            <ul class="nav-items">
+                <li id="movies" onclick="showDropdown(this.id)">Movies</li>
+                <li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
+                <li id="anime" onclick="showDropdown(this.id)">Anime</li>
+                <li><a href="#" onclick="SignUpOverlayOn()">SIGN UP</a></li>
+                <li><a href="#" onclick="LoginOverlayOn()">LOG IN</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="nav-dropdown-wrapper">
+        <div class="dropdown-pane genre-pane">
+            <p>Genres:</p>
+            <div class="nav-dropdown">
+                <div class="genre-col">
+                    <a href="#">Action</a>
+                    <a href="#">Comedy</a>
+                    <a href="#">Drama</a>
+                    <a href="#">Fantasy</a>
+                </div>
+                <div class="genre-col">
+                    <a href="#">Thriller</a>
+                    <a href="#">Romance</a>
+                    <a href="#">Mystery</a>
+                    <a href="#">Horror</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dropdown-pane sortby-pane">
+            <p>Sort by:</p>
+            <div class="nav-dropdown">
+                <div>
+                    <a id="dropdown-top-something" href="#">Top Movies</a>
+                    <a href="#">Trending</a>
+                    <a href="#">New Releases</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
