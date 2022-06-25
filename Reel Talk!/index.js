@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const hbs = require('hbs');
 const routes = require('./routes/routes.js');
@@ -21,6 +20,6 @@ hbs.registerPartials(__dirname + '/views/partials');
 db.connect();
 
 var port = 3000;
-app.listen(port, function() {
+app.listen(process.env.PORT || port, function() {
     console.log('Node server is running on port ' + port + '...');
 });

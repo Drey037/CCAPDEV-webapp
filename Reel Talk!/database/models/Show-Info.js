@@ -8,7 +8,10 @@ const ShowInformationSchema = new mongoose.Schema({
     genre: [String],
     description: String,
     video : String,
-    image: String
+    image: String,
+    type: {
+
+    }
 });
 
 const ShowInfo = mongoose.model('ShowInfo', ShowInformationSchema);
