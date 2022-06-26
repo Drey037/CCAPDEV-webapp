@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/navbar.css" />
+		<link rel="stylesheet" href="css/post page.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+	
+	<!-- This part is all about the navigation bar -->
+	{{> navbar_logged}}
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+		<div class="main-wrapper">
+			<div class="main">
+
+				<!--This is where the poster and trailer is placed-->
+				<div class="pic_vid">
+					<img src="{{poster}}" class="movieposter" alt="poster">
+					<iframe src="{{trailer}}" class="trailer"></iframe>
+				</div>
+				
+
+				<!--This is where the text content is contained-->
+				<div class="review-container">
+					<!--Title and ratings-->
+					<div class="review-title"> <h1>{{title}} ({{year}})</h1> </div>
+
+					<h2 class="info_header movie_info">About the movie</h2>
+
+					<!-- The Movie info -->
+					<div class="reviewcontent info_header">{{description}}</div> <br>
+					<div class="reviewcontent info_header"> <strong>Director:</strong> {{director}} </div>
+					<div class="reviewcontent info_header"> <strong>Cast:</strong> {{cast}} </div> <br>
+					
+					<!--The actual review-->
+					<div class="reviewcontent">{{review_content}}</div>
+				</div>
+
+				<!--User will enter the comment here-->
+				<div class="review-comments-container">
+					<div class="user-comment">
+
+						<img src="{{user_image}}" class="user-comment-pp">
+						<textarea class="review-comment-textbox" placeholder="Write a reply..." name="user-comment" id="user-comment"></textarea>
+						<button class="reply-comment">Reply</button>
+
+					</div>
+				</div>
+
+				{{> comment}}	<!-- TEMPORARY -->
+				{{#each comments}}
+					{{> comment}}
+				{{/each}}
+				
+			</div>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+{{!-- IN THE FOLLOWING FILES: --}}
+{{!-- logged_in.hbs --}}
+
+<div id="new-review">
+    <h1>Create a New Review</h1>
+    <div class="poster-selection">
+        <div class="poster-selection-wrapper">
+            <img src="assets/Movie Posters/shrek.jpg" alt="Poster option 1">
+            <div class="poster-selection-overlay">
+                <div>Choose</div>
+            </div>
+        </div>
+        <div class="poster-selection-wrapper">
+            <img src="assets/Movie Posters/shrek2.jpg" alt="Poster option 2">
+            <div class="poster-selection-overlay">
+                <div>Choose</div>
+            </div>
+        </div>
+        <div class="poster-selection-wrapper">
+            <img src="assets/Movie Posters/shrek3.jpg" alt="Poster option 3">
+            <div class="poster-selection-overlay">
+                <div>Choose</div>
+            </div>
+        </div>
+    </div>
+    <h2>Shrek (2001)</h2>
+    <div class="genres">
+        <p>Comedy</p>
+        <p>Adventure</p>
+        <p>Family</p>
+    </div>
+    <textarea name="review-narrative" id="review-narrative" placeholder="Write a review here...">Write a review here...</textarea>
+    <button id="reel-it" onclick="location.href = 'logged_in.html'">Reel It!</button>
+    <button class="cancel-review" onclick="NewReviewOverlayOff()">Cancel</button>
+</div>

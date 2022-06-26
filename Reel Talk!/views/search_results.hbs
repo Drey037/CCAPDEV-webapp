@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<title>Reel Talk!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap link -->
-		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/review_card.css" />
@@ -21,163 +19,15 @@
 	<body>
 	
 	<!-- This part is all about the navigation bar -->
-	<div class="nav-bar-bg">
-		<div class="wrapper">
-			<nav>
-				<a href="logged_in.html"><img src="assets/1.png" class="logo" alt="logo" /></a>
-				
-				<div class="searchbar">
-					<input type="text" class="search-bar" id="search" name="search">
-				</div>
-				<button class="searchbutton" id="searchbutton" onclick="location.href='search_results.html'"></button>
-				
-				<ul class="nav-items">
-					<li id="movies" onclick="showDropdown(this.id)">Movies</li>
-					<li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
-					<li id="anime" onclick="showDropdown(this.id)">Anime</li>
-					<li><a href="#" onclick="SignUpOverlayOn()">SIGN UP</a></li>
-					<li><a href="#" onclick="LoginOverlayOn()">LOG IN</a></li>
-				</ul>
-			</nav>
-		</div>
-
-		<div id="nav-dropdown-wrapper">
-			<div class="dropdown-pane genre-pane">
-				<p>Genres:</p>
-				<div class="nav-dropdown">
-					<div class="genre-col">
-						<a href="#">Action</a>
-						<a href="#">Comedy</a>
-						<a href="#">Drama</a>
-						<a href="#">Fantasy</a>
-					</div>
-					<div class="genre-col">
-						<a href="#">Thriller</a>
-						<a href="#">Romance</a>
-						<a href="#">Mystery</a>
-						<a href="#">Horror</a>
-					</div>
-				</div>
-			</div>
-			
-			<div class="dropdown-pane sortby-pane">
-				<p>Sort by:</p>
-				<div class="nav-dropdown">
-					<div>
-						<a id="dropdown-top-something" href="#">Top Movies</a>
-						<a href="#">Trending</a>
-						<a href="#">New Releases</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	
+	{{> navbar}}
 	
 	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
 	<div id="darkoverlay"></div>
-	
-	<!-- The "Oops...get an account first" Pop Up -->
-	<div id="oops">
-			<h1 class="createaccount">Oops... You need to log in first</h1>
-			<h1><a class="cancelbutton" href="#" onclick="oopsoff()">X</a></h1>
-				<p class="oops">In order to enjoy the full features</p><br>
-				<p class="oops-p">Already have an account?</p>
-				<button class="oops" onclick="LoginOverlayOn()">Log In</button>
-				<p class="oops-p">OR</p>
-				<hr class="oops1">
-				<hr class="oops2">
-				
-				<p class="oops-p">Don’t have an account yet? </p>
-				<button class="oops" onclick="SignUpOverlayOn()">Sign Up</button>
-	</div>
-	
-	
-	
-	
-	<!-- The SignUp overlay when signup button is pressed -->
-		<div id="signup">
-			<h1 class="createaccount">Create a new account</h1>
-			<h1><a class="cancelbutton" href="#" onclick="SignUpOverlayOff()">X</a></h1>
-			
-			<!-- Email Address -->
-			<div class="createaccount-area">
-				<p class="createaccount-area">Email Address:</p>
-				<input type="text" class="createaccount-area" id="email" name="email"> 
-			</div>
-			
-			<!-- Username -->
-			<div class="createaccount-area">
-				<p class="createaccount-area">Username:</p>
-				<input type="text" class="createaccount-area" id="username" name="username"> 
-			</div>
-			
-			<!-- Password -->
-			<div class="createaccount-area">
-				<p class="createaccount-area">Password:</p>
-				<input type="password" class="createaccount-area" id="password" name="password"> 
-			</div>
-			
-			<!-- Retype Password -->
-			<div class="createaccount-area">
-				<p class="createaccount-area">Retype Password:</p>
-				<input type="password" class="createaccount-area" id="repassword" name="repassword"> 
-			</div>
-			
-			<button class="createaccount-area" onclick="SignUpSuccess()">Sign Up</button>
-		</div>
-	
-	
-	<!-- The Log in overlay when Log in button is pressed -->
-		<div id="login">
-			<h1 class="createaccount">Sign in to your account</h1>
-			<h1><a class="cancelbutton" href="#" onclick="LoginOverlayOff()">X</a></h1>
-			
-			<!-- Email Address -->
-			<div class="createaccount-area">
-				<p class="createaccount-area">Email Address:</p>
-				<input type="text" class="createaccount-area" id="email" name="email"> 
-			</div>
-			
-			<!-- Password -->
-			<div class="createaccount-area">
-				<p class="createaccount-area">Password:</p>
-				<input type="password" class="createaccount-area" id="password" name="password"> 
-			</div>
-			
-			<button class="createaccount-area" onclick="LoginSuccess()">Log In</button>
-		</div>
-	
-	
-	
-	<!-- The Successful Registration Pop Up -->
-	<div id="signup-success">
-			<h1 class="createaccount">Thank you for registering</h1>
-			
-				<p class="signup-success">You can now create posts, comment, create watchlists, etc.</p>
-				<p class="signup-success">Now, proceed to the log in page to sign in</p>
-				
-			<button class="signup-success" onclick="SignUpSuccessClose()">Proceed to Log In</button>
-	</div>
-	
-	
-	<!-- The Successful Log In Pop Up -->
-	<div id="login-success">
-			<h1 class="createaccount">Successfully Logged In!</h1>
-			
-				<p class="signup-success">You can now create posts, comment, create watchlists, etc.</p>
-				<p class="signup-success">Now, proceed to the main page</p>
-				
-			<button class="signup-success" onclick="location.href = 'logged_in.html'">Proceed to Main Page</button>
-	</div>
-	
-	
-	
-	
-	<!-- THE END OF ALL OVERLAYS -->
-	
-	
+	{{> overlays/oops}}
+	{{> overlays/signup}}
+	{{> overlays/login}}
+	{{> overlays/signup_success}}
+	{{> overlays/login_success}}
 	
 	<!-- This part is the main page where the posts and stuff are located -->
 	<div id="main-center">
@@ -188,75 +38,29 @@
 				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner">
 
-					  <!-- Carousel Item 1 -->
-					  <div class="carousel-item active">
-						<div class="carousel-item-box">
-							<img src="assets/Movie Posters/hunger_games_1.jpg">
-							<div class="carousel-item-info">
-								<h3>The Hunger Games (2012)</h3>
-								<div class="carousel-item-genres">
-									<p>Action</p>
-									<p>Drama</p>
-									<p>Thriller</p>
+					  <!-- Carousel Item (ACTIVE) -->
+						<div class="carousel-item active">
+							<div class="carousel-item-box">
+								<img src="assets/Movie Posters/hunger_games_1.jpg">
+								<div class="carousel-item-info">
+									<h3>The Hunger Games (2012)</h3>
+									<div class="carousel-item-genres">
+										<p>Action</p>
+										<p>Drama</p>
+										<p>Thriller</p>
+									</div>
+									<p>Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death.</p>
+									<button onclick="oops()">Add to Watchlist</button>
 								</div>
-								<p>Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death.</p>
-								<button onclick="oops()">Add to Watchlist</button>
 							</div>
 						</div>
-					  </div>
 
-					  <!-- Carousel Item 2 -->
-					  <div class="carousel-item">
-						<div class="carousel-item-box">
-							<img src="assets/Movie Posters/hunger_games_2.jpg">
-							<div class="carousel-item-info">
-								<h3>The Hunger Games: Catching Fire (2013)</h3>
-								<div class="carousel-item-genres">
-									<p>Action</p>
-									<p>Drama</p>
-									<p>Thriller</p>
-								</div>
-								<p>Katniss Everdeen and Peeta Mellark become targets of the Capitol after their victory in the 74th Hunger Games sparks a rebellion in the Districts of Panem.</p>
-								<button>Add to Watchlist</button>
-							</div>
-						</div>
-					  </div>
+						{{#each carousel_items}}
+							{{> carousel_item}}
+						{{/each}}					  
 
-					  <!-- Carousel Item 3 -->
-					  <div class="carousel-item">
-						<div class="carousel-item-box">
-							<img src="assets/Movie Posters/hunger_games_3.jpg">
-							<div class="carousel-item-info">
-								<h3>The Hunger Games: Mockingjay Part 1 (2014)</h3>
-								<div class="carousel-item-genres">
-									<p>Action</p>
-									<p>Drama</p>
-									<p>Thriller</p>
-								</div>
-								<p>Katniss Everdeen is in District 13 after she shatters the games forever. Under the leadership of President Coin and the advice of her trusted friends, Katniss spreads her wings as she fights to save Peeta and a nation moved by her courage.</p>
-								<button>Add to Watchlist</button>
-							</div>
-						</div>
-					  </div>
-
-					  <!-- Carousel Item 4 -->
-					  <div class="carousel-item">
-						<div class="carousel-item-box">
-							<img src="assets/Movie Posters/hunger_games_4.jpg">
-							<div class="carousel-item-info">
-								<h3>The Hunger Games: Mockingjay Part 2 (2015)</h3>
-								<div class="carousel-item-genres">
-									<p>Action</p>
-									<p>Drama</p>
-									<p>Thriller</p>
-								</div>
-								<p>Katniss and a team of rebels from District 13 prepare for the final battle that will decide the fate of Panem.</p>
-								<button>Add to Watchlist</button>
-							</div>
-						</div>
-					  </div>
-					  
 					</div>
+
 					<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					  <span class="sr-only">Previous</span>
@@ -269,135 +73,17 @@
 			</div>
 
 			<div class="main">
-				
 				<!-- This part is the area where the posts will be placed-->
 				<div class="postarea">
-					<!-- First post -->
-					<div class="postpane">
-						<div class="postpane-overlay-buttons">
-							<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
-							<button class="postpane-overlay" onclick="oops()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
-						</div>
-						<img src="assets/Movie Posters/hunger_games_1.jpg" class="reviewpic">
-						
-						<!-- Review Bar -->
-						<div class="review">
-							<a href="User Profile Reviews.html" title="Visit Profile">l33la:</a>
-							
-							<!-- Star Ratings -->
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							
-							<!-- The review of the post -->
-							<p class="review">The Hunger Games presents a dystopian world in a way a mature filmmaker would- instead of being stylish and lavish it keeps things stark and cool.</p>
-							
-						</div>
-						
-						
-						<!-- Title Bar of the review -->
-						<div class="titlebar">
-							<h1 class="titlebar">The Hunger Games</h1>
-							
-							<ul class="titlebar">
-							<li><a href="#">Action</a></li> <!-- Genre 1 -->
-							<li><a href="#">Drama</a></li> <!-- Genre 2 -->
-							<li><a href="#">Thriller</a></li> <!-- Genre 3 -->
-						
-							<button class="comment" onclick="oops()">Write a Comment</button>
-						</div>
-					
-					</div>
-					
-					<!-- Second post -->
-					<div class="postpane">
-						<div class="postpane-overlay-buttons">
-							<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
-							<button class="postpane-overlay" onclick="oops()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
-						</div>
-						<img src="assets/Movie Posters/hunger_games_2.jpg" class="reviewpic" />
-						
-						<!-- Review Bar -->
-						<div class="review">
-							<a href="User Profile Reviews.html" title="Visit Profile">ShrekLover:</a>
-							
-							<!-- Star Ratings -->
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-black"></div>
-							
-							<!-- The review of the post -->
-							<p class="review">Not a Shrek movie but still a total banger!</p>
-							
-						</div>
-						
-						
-						<!-- Title Bar of the review -->
-						<div class="titlebar">
-							<h1 class="titlebar">The Hunger Games: Catching Fire</h1>
-							
-							<ul class="titlebar">
-							<li><a href="#">Action</a></li> <!-- Genre 1 -->
-							<li><a href="#">Drama</a></li> <!-- Genre 2 -->
-							<li><a href="#">Thriller</a></li> <!-- Genre 3 -->
-						
-							<button class="comment" onclick="oops()">Write a Comment</button>
-						</div>
-					
-					</div>
-
-					<!-- Third post -->
-					<div class="postpane">
-						<div class="postpane-overlay-buttons">
-							<button class="postpane-overlay" onclick="oops()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
-							<button class="postpane-overlay" onclick="oops()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
-						</div>
-						<img src="assets/Movie Posters/hunger_games_3.jpg" class="reviewpic" />
-						
-						<!-- Review Bar -->
-						<div class="review">
-							<a href="User Profile Reviews.html" title="Visit Profile">dogboy_3:</a>
-							
-							<!-- Star Ratings -->
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-gold"></div>
-							<div class="star-black"></div>
-							
-							<!-- The review of the post -->
-							<p class="review">This is a very well crafted film. I found it gripping and immersive. Most of the action scenes seemed realistic and plausible which I always find more exciting/scary than cartoonish cgi action. Really solid performances from several of the supporting cast and top quality work as usual from Jennifer Lawrence. </p>
-							
-						</div>
-						
-						
-						<!-- Title Bar of the review -->
-						<div class="titlebar">
-							<h1 class="titlebar">The Hunger Games: Mockingjay Part 1</h1>
-							
-							<ul class="titlebar">
-							<li><a href="#">Action</a></li> <!-- Genre 1 -->
-							<li><a href="#">Drama</a></li> <!-- Genre 2 -->
-							<li><a href="#">Thriller</a></li> <!-- Genre 3 -->
-						
-							<button class="comment" onclick="oops()">Write a Comment</button>
-						</div>
-					
-					</div>
-					
+					<!-- Review Cards -->
+					{{> review_card}}	<!-- TEMPORARY -->
+					{{#each review}}
+						{{> review_card}}
+					{{/each}}
 				</div>
 				
 				<!-- This part is the "Create a New Account" pane -->
-				<div class="createnewpost">
-					<h1>Create an account</h1>
-					<p>Create an account to review, comment, and add movies to a watchlist!</p>
-					
-					<button type="button" class="createpost" onclick="SignUpOverlayOn()">Create Account</button>
-				</div>
+				{{> create_account_pane}}
 					
 			</div>		
 		</div>

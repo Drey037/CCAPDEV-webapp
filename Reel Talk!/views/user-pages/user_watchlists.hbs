@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/navbar.css" />
+		<link rel="stylesheet" href="css/overlays.css">
+		<link rel="stylesheet" href="css/watchlist_card.css" />
+		<link rel="stylesheet" href="css/profile_card.css" />
+
+
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
+	</head>
+	
+	<body>
+	
+	<!-- This part is all about the navigation bar -->
+	{{> navbar_logged}}
+	
+	<!-- The User Tab -->
+	<div class="usertab">
+		<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
+		<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
+	</div>
+
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+		<div class="main-wrapper">
+			<div class="main">
+
+				<div class="postarea">
+					{{#each watchlist}}
+						{{> watchlist_card}}
+					{{/each}}
+				</div>
+
+				<!-- userwindow -->
+				{{> user_window}}
+
+			</div>
+		</div>
+	</div>
+
+<script src="js/main.js"></script>
+</body>
+
+</html>

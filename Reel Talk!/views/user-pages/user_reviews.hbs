@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<title>Reel Talk!</title>
 		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/navbar.css" />
 		<link rel="stylesheet" href="css/overlays.css">
 		<link rel="stylesheet" href="css/review_card.css" />
+		<link rel="stylesheet" href="css/watchlist_card.css" />
 		<link rel="stylesheet" href="css/watchlist_sidepane.css" />
+		<link rel="stylesheet" href="css/profile_card.css" />
 
-		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-		<!-- For icons from Font Awesome website -->
 		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
 	</head>
 	
@@ -18,21 +19,25 @@
 	
 	<!-- This part is all about the navigation bar -->
 	{{> navbar_logged}}
+	
+	<div class="usertab">
+		<button id="usertabbutton-reviews" class="active" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
+		<button id="usertabbutton-collections" class="inactive" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
+	</div>
+
 
 	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
 	<div id="darkoverlay"></div>
 	{{> overlays/create_review}}
 	{{> overlays/add_to_watchlist}}
 	{{> overlays/new_watchlist}}
-		
+
 
 	<!-- This part is the main page where the posts and stuff are located -->
 	<div id="main-center">
 		<div class="main-wrapper">
-			<h1 class="header-texts">See What's Trending</h1>
 			<div class="main">
 
-				<!-- This part is the area where the posts will be placed-->
 				<div class="postarea">
 					<!-- Review Cards -->
 					{{> review_card}}	<!-- TEMPORARY -->
@@ -41,26 +46,16 @@
 					{{/each}}
 				</div>
 
-				<!-- This part is the Watchlist pane -->
-				<!-- Should hold a max of 15 watchlists only -->
-				<div class="watchlist-pane">
-					<h1>My Watchlists</h1>
-
-					{{> watchlist_pane_item}}	<!-- TEMPORARY -->
-					{{#each watchlist}}
-						{{> watchlist_pane_item}}
-					{{/each}}
-
-					<button id="to-watchlists" onclick="location.href='User Profile Collections.html'">
-						View All Watchlists
-					</button>
-				</div>
-
-			</div>		
+				<!-- userwindow -->
+				{{> user_window}}
+				
+			</div>
 		</div>
 	</div>
-	
-	<script src="js/main.js"></script>
-	</body>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+
 </html>
-		

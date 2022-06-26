@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/edit_watchlist.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+	
+	<!-- This part is all about the navigation bar -->
+	{{> navbar_logged}}
+
+    <!-- To add reviews/watchlist tab -->
+
+    <div class="usertab">
+			<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
+			<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
+	</div>
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+		<div class="main-wrapper">
+			<div class="main">
+
+				<div class="edit-watchlist-wrapper">
+                    <h1>{{title}}</h1>
+                    <h3>{{description}}</h3>
+                    {{#each watchlist}}
+                        {{> in_watchlist_item}}
+                    {{/each}}
+                </div>
+					
+			</div>		
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+	</body>
+</html>
