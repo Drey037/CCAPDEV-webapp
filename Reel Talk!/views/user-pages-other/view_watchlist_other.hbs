@@ -12,7 +12,11 @@
 	<body>
 	
 	<!-- This part is all about the navigation bar -->
-	{{> navbar_logged}}
+	{{#if logged_in}}
+		{{> navbar_logged}}
+	{{else}}
+		{{> navbar}}
+	{{/if}}
 
     <!-- To add reviews/watchlist tab -->
 

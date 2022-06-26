@@ -19,15 +19,25 @@
 	<body>
 	
 	<!-- This part is all about the navigation bar -->
-	{{> navbar}}
+	{{#if logged_in}}
+		{{> navbar_logged}}
+	{{else}}
+		{{> navbar}}
+	{{/if}}
 	
 	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
 	<div id="darkoverlay"></div>
-	{{> overlays/oops}}
-	{{> overlays/signup}}
-	{{> overlays/login}}
-	{{> overlays/signup_success}}
-	{{> overlays/login_success}}
+	{{#if logged_in}}
+		{{> overlays/create_review}}
+		{{> overlays/add_to_watchlist}}
+		{{> overlays/new_watchlist}}
+	{{else}}
+		{{> overlays/oops}}
+		{{> overlays/signup}}
+		{{> overlays/login}}
+		{{> overlays/signup_success}}
+		{{> overlays/login_success}}
+	{{/if}}
 	
 	<!-- This part is the main page where the posts and stuff are located -->
 	<div id="main-center">
@@ -43,13 +53,11 @@
 							<div class="carousel-item-box">
 								<img src="assets/Movie Posters/hunger_games_1.jpg">
 								<div class="carousel-item-info">
-									<h3>The Hunger Games (2012)</h3>
+									<h3>{{active_title}} ({{active_year}})</h3>
 									<div class="carousel-item-genres">
-										<p>Action</p>
-										<p>Drama</p>
-										<p>Thriller</p>
+										<p>{{active_genre}}</p>
 									</div>
-									<p>Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death.</p>
+									<p>{{active_description}}</p>
 									<button onclick="oops()">Add to Watchlist</button>
 								</div>
 							</div>
@@ -73,10 +81,10 @@
 			</div>
 
 			<div class="main">
+				
 				<!-- This part is the area where the posts will be placed-->
 				<div class="postarea">
 					<!-- Review Cards -->
-					{{> review_card}}	<!-- TEMPORARY -->
 					{{#each review}}
 						{{> review_card}}
 					{{/each}}

@@ -2,27 +2,16 @@
     <div class="userwindowbp">
         <img src="../assets/Movie Posters/bp.png" class="userwindowbp">
     </div>
+
     <div class="userwindowpp">
-        <img src="../assets/users/aud_one.jpg" class="userwindowpp">
+        <img src="{{profile_picture}}" class="userwindowpp">
     </div>
+    
     <div class = "userwindowinfo">
-        <h1 class="userwindowname">
-        aud_one
-        </h1>
-    <p class = "userwindowgender">
-        Gender: Female
-    </p>
-
-    <p class = "userwindowbirthday">
-        Birthday: 03/07/05
-    </p>
-
-    <p class ="userwindowposts">
-            Posts: 2		
-    </p>
-
-    <p class ="userwindowcomments">
-            Comments: 111		
-    </p>
+        <h1 class="userwindowname">{{username}}</h1>
+        <p class = "userwindowgender">Gender: {{gender}}</p>
+        <p class = "userwindowbirthday"> Birthday: {{birthday}}</p>
+        <p class ="userwindowposts">Posts: {{num_posts}}</p>
+        <p class ="userwindowcomments">Comments: {{num_comments}}</p>
     </div>
 </div> 

@@ -12,7 +12,11 @@
 	<body>
 	
 	<!-- This part is all about the navigation bar -->
-	{{> navbar_logged}}
+	{{#if logged_in}}
+		{{> navbar_logged}}
+	{{else}}
+		{{> navbar}}
+	{{/if}}
 
 	<!-- This part is the main page where the posts and stuff are located -->
 	<div id="main-center">
@@ -53,7 +57,6 @@
 					</div>
 				</div>
 
-				{{> comment}}	<!-- TEMPORARY -->
 				{{#each comments}}
 					{{> comment}}
 				{{/each}}

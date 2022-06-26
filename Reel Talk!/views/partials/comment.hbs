@@ -1,24 +1,18 @@
 {{!-- IN THE FOLLOWING FILES: --}}
-{{!-- Review Page.hbs --}}
+{{!-- review_page.hbs --}}
 
 <div class="review-comments">
 
-    <!-- Profile Pic-->
-    <img src="Assets/users/animeface.jpg" class="user-comment-pp">
-
-    <!-- Text Area -->
+    <img src="{{profile_picture}}" class="user-comment-pp">
     <div class="review-comment-area">
 
         <!-- Username and Date Commented-->
-        <p class="comment-username">LoveMe</p> <p class="comment-date">01/07/2022</p>
+        <p class="comment-username">{{username}}</p> <p class="comment-date">{{date}}</p>
         <br>
 
         <!-- User's Comment -->
-        <p class="review-comment"> I totally agree with this review. Although this movie became
-            a meme, you can't deny that this is a huge classic.
-        </p>
+        <p class="review-comment">{{content}}</p>
         <br>
-        
 
         <div class="rating-thumbs">
             <!-- Thumbs up -->
@@ -26,6 +20,5 @@
             <!-- Thumbs down -->
                 <i class="fa fa-thumbs-down fa-3x like" onclick="clickrating('down1')" aria-hidden="true" id="downbutton1"></i> <input type="text" class="rating-numbers" id="down1" value="1" readonly/>
         </div>
-
     </div>
 </div>

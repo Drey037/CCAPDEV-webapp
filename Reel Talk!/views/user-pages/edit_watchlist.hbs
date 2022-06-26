@@ -14,8 +14,6 @@
 	{{> navbar_logged}}
 
 	</body>
-    <!-- To add reviews/watchlist tab -->
-
     <div class="usertab">
 		<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
 		<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
@@ -37,15 +35,14 @@
                     
                         <h1>In Your Watchlist</h1>
 
-                        <!-- Item in watchlist -->
-						{{> in_watchlist_item}}  <!-- TEMPORARY -->
+                        <!-- Items in watchlist -->
 						{{#each watchlist_item}}
 							{{> in_watchlist_item}}
 						{{/each}}
 
-                        <div class="edit-watchlist-save"><button type="submit" onclick="location.href='User Profile Collections.html'">Save</button></div>
+                        <div class="edit-watchlist-save"><button type="submit">Save</button></div>
                     </form>
-                    <button class="edit-watchlist-cancel" onclick="location.href='User Profile Collections.html'">Cancel</button>
+                    <button class="edit-watchlist-cancel">Cancel</button>
 
                 </div>
 					

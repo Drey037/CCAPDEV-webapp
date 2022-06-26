@@ -7,28 +7,16 @@
         <img src="Assets/Movie Posters/bp.png" class="userwindowbp">
     </div>
     <div class="userwindowpp">
-        <img src="Assets/sample.jpg" class="userwindowpp">
+        <img src="{{profile_picture}}" class="userwindowpp">
     </div>
     <div class = "userwindowinfo">
-        <h1 class="userwindowname">
-            user_name
-        </h1>
-        <p class = "userwindowgender">
-            Gender: Female
-        </p>
+        <h1 class="userwindowname">{{username}}</h1>
+        <p class = "userwindowgender">Gender: {{gender}}</p>
+        <p class = "userwindowbirthday"> Birthday: {{birthday}}</p>
+        <p class ="userwindowposts">Posts: {{num_posts}}</p>
+        <p class ="userwindowcomments">Comments: {{num_comments}}</p>
 
-        <p class = "userwindowbirthday">
-            Birthday: 11/07/97
-        </p>
-
-        <p class ="userwindowposts">
-                Posts: 2		
-        </p>
-
-        <p class ="userwindowcomments">
-                Comments: 25		
-        </p>
-        <button class = "editprofilebutton" onclick="location.href='User Settings Edit.html'"> 
+        <button class = "editprofilebutton"> 
             Edit Profile
         </button>
     </div>

@@ -7,7 +7,7 @@
 <div class="nav-bar-bg">
     <div class="wrapper">
         <nav>
-            <a href="logged_in.html"><img src="assets/1.png" class="logo" alt="logo" /></a>
+            <a href="logged_in.hbs"><img src="assets/1.png" class="logo" alt="logo" /></a>
             
             <div class="searchbar">
                 <input type="text" class="search-bar" id="search" name="search">
@@ -22,8 +22,8 @@
                 <!-- This is the profile at the top right" -->
                 <a href="#">
                     <div class="profile" onclick="showUserDropdown()">
-                        <img src="assets/sample.jpg" class="profile" alt="profile">
-                        <p class="profile">user_name</p>
+                        <img src="{{profile_picture}}" class="profile" alt="profile">
+                        <p class="profile">{{username}}</p>
                     </div>
                 </a>
             </ul>
@@ -51,8 +51,8 @@
     </div>
 
     <div id="user-dropdown">
-        <a href="User Profile Reviews.html">View Profile</a>
-        <a href="User Settings.html">Account Settings</a>
+        <a href="user-pages/user_reviews.hbs">View Profile</a>
+        <a href="user-pages/user_settings.hbs">Account Settings</a>
         <a href="index.html">Log Out</a>
     </div>
 </div>

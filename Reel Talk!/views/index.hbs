@@ -12,15 +12,25 @@
 	<body>
 	
 	<!-- Navigation bar -->
-	{{> navbar}}
+	{{#if logged_in}}
+		{{> navbar_logged}}
+	{{else}}
+		{{> navbar}}
+	{{/if}}
 	
 	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
 	<div id="darkoverlay"></div>
-	{{> overlays/oops}}
-	{{> overlays/signup}}
-	{{> overlays/login}}
-	{{> overlays/signup_success}}
-	{{> overlays/login_success}}
+	{{#if logged_in}}
+		{{> overlays/create_review}}
+		{{> overlays/add_to_watchlist}}
+		{{> overlays/new_watchlist}}
+	{{else}}
+		{{> overlays/oops}}
+		{{> overlays/signup}}
+		{{> overlays/login}}
+		{{> overlays/signup_success}}
+		{{> overlays/login_success}}
+	{{/if}}
 
 	<!-- This part is the main page where the posts and stuff are located -->
 	<div id="main-center">
@@ -38,7 +48,11 @@
 				</div>
 				
 				<!-- This part is the "Create a New Account" pane -->
-				{{> create_account_pane}}
+				{{#if logged_in}}
+					{{> watchlist_pane}}
+				{{else}}
+					{{> create_account_pane}}
+				{{/if}}
 					
 			</div>		
 		</div>
