@@ -1,6 +1,8 @@
-require('dotenv').config;
+const dotenv = require('dotenv');
+dotenv.config();
+
 const mongoose = require('mongoose');
-const url = process.env.MONGODB_URI;     // Will have to change this for when we use MongoDB Atlas
+const url = process.env.MONGODB_URI;
 const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true
