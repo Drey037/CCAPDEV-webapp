@@ -59,7 +59,7 @@ nav ul {
 #search {
 	position: relative;
     left: 130px;
-	background: url("../assets/search.png") no-repeat left;
+	background: url("../images/search.png") no-repeat left;
 	background-position: 10px 6px;
 	background-size: 20px;
 	background-color: white;
