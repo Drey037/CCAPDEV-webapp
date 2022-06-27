@@ -20,6 +20,14 @@ const UserInfoSchema = new mongoose.Schema({
 	gender: {
         type: String,
         required: true
+    },
+    numPosts: {
+        type: Number,
+        required: true
+    },
+    numComments: {
+        type: Number,
+        required: true
     }
 });
 
