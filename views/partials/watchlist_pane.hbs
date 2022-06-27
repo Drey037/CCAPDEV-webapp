@@ -1,9 +1,13 @@
 <div class="watchlist-pane">
     <h1>My Watchlists</h1>
 
-    {{#each watchlist}}
-        <button class="watchlist"><p>{{this.title}}</p></button>
-    {{/each}}
+    {{#if watchlist}}
+        {{#each watchlist}}
+            <button class="watchlist"><p>{{this.title}}</p></button>
+        {{/each}}
+    {{else}}
+        <p class="none-found">Make your first watchlist!</p>
+    {{/if}}
 
     <button id="to-watchlists">View All Watchlists</button>
 </div>

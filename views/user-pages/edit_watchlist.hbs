@@ -36,9 +36,13 @@
                         <h1>In Your Watchlist</h1>
 
                         <!-- Items in watchlist -->
-						{{#each watchlist_item}}
-							{{> in_watchlist_item}}
-						{{/each}}
+						{{#if watchlist_item}}
+							{{#each watchlist_item}}
+								{{> in_watchlist_item}}
+							{{/each}}
+						{{else}}
+							<h4 class="none-found">This watchlist is empty.</h4>
+						{{/if}}
 
                         <div class="edit-watchlist-save"><button type="submit">Save</button></div>
                     </form>

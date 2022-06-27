@@ -40,9 +40,13 @@
 
 				<div class="postarea">
 					<!-- Review Cards -->
-					{{#each review}}
-						{{> review_card}}
-					{{/each}}
+					{{#if reviews}}
+						{{#each review}}
+							{{> review_card}}
+						{{/each}}
+					{{else}}
+						<h4 class="none-found">You haven't made any reviews yet.</h4>
+					{{/if}}
 				</div>
 
 				<!-- userwindow -->

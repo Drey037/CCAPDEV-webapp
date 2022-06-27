@@ -52,10 +52,13 @@
 
 				<div class="postarea">
 					<!-- Review Cards -->
-					{{> review_card}}	<!-- TEMPORARY -->
-					{{#each review}}
-						{{> review_card}}
-					{{/each}}
+					{{#if review}}
+						{{#each review}}
+							{{> review_card}}
+						{{/each}}
+					{{else}}
+						<h4 class="none-found">This user hasn't made any reviews.</h4>
+					{{/if}}
 				</div>
 
 				<!-- userwindow -->

@@ -51,9 +51,13 @@
 			<div class="main">
 
 				<div class="postarea">
-					{{#each watchlist}}
-						{{> watchlist_card}}
-					{{/each}}
+					{{#if watchlist}}
+						{{#each watchlist}}
+							{{> watchlist_card}}
+						{{/each}}
+					{{else}}
+						<h4 class="none-found">This user hasn't made any watchlists.</h4>
+					{{/if}}
 				</div>
 
 				<!-- userwindow -->

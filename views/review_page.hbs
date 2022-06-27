@@ -57,9 +57,13 @@
 					</div>
 				</div>
 
-				{{#each comments}}
-					{{> comment}}
-				{{/each}}
+				{{#if comments}}
+					{{#each comments}}
+						{{> comment}}
+					{{/each}}
+				{{else}}
+					<h4 class="none-found">No comments</h4>
+				{{/if}}
 				
 			</div>
 		</div>

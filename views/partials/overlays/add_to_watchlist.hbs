@@ -3,9 +3,13 @@
 
     <div id="watchlist-container">
         <ul>
-            {{#each watchlist}}
-                <button class="watchlist"><p>{{title}}</p></button>
-            {{/each}}
+            {{#if watchlist}}
+                {{#each watchlist}}
+                    <button class="watchlist"><p>{{title}}</p></button>
+                {{/each}}
+            {{else}}
+                <h4 class="none-found">Oops! No watchlists found.</h4>
+            {{/if}}
         </ul>
     </div>
 

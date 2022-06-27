@@ -34,16 +34,21 @@
     margin-top: 20px;
 }
 
-.carousel-item-box button {
+.carousel-item-buttons {
+    position: absolute;
+    bottom: 40px;
+}
+
+.carousel-item-buttons button {
     background-color: #F05454;
     color: #FFFFFF;
-    position: absolute;
-    width: 480px;
-    height: 50px;
-    bottom: 40px;
+    width: 150px;
+    height: 35px;
     border-radius: 5px;
     border-style: none;
     outline: none;
+    margin-top: 7px;
+    font-size: 14px;
 }
 
 .carousel-item-genres p {

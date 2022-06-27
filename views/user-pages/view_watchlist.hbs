@@ -30,9 +30,13 @@
                     <h1>{{title}}</h1>
                     <form action="#" id="edit-watchlist-text">
                         <h3>{{description}}</h3>
-						{{#each watchlist}}
-							{{> in_watchlist_item}}
-						{{/each}}                      
+						{{#if watchlist_item}}
+							{{#each watchlist_item}}
+								{{> in_watchlist_item}}
+							{{/each}}
+						{{else}}
+							<h4 class="none-found">This watchlist is empty.</h4>
+						{{/if}}                   
                     </form>
 					<button class="edit-watchlist-cancel" onclick="location.href='edit_watchlist.html'">Edit</button>
                     <button class="edit-watchlist-cancel" onclick="location.href='User Profile Collections.html'">Back</button>

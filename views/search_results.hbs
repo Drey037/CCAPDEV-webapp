@@ -44,24 +44,26 @@
 		<div class="main-wrapper">
 			<h1 class="header-texts">Search Results</h1>
 
+			{{#if active}}
 			<div class="carousel-background">
 				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner">
 
 					  <!-- Carousel Item (ACTIVE) -->
-						<div class="carousel-item active">
-							<div class="carousel-item-box">
-								<img src="assets/Movie Posters/hunger_games_1.jpg">
-								<div class="carousel-item-info">
-									<h3>{{active_title}} ({{active_year}})</h3>
-									<div class="carousel-item-genres">
-										<p>{{active_genre}}</p>
+					  	
+							<div class="carousel-item active">
+								<div class="carousel-item-box">
+									<img src="assets/Movie Posters/hunger_games_1.jpg">
+									<div class="carousel-item-info">
+										<h3>{{active.title}} ({{active.year}})</h3>
+										<div class="carousel-item-genres">
+											<p>{{active.genre}}</p>
+										</div>
+										<p>{{active.description}}</p>
+										<button onclick="oops()">Add to Watchlist</button>
 									</div>
-									<p>{{active_description}}</p>
-									<button onclick="oops()">Add to Watchlist</button>
 								</div>
 							</div>
-						</div>
 
 						{{#each carousel_items}}
 							{{> carousel_item}}
@@ -79,15 +81,22 @@
 					</a>
 				  </div>
 			</div>
+			{{else}}
+				<h4 class="none-found">Oops! No shows found.</h4>
+			{{/if}}
 
 			<div class="main">
 				
 				<!-- This part is the area where the posts will be placed-->
 				<div class="postarea">
 					<!-- Review Cards -->
-					{{#each review}}
-						{{> review_card}}
-					{{/each}}
+					{{#if review}}
+						{{#each review}}
+							{{> review_card}}
+						{{/each}}
+					{{else}}
+						<h4 class="none-found">Oops! No reviews found.</h4>
+					{{/if}}
 				</div>
 				
 				<!-- This part is the "Create a New Account" pane -->

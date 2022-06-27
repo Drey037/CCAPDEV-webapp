@@ -110,5 +110,8 @@ div.postarea {
 	width: 650px;
 }
 
-
+.none-found {
+	color: gray;
+	text-align: center;
+}
 
