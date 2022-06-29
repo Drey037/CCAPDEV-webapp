@@ -51,8 +51,10 @@
 					<div class="user-comment">
 
 						<img src="{{user_image}}" class="user-comment-pp">
+						<form action="/comment" method = "post">
 						<textarea class="review-comment-textbox" placeholder="Write a reply..." name="user-comment" id="user-comment"></textarea>
-						<button class="reply-comment">Reply</button>
+						<button class="reply-comment" type="submit">Reply</button>
+						</form>
 
 					</div>
 				</div>

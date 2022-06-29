@@ -1,8 +1,10 @@
 <div id="new-watchlist">
     <h1>Create New Watchlist</h1>
     <p>Collection Name:</p>
+    <form action="/new-watchlist" method = "post">
     <input type="text" placeholder="Collection name">
     <textarea name="new-watchlist-textarea" id="new-watchlist-textarea" cols="30" rows="10" placeholder="Enter a description here..."></textarea>
     <button id="new-watchlist-save" onclick="NewWatchlistOff()">Save</button>
+    </form>
     <button id="new-watchlist-cancel" onclick="NewWatchlistOff()">Cancel</button>
 </div>

@@ -9,7 +9,9 @@
     <div class="genres">
         <p>{{genre}}</p>
     </div>
+    <form action="/create-review" method = "post">
     <textarea name="review-narrative" id="review-narrative" placeholder="Write a review here..."></textarea>
     <button id="reel-it" onclick="location.href = 'logged_in.html'">Reel It!</button>
+    </form>
     <button class="cancel-review" onclick="NewReviewOverlayOff()">Cancel</button>
 </div>
