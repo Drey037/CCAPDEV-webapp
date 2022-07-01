@@ -77,7 +77,8 @@ nav ul {
 
 /* INVISIBLE SEARCH BUTTON */
 button.searchbutton {
-	display: none;
+	height: 0;
+	width: 0;
 }
 
 
