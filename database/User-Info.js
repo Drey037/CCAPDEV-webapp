@@ -9,25 +9,31 @@ const UserInfoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        min: 6,
+        required: true
+    },
 	name: {
         type: String,
-        required: true
     },
 	birthday: {
-        type: Date,
-        required: true
+        type: Date
     },
 	gender: {
-        type: String,
-        required: true
+        type: String
     },
     numPosts: {
         type: Number,
-        required: true
+        default: 0
     },
     numComments: {
         type: Number,
-        required: true
+        default: 0
+    },
+    profile_pic: {
+        type: String,
+        default: "/images/profile_pic/default.jpg"
     }
 });
 

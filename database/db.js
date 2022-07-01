@@ -3,6 +3,8 @@ dotenv.config();
 
 const mongoose = require('mongoose');
 const url = process.env.MONGODB_URI;
+
+
 //const url = 'mongodb://127.0.0.1/ReelTalkDB';     // Will have to change this for when we use MongoDB Atlas
 
 const Comment = require('./Comment');
@@ -28,7 +30,10 @@ const database = {
 
     insertOne: function(model, doc, callback) {
         model.create(doc, function(error, result) {
-            if(error) return callback(false);
+            if(error) {
+                console.log(error);
+                return callback(false);
+            }
             console.log('Added ' + result);
             return callback(true);
         });
@@ -44,7 +49,10 @@ const database = {
 
     findOne: function(model, query, projection, callback) {
         model.findOne(query, projection, function(error, result) {
-            if(error) return callback(false);
+            if(error) {
+                console.log(error);
+                return callback(false);
+            }
             return callback(result);
         });
     },

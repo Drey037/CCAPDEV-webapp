@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/overlays.css">
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/review_card.css" />
-		<link rel="stylesheet" href="css/messages.ccs" />
+		<link rel="stylesheet" href="css/messages.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
 	</head>
@@ -30,20 +30,23 @@
 				
                 <div id="login">
                     <h1 class="createaccount">Sign in to your account</h1>
+
+					{{> messages}}
+					<form action="/login" method = "POST">
+
                     <!-- Email Address -->
                     <div class="createaccount-area">
                         <p class="createaccount-area">Email Address:</p>
-                        <input type="text" class="createaccount-area" id="login-email" name="login-email"> 
+                        <input type="text" class="createaccount-area" id="email" name="email"> 
                     </div>
                     
                     <!-- Password -->
-                    <form action="/login" method = "post">
                     <div class="createaccount-area">
                         <p class="createaccount-area">Password:</p>
-                        <input type="password" class="createaccount-area" id="login-password" name="login-password"> 
+                        <input type="password" class="createaccount-area" id="password" name="password"> 
                     </div>
                     
-                    <button class="createaccount-area" onclick="LoginSuccess()" type = "submit">Log In</button>
+                    <button class="createaccount-area" type = "submit">Log In</button>
                     </form>
                 </div>
 

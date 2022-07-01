@@ -1,4 +1,4 @@
-div class="nav-bar-bg">
+<div class="nav-bar-bg">
     <div class="wrapper">
         <nav>
             <a href="logged_in.hbs"><img src="images/logo.png" class="logo" alt="logo" /></a>
@@ -20,7 +20,7 @@ div class="nav-bar-bg">
                 <!-- This is the profile at the top right" -->
                 <a href="#">
                     <div class="profile" onclick="showUserDropdown()">
-                        <img src="{{profile_picture}}" class="profile" alt="profile">
+                        <img src="{{profile_pic}}" class="profile" alt="profile">
                         <p class="profile">{{username}}</p>
                     </div>
                 </a>
@@ -51,6 +51,6 @@ div class="nav-bar-bg">
     <div id="user-dropdown">
         <a href="user-pages/user_reviews.hbs">View Profile</a>
         <a href="user-pages/user_settings.hbs">Account Settings</a>
-        <a href="index.hbs">Log Out</a>
+        <a href="/logout">Log Out</a>
     </div>
 </div>
