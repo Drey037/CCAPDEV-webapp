@@ -3,10 +3,12 @@
         <nav>
             <a href="#"><img src="images/logo.png" class="logo" alt="logo"/></a>
             
-            <div class="searchbar">
-                <input type="text" class="search-bar" id="search" name="search">
-            </div>
-            <button class="searchbutton" id="searchbutton" onclick="location.href='search_results.html'"></button>
+            <form action="/search" method="GET">
+                <div class="searchbar">
+                    <input type="text" class="search-bar" id="search" name="searchQuery">
+                    <button class="searchbutton" type="submit"></button>
+                </div>
+            </form>
             
             <ul class="nav-items">
                 <li id="movies" onclick="showDropdown(this.id)">Movies</li>
