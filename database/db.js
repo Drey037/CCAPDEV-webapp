@@ -3,10 +3,7 @@ dotenv.config();
 
 const mongoose = require('mongoose');
 const url = process.env.MONGODB_URI;
-const options = {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-};
+//const url = 'mongodb://127.0.0.1/ReelTalkDB';     // Will have to change this for when we use MongoDB Atlas
 
 const Comment = require('./Comment');
 const LoginInfo = require('./Login-Info');
@@ -14,6 +11,12 @@ const Review = require('./Review');
 const ShowInfo = require('./Show-Info');
 const UserInfo = require('./User-Info');
 const Watchlist = require('./Watchlist');
+
+
+const options = {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+};
 
 const database = {
     connect: function () {

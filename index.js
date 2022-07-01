@@ -1,13 +1,13 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const hbs = require('hbs');
-const routes = require('./routes/routes.js');
-const db = require('./database/db.js');
+const routes = require('./routes/routes');
+const db = require('./database/db');
 
 //Imports from Security and Authentication
 const session = require('express-session');
 const flash = require('connect-flash');
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 
 const app = new express();
 
@@ -24,7 +24,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 //Session server config
 app.use(session({
     secret: 'sefg93bfg3ut',
-    store: new MongoStore({mongooseConnection: mongoose.connection}),
+    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
     resave: false,
     saveUninitialized: true,
     cookies: {secure: false, maxAge: 1000 * 60 * 60 * 24 * 7}
