@@ -19,7 +19,7 @@
 	<body>
 	
 	<!-- This part is all about the navigation bar -->
-	{{#if logged_in}}
+	{{#if username}}
 		{{> navbar_logged}}
 	{{else}}
 		{{> navbar}}
@@ -27,7 +27,7 @@
 	
 	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
 	<div id="darkoverlay"></div>
-	{{#if logged_in}}
+	{{#if username}}
 		{{> overlays/create_review}}
 		{{> overlays/add_to_watchlist}}
 		{{> overlays/new_watchlist}}

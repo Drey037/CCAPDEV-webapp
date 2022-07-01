@@ -5,14 +5,14 @@ const userController = require('../controllers/userController.js');
 const reviewController = require('../controllers/ReviewController.js');
 const commentController = require('../controllers/CommentController.js');
 const watchlistController = require('../controllers/WatchlistController.js');
-const { isPrivate } = require('../middlewares/checkAuth');
+const { isPrivate, isPublic } = require('../middlewares/checkAuth');
 
 const app = express();
 
 
 
 
-app.get('/', isPrivate, controller.getIndex);
+app.get('/', controller.getIndex);
 
 app.get('/about', controller.getAbout);
 

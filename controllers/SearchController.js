@@ -10,7 +10,7 @@ const SearchController = {
     search: function(req, res) {
         console.log("In search controller");
         var searchQuery = req.query.searchQuery;
-        var response = {active: null, carousel_items: [], review: null};
+        var response = {active: null, carousel_items: [], review: null, username: req.session.username, profile_pic: req.session.profile_pic};
 
         var titleSearchArr = [];
         searchQuery.split(" ").forEach(element => {

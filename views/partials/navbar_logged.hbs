@@ -1,21 +1,21 @@
 <div class="nav-bar-bg">
     <div class="wrapper">
         <nav>
-            <a href="logged_in.hbs"><img src="images/logo.png" class="logo" alt="logo" /></a>
+            <a href="/"><img src="images/logo.png" class="logo" alt="logo" /></a>
             
             <form action="/search" method="GET">
                 <div class="searchbar">
                     <input type="text" class="search-bar" id="search" name="searchQuery">
                     
                 </div>
-                <button class="searchbutton" type="submit"></button>
+                <button class="searchbutton" type="submit" id="searchbutton"></button>
             </form>
             
             <ul class="nav-items">
                 <li id="movies" onclick="showDropdown(this.id)">Movies</li>
                 <li id="tv-shows" onclick="showDropdown(this.id)">TV Shows</li>
                 <li id="anime" onclick="showDropdown(this.id)">Anime</li>
-                <li id="about" onclick="showDropdown(this.id)">About</li>
+               <li><a href="/about">About</a></li>
                 
                 <!-- This is the profile at the top right" -->
                 <a href="#">
