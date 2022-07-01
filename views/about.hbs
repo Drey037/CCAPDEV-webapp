@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reel Talk!</title>
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/overlays.css">
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/review_card.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+	
+	<!-- Navigation bar -->
+	{{#if logged_in}}
+		{{> navbar_logged}}
+	{{else}}
+		{{> navbar}}
+	{{/if}}
+	
+	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
+	<div id="darkoverlay"></div>
+	{{#if logged_in}}
+		{{> overlays/create_review}}
+		{{> overlays/add_to_watchlist}}
+		{{> overlays/new_watchlist}}
+	{{else}}
+		{{> overlays/oops}}
+	{{/if}}
+
+	<!-- This part is the main page where the posts and stuff are located -->
+	<div id="main-center">
+		<div class="main-wrapper">
+			<h1 class="header-texts">About</h1>
+			<div class="main">
+
+				Hello there! We are 
+				
+				<!-- This part is the area where the posts will be placed
+				<div class="postarea">
+					 Review Cards 
+					{{#if review}}
+						{{#each review}}
+							{{> review_card}}
+						{{/each}}
+					{{else}}
+						<h4 class="none-found">Oops! No reviews found.</h4>
+					{{/if}}
+				</div>
+				
+			 This part is the "Create a New Account" pane
+				{{#if logged_in}}
+					{{> watchlist_pane}}
+				{{else}}
+					{{> create_account_pane}}
+				{{/if}} -->
+					
+			</div>		
+		</div>
+	</div>
+	
+	<script src="js/main.js"></script>
+	</body>
+</html>
+		
