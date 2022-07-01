@@ -9,6 +9,8 @@ const watchlistController = require('../controllers/WatchlistController.js');
 
 const app = express();
 
+app.get('/about', controller.getAbout);
+
 app.get('/', controller.getIndex);
 
 //For search bar

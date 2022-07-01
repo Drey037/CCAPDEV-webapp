@@ -18,7 +18,7 @@ const userController = {
         const errors = validationResult(req);
     
         if (errors.isEmpty()) {
-            const {email, username, password, repassword} = req.body;
+            const {email, username, password} = req.body;
     
             res.redirect('/get-login');
         }

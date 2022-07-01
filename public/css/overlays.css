@@ -216,11 +216,10 @@ a.cancelbutton {
 }
 
 h1.createaccount {
-	position: absolute;
-	width: 600px;
-	height: 320px;
+	position: relative;
 	text-align: center;
-	top: 30px;
+
+	margin-bottom: 20px;
 
 	font-family: 'Inter';
 	font-style: normal;
@@ -235,7 +234,6 @@ h1.createaccount {
 div.createaccount-area {
 	position: relative;
 	left: 50px;
-	top: 90px;
 	padding-bottom: 70px;
 	margin-bottom: 10px;
 	
@@ -246,8 +244,7 @@ div.createaccount-area {
 }
 
 p.createaccount-area {
-	position: absolute;
-	top: 10px;
+	position: relative;
 	
 	font-family: 'Inter';
 	font-style: normal;
@@ -256,7 +253,7 @@ p.createaccount-area {
 }
 
 input.createaccount-area {
-	position: absolute;
+	position: relative;
 	width: 500px;
 	height: 30px;
 	bottom: 0px;
@@ -272,11 +269,10 @@ input.createaccount-area {
 }
 
 button.createaccount-area {
-	position: absolute;
+	position: relative;
 	width: 150px;
 	height: 40px;
 	left: 225px;
-	bottom: 30px;
 
 	border: none;
 	background: #F05454;
