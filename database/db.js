@@ -5,12 +5,12 @@ const mongoose = require('mongoose');
 const url = process.env.MONGODB_URI;
 //const url = 'mongodb://127.0.0.1/ReelTalkDB';     // Will have to change this for when we use MongoDB Atlas
 
-const Comment = require('./models/Comment');
-const LoginInfo = require('./models/Login-Info');
-const Review = require('./models/Review');
-const ShowInfo = require('./models/Show-Info');
-const UserInfo = require('./models/User-Info');
-const Watchlist = require('./models/Watchlist');
+const Comment = require('./Comment');
+const LoginInfo = require('./Login-Info');
+const Review = require('./Review');
+const ShowInfo = require('./Show-Info');
+const UserInfo = require('./User-Info');
+const Watchlist = require('./Watchlist');
 
 
 const options = {

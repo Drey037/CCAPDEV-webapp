@@ -1,5 +1,10 @@
 const express = require('express');
 const controller = require('../controllers/controller.js');
+const userController = require('../controllers/userController.js');
+const reviewController = require('../controllers/ReviewController.js');
+const commentController = require('../controllers/CommentController.js');
+const watchlistController = require('../controllers/WatchlistController.js');
+
 
 const app = express();
 
@@ -12,10 +17,10 @@ app.get('/save-settings', userController.saveSettings);
 app.get('/create-review', reviewController.createReview);
 
 //For comment
-app.get('/comment', CommentController.comment);
+app.get('/comment', commentController.comment);
 
 //For Watchlist
-app.get('/edit-watchlist', WatchlistController.editWatchList);
-app.get('/new-watchlist', WatchlistController.newWatchList);
+app.get('/edit-watchlist', watchlistController.editWatchlist);
+app.get('/new-watchlist', watchlistController.newWatchlist);
 
 module.exports = app;
