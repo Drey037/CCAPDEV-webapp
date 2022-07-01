@@ -37,12 +37,10 @@
 	width: 600px;
 	height: 500px;
 	left: 660px;
-	top: 200px;
-	display: none;
+	top: 100px;
 	border-radius: 8px;
 	
-	
-	z-index: 3;
+
 
 	background: #FFFFFF;
 }
@@ -53,11 +51,9 @@
 	width: 600px;
 	height: 340px;
 	left: 660px;
-	top: 200px;
-	display: none;
+	top: 100px;
 	border-radius: 8px;
-	
-	z-index: 3;
+
 
 	background: #FFFFFF;
 }

@@ -14,7 +14,7 @@ app.get('/', controller.getIndex);
 //For search bar
 app.get('/search', SearchController.search);
 
-//For user
+//For user settings
 app.get('/save-settings', userController.saveSettings);
 
 //For reviews

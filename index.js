@@ -1,8 +1,12 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const hbs = require('hbs');
-const routes = require('./routes/routes');
 const db = require('./database/db');
+
+
+//Importing routes
+const routes = require('./routes/routes');
+const Authroutes = require('./routes/auth');
 
 //Imports from Security and Authentication
 const session = require('express-session');
@@ -14,7 +18,6 @@ const app = new express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
-app.use('/', routes);
 app.use(fileUpload());
 
 app.set('view engine', 'hbs');
@@ -38,6 +41,9 @@ app.use((req, res, next) => {
     res.locals.error_msg = req.flash('error_msg');
     next();
 });
+
+app.use('/', routes);
+app.use('/', Authroutes);
 
 
 db.connect();
