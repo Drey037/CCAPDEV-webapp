@@ -63,7 +63,12 @@ function showDropdown(elem_id) {
 
     dropdown_box.style.right = (screen.width - elem_bounds.right) + "px";
     dropdown_box.style.display = "inline-block";
-    document.getElementById("dropdown-top-something").innerHTML = "Top " + dropdown_name;
+
+    var genre_links = document.querySelectorAll(".genre-col a");
+    for(var i = 0; i < genre_links.length; i++) {
+        var current = genre_links[i];
+        current.setAttribute("href", "/search-genre/" + dropdown_name + "/" + current.innerHTML);
+    }
 }
 
 function showUserDropdown() {

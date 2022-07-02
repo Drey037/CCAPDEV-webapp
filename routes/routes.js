@@ -18,6 +18,7 @@ app.get('/about', controller.getAbout);
 
 //For search bar
 app.get('/search', SearchController.search);
+app.get('/search-genre/:category/:genre', SearchController.searchGenre);
 
 //For user settings
 app.get('/save-settings', userController.saveSettings);
