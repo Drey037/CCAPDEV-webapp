@@ -24,6 +24,7 @@ app.get('/search-genre/:category/:genre', SearchController.searchGenre);
 app.get('/save-settings', userController.saveSettings);
 
 //For reviews
+app.get('/get-create-review', reviewController.getCreateReview);
 app.get('/create-review', reviewController.createReview);
 
 //For comment

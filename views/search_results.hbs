@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="css/navbar.css">
 		<link rel="stylesheet" href="css/overlays.css">
 		<link rel="stylesheet" href="css/carousel.css">
+		<link rel="stylesheet" href="css/watchlist_card.css" />
+		<link rel="stylesheet" href="css/watchlist_sidepane.css" />
 		
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		<!-- For icons from Font Awesome website -->
@@ -43,7 +45,7 @@
 			{{#if active}}
 			<div class="carousel-background">
 				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
+					<div class="carousel-inner" id="carousel-inner">
 
 					  <!-- Carousel Item (ACTIVE) -->
 					  	
@@ -58,7 +60,7 @@
 										<p>{{active.description}}</p>
 										<div class="carousel-item-buttons">
 											<button href="">Add to Watchlist</button>
-											<button>Create review</button>
+											<button class="createReview">Create review</button>
 										</div>
 									</div>
 								</div>
@@ -99,7 +101,11 @@
 				</div>
 				
 				<!-- This part is the "Create a New Account" pane -->
-				{{> create_account_pane}}
+				{{#if username}}
+					{{> watchlist_pane}}
+				{{else}}
+					{{> create_account_pane}}
+				{{/if}}
 					
 			</div>		
 		</div>

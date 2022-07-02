@@ -46,6 +46,7 @@ function oopsoff() {
 }
 
 function NewReviewOverlayOn() {
+    console.log("Opening new review");
     document.getElementById("darkoverlay").style.display = "block";
     document.getElementById("new-review").style.display = "inline-block";
 }
@@ -182,3 +183,29 @@ function NewWatchlistOff() {
     document.getElementById("darkoverlay").style.display = "none";
     document.getElementById("new-watchlist").style.display = "none";
 }
+
+
+
+
+
+$(document).ready(function () {
+    $('#carousel-inner').on('click', '.createReview', function () {
+        var details = $.trim($(this).parent().siblings('h3').html());
+
+        var movieName = details.split("(")[0];
+        movieName = movieName.substring(0, movieName.length - 1);
+
+        var year = details.split("(")[1];
+        year = year.split(")")[0];
+
+        console.log(movieName);
+        console.log(year);
+
+        
+        $.ajax({
+            type: "GET",
+            url: "/get-create-review",
+            data: {title: movieName, year: year}
+        });
+    });
+});
