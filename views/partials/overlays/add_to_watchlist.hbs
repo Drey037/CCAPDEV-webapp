@@ -4,9 +4,12 @@
     <div id="watchlist-container">
         <ul>
             {{#if watchlist}}
+                <form action="/add-to-watchlist" method="post">
+                    <input class="add-to-watchlist-showId" type="hidden" name="showId">
                 {{#each watchlist}}
-                    <button class="watchlist"><p>{{this.title}}</p></button>
+                    <button name="watchlistId" value="{{this._id}}" class="watchlist add-to-watchlist-item"><p>{{this.title}}</p></button>
                 {{/each}}
+                </form>
             {{else}}
                 <h4 class="none-found">Oops! No watchlists found.</h4>
             {{/if}}
