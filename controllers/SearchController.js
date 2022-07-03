@@ -40,14 +40,14 @@ const SearchController = {
                         response.review = data;
 
                     // Gets user's watchlists
-                    if(req.session.user != null) {
-                        db.findOne(User, {"_id": req.session.user}, null, async function(data) {
+                    db.findOne(User, {"_id": req.session.user}, null, async function(data) {
+                        if(data != null) {
                             var populatedData = await data.populate("watchlists");
                             response.watchlist = populatedData.watchlists;
-    
-                            res.render('search_results', response);
-                        });
-                    }
+                        }
+                        res.render('search_results', response);
+                    });
+                    
                 });
                 
             }

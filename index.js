@@ -48,7 +48,7 @@ app.use('/', Authroutes);
 
 db.connect();
 
-var port = 3000;
+const port = 3000;
 app.listen(process.env.PORT || port, function() {
     console.log('Node server is running on port ' + port + '...');
 });
