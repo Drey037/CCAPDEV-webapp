@@ -118,51 +118,62 @@ const userController = {
         }
     },
 
-    viewProfile: function(req, res) {
-        if (req.session) {
-            db.findOne(userModel, { username: req.session.username }, null, (result) => {
-                res.render('user-pages/user_reviews', {username: result.username, gender: result.gender,
-                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic });
-                    //Add for watchlists and reviews Fk
-            });
-        }
-    },
-
     viewSettings: function(req, res) {
         if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, (result) => {
                 res.render('user-pages/user_settings', {username: result.username, email: result.email, gender: result.gender,
-                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic});
+                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
             });
         }
     },
 
-    //Should search for watchlists
-    viewWatchlists: function(req, res) {
+    // NOT DONE
+    userReviews: function(req, res) {
         if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, (result) => {
-                res.render('user-pages/user_watchlists', {username: result.username, gender: result.gender,
-                    birthday: result.birthday, numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic });
+                res.render('user-pages/user_reviews', {username: result.username, gender: result.gender,
+                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
                     //Add for watchlists and reviews Fk
             });
         }
     },
 
-    //
-    saveSettings: function (req, res) {
-        var query = {username: req.session.username};
-        var update = {
+    userWatchlists: function(req, res) {
+        if (req.session) {
+            db.findOne(userModel, { username: req.session.username }, null, async (result) => {
+                var response = {
+                    username: result.username,
+                    gender: result.gender,
+                    numPosts: result.numPosts,
+                    numComments: result.numComments,
+                    profile_pic: result.profile_pic,
+                    watchlist: []
+                };
 
+                var populatedResults = await result.populate('watchlists');
+                var populatedWatchlists = [];
+
+                for(var i = 0; i < populatedResults.watchlists.length; i++) {
+                    populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
+                    populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
+                }
+
+                response.watchlist = populatedWatchlists;
+                
+                res.render('user-pages/user_watchlists', response);
+            });
         }
-
-        db.updateOne(userModel, query, null, function(result) {
-            res.render('../views/partials/comment', query);
-        });
     },
 
+    viewWatchlist: function(req, res) {
 
-    //what is this for comments
-    commentthingy: function (req, res) {
+    },
+
+    editWatchlist: function(req, res) {
+
+    },
+
+    saveSettings: function (req, res) {
         var query = {user: req.params.idNum};
 
         db.findMany(Comment, query, null, function(result) {
