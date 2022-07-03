@@ -8,7 +8,8 @@ const ReviewController = {
     getCreateReview: function (req, res) {
         console.log('Opening new Review');
         db.findOne(show, {title: req.query.title, year: req.query.year}, null, function(result) {
-            res.render('create_review.hbs', {username: req.session.username, profile_pic: req.session.profile_pic, title: result.title, year: result.year, image: result.image });
+            console.log(result);
+            res.render('index', {username: req.session.username, profile_pic: req.session.profile_pic, title: result.title, year: result.year, image: result.image });
         });
     },
 
@@ -25,7 +26,7 @@ const ReviewController = {
 
         db.deleteOne(review, {"_id": reviewId}, null);
     },
-    
+
     updateReview: function (req, res) {
         console.log('Updating Review');
 
