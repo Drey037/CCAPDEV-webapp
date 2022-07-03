@@ -25,4 +25,8 @@ const loginValidation = [
     body('password').not().isEmpty().withMessage("Password is required.")
   ];
 
-module.exports = { registerValidation, loginValidation };
+const settingsValidation = [
+  body('username').not().isEmpty().withMessage("Please enter a username.")
+];
+
+module.exports = { registerValidation, loginValidation, settingsValidation };

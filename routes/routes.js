@@ -6,6 +6,7 @@ const reviewController = require('../controllers/ReviewController.js');
 const commentController = require('../controllers/CommentController.js');
 const watchlistController = require('../controllers/WatchlistController.js');
 const { isPrivate, isPublic } = require('../middlewares/checkAuth');
+const {settingsValidation} = require('../validators');
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.get('/search-genre/:category/:genre', SearchController.searchGenre);
 
 //For user settings and other user related things
 app.get('/account-settings', isPrivate,  userController.viewSettings);
+app.get('/edit-settings', isPrivate, settingsValidation, userController.editSettings);
+
 app.get('/user-reviews', isPrivate, userController.userReviews);    // TODO
 app.get('/user-watchlists', isPrivate,  userController.userWatchlists);
 app.get('/view-watchlist/:watchlistId', userController.viewWatchlist);   // TODO
