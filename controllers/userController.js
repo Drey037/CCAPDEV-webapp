@@ -116,6 +116,36 @@ const userController = {
         }
     },
 
+    viewProfile: function(req, res) {
+        if (req.session) {
+            db.findOne(userModel, { username: req.session.username }, null, (result) => {
+                res.render('user-pages/user_reviews', {username: result.username, gender: result.gender,
+                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
+                    //Add for watchlists and reviews Fk
+            });
+        }
+    },
+
+    viewSettings: function(req, res) {
+        if (req.session) {
+            db.findOne(userModel, { username: req.session.username }, null, (result) => {
+                res.render('user-pages/user_settings', {username: result.username, email: result.email, gender: result.gender,
+                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
+            });
+        }
+    },
+
+    //Should search for watchlists
+    viewWatchlists: function(req, res) {
+        if (req.session) {
+            db.findOne(userModel, { username: req.session.username }, null, (result) => {
+                res.render('user-pages/user_watchlists', {username: result.username, gender: result.gender,
+                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
+                    //Add for watchlists and reviews Fk
+            });
+        }
+    },
+
     saveSettings: function (req, res) {
         var query = {user: req.params.idNum};
 

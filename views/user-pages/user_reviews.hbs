@@ -21,14 +21,13 @@
 	{{> navbar_logged}}
 	
 	<div class="usertab">
-		<button id="usertabbutton-reviews" class="active" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
-		<button id="usertabbutton-collections" class="inactive" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
+		<button id="usertabbutton-reviews" class="active" onclick= "location.href = '/view-profile'">Reviews</button>
+		<button id="usertabbutton-collections" class="inactive" onclick= "location.href = '/view-watchlists'">Watchlists</button>
 	</div>
 
 
 	<!-- OVERLAY AREAS || THE THINGS THAT POP UP -->
 	<div id="darkoverlay"></div>
-	{{> overlays/create_review}}
 	{{> overlays/add_to_watchlist}}
 	{{> overlays/new_watchlist}}
 
