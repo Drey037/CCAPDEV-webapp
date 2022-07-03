@@ -32,6 +32,6 @@ app.get('/comment', commentController.comment);
 
 //For Watchlist
 app.get('/edit-watchlist', watchlistController.editWatchlist);
-app.get('/new-watchlist', watchlistController.newWatchlist);
+app.post('/new-watchlist', watchlistController.newWatchlist);
 
 module.exports = app;

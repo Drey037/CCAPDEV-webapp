@@ -5,7 +5,7 @@
         <ul>
             {{#if watchlist}}
                 {{#each watchlist}}
-                    <button class="watchlist"><p>{{title}}</p></button>
+                    <button class="watchlist"><p>{{this.title}}</p></button>
                 {{/each}}
             {{else}}
                 <h4 class="none-found">Oops! No watchlists found.</h4>

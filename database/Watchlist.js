@@ -1,21 +1,12 @@
 const mongoose = require('mongoose');
 
 const WatchlistSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    shows: [{
-        type: mongoose.Schema.ObjectId, ref: 'ShowInfo',
-        required: true
-    }],
+    title: {type: String},
+    description: {type: String},
+    shows: [{type: mongoose.Schema.ObjectId, ref: 'ShowInfo',}],
     item_count: {
         type: Number,
-        required: true
+        default: 0
     }
 });
 

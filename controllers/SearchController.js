@@ -1,6 +1,8 @@
 const db = require('../database/db.js');
 const ShowInfo = require('../database/Show-Info.js');
 const Review = require('../database/Review.js');
+const User = require('../database/User-Info.js');
+const { ObjectId } = require('mongodb');
 
 // Handles requests related to the search bar
 
@@ -10,7 +12,7 @@ const SearchController = {
     search: function(req, res) {
         console.log("In SearchController.search");
         var searchQuery = req.query.searchQuery;
-        var response = {active: null, carousel_items: [], review: null, username: req.session.username, profile_pic: req.session.profile_pic};
+        var response = {active: null, carousel_items: [], review: null, watchlist: [], username: req.session.username, profile_pic: req.session.profile_pic, id: req.session.user};
 
         var titleSearchArr = [];
         searchQuery.split(" ").forEach(element => {
@@ -36,10 +38,18 @@ const SearchController = {
                 db.findMany(Review, reviewQuery, null, function(data) {
                     if(data.length > 0)
                         response.review = data;
-                    
+
+                    // Gets user's watchlists
+                    db.findOne(User, {"_id": req.session.user}, null, async function(data) {
+                        var populatedData = await data.populate("watchlists");
+                        response.watchlist = populatedData.watchlists;
+
+                        res.render('search_results', response);
+                    });
                 });
+                
             }
-            res.render('search_results', response);
+            
         });
         
     },
@@ -48,7 +58,7 @@ const SearchController = {
         console.log("In SearchController.searchGenre");
         var category = req.params.category
         var genre = req.params.genre.toLowerCase();
-        var response = {active: null, carousel_items: [], review: null, username: req.session.username, profile_pic: req.session.profile_pic};
+        var response = {active: null, carousel_items: [], review: null, watchlist: [], username: req.session.username, profile_pic: req.session.profile_pic, id: req.session.user};
 
         if(category == "Movies")
             category = "movie";
@@ -75,10 +85,16 @@ const SearchController = {
                 db.findMany(Review, reviewQuery, null, function(data) {
                     if(data.length > 0)
                         response.review = data;
-                    
+
+                    // Gets user's watchlists
+                    db.findOne(User, {"_id": req.session.user}, null, async function(data) {
+                        var populatedData = await data.populate("watchlists");
+                        response.watchlist = populatedData.watchlists;
+
+                        res.render('search_results', response);
+                    });
                 });
             }
-            res.render('search_results', response);
         });
     }
 };
