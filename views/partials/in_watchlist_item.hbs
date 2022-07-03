@@ -1,9 +1,12 @@
 <div class="in-watchlist">
     <div class="in-watchlist-img-wrapper">
-        <img src="{{poster}}" alt="Watchlist item poster">
-        <div class="in-watchlist-overlay">
-            <div id="remove-in-watchlist-item">Remove</div>
-        </div>
+        <img src="{{this.image}}" alt="Watchlist item poster">
+
+        {{!-- {{#if this.edit}} --}}
+            <div class="in-watchlist-overlay">
+                <div id="remove-in-watchlist-item" class="remove-in-watchlist-item">Remove</div>
+            </div>
+        {{!-- {{/if}} --}}
     </div>
 
     <div class="in-watchlist-info">

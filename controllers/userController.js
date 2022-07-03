@@ -2,7 +2,8 @@ const userModel = require('../database/User-Info.js');
 const db = require('../database/db');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
-
+const { ObjectId } = require('mongodb');
+const watchlist = require('../database/Watchlist.js');
 
 
 
@@ -121,19 +122,40 @@ const userController = {
     viewSettings: function(req, res) {
         if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, (result) => {
+                var bday = result.birthday;
+                var formattedDate = bday.getFullYear().toString() + '-' + (bday.getMonth() + 1).toString().padStart(2, 0) + '-' + bday.getDate().toString().padStart(2, 0);
+
+                console.log(formattedDate);
                 res.render('user-pages/user_settings', {username: result.username, email: result.email, gender: result.gender,
-                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
+                    numPosts: result.numPosts, numComments: result.numComments, birthday: formattedDate, profile_pic: result.profile_pic, });
             });
         }
     },
 
-    // NOT DONE
+    // NOT TESTED; NEED REVIEWS
     userReviews: function(req, res) {
         if (req.session) {
-            db.findOne(userModel, { username: req.session.username }, null, (result) => {
-                res.render('user-pages/user_reviews', {username: result.username, gender: result.gender,
-                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
-                    //Add for watchlists and reviews Fk
+            db.findOne(userModel, { username: req.session.username }, null, async (result) => {
+                var response = {
+                    username: result.username,
+                    gender: result.gender,
+                    numPosts: result.numPosts,
+                    numComments: result.numComments,
+                    profile_pic: result.profile_pic,
+                    reviews: []
+                };
+
+                var populatedResults = await result.populate('reviews');
+                var populatedReviews = [];
+
+                for(var i = 0; i < result.reviews.length; i++) {
+                    var review = await populatedResults.reviews[i].populate('show').populate('comments').populate('user');
+                    populatedReviews.push(review);
+                }
+
+                response.reviews = populatedReviews;
+
+                res.render('user-pages/user_reviews', response);
             });
         }
     },
@@ -166,18 +188,64 @@ const userController = {
     },
 
     viewWatchlist: function(req, res) {
+        var watchlistId = ObjectId(req.params.watchlistId);
+        db.findOne(watchlist, {"_id": watchlistId}, null, async function(result) {
+            var response = {
+                id: req.params.watchlistId,
+                title: result.title,
+                description: result.description,
+                watchlist_item: [],
+                edit: true
+            };
 
+            var populatedShows = await result.populate('shows');
+            response.watchlist_item = populatedShows.shows;
+            res.render('user-pages/view_watchlist', response);
+        });
     },
 
     editWatchlist: function(req, res) {
+        var watchlistId = ObjectId(req.params.watchlistId);
+        db.findOne(watchlist, {"_id": watchlistId}, null, async function(result) {
+            var response = {
+                id: req.params.watchlistId,
+                title: result.title,
+                description: result.description,
+                watchlist_item: [],
+                edit: true
+            };
 
+            var populatedShows = await result.populate('shows');
+            response.watchlist_item = populatedShows.shows;
+            res.render('user-pages/edit_watchlist', response);
+        });
+    },
+
+    editSettings: function(req, res) {
+        if (req.session) {
+            db.findOne(userModel, { username: req.session.username }, null, (result) => {
+                var bday = result.birthday;
+                var formattedDate = bday.getFullYear().toString() + '-' + (bday.getMonth() + 1).toString().padStart(2, 0) + '-' + bday.getDate().toString().padStart(2, 0);
+
+                res.render('user-pages/user_settings_edit', {username: result.username, gender: result.gender,
+                    numPosts: result.numPosts, numComments: result.numComments, birthday: formattedDate, profile_pic: result.profile_pic });
+                    //Add for watchlists and reviews Fk
+            });
+        }
     },
 
     saveSettings: function (req, res) {
-        var query = {user: req.params.idNum};
+        var query = {username: req.session.username};
+        var update = {
+            profile_pic: req.body.profile_pic,
+            username: req.body.username,
+            birthday: req.body.birthday,
+            gender: req.body.gender
+        };
 
-        db.findMany(Comment, query, null, function(result) {
-            res.render('../views/partials/comment', query);
+
+        db.updateOne(userModel, query, update, function() {
+            res.redirect('/account-settings');
         });
     }
 };
