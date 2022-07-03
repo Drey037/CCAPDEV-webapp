@@ -201,20 +201,20 @@ $(document).ready(function () {
     $('#carousel-inner').on('click', '.createReview', function () {
         var details = $.trim($(this).parent().siblings('h3').html());
 
-        var movieName = details.split("(")[0];
-        movieName = movieName.substring(0, movieName.length - 1);
+        var title = details.split("(")[0];
+        title = title.substring(0, title.length - 1);
 
         var year = details.split("(")[1];
         year = year.split(")")[0];
 
-        console.log(movieName);
+        console.log(title);
         console.log(year);
 
         
         $.ajax({
             type: "GET",
             url: "/get-create-review",
-            data: {title: movieName, year: year}
+            data: {title: title, year: year},
         });
     });
 });

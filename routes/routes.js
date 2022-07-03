@@ -20,12 +20,17 @@ app.get('/about', controller.getAbout);
 app.get('/search', SearchController.search);
 app.get('/search-genre/:category/:genre', SearchController.searchGenre);
 
-//For user settings
-app.get('/save-settings', userController.saveSettings);
+//For user settings and toher user related things
+app.get('/view-profile', isPrivate, userController.viewProfile);
+app.get('/account-settings', isPrivate,  userController.viewSettings);
+app.get('/view-watchlists', isPrivate,  userController.viewWatchlists);
+
+
+app.post('/save-settings', isPrivate, userController.saveSettings);
 
 //For reviews
 app.get('/get-create-review', reviewController.getCreateReview);
-app.get('/create-review', reviewController.createReview);
+app.post('/create-review', reviewController.createReview);
 
 //For comment
 app.get('/comment', commentController.comment);
@@ -34,5 +39,6 @@ app.get('/comment', commentController.comment);
 app.get('/edit-watchlist', watchlistController.editWatchlist);
 app.post('/new-watchlist', watchlistController.newWatchlist);
 app.post('/add-to-watchlist', watchlistController.addToWatchlist);
+
 
 module.exports = app;
