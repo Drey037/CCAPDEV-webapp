@@ -8,7 +8,6 @@ const WatchlistController = {
 
     newWatchlist: function (req, res) {
         var query = {"_id": ObjectId(req.session.user)};
-        console.log(query);
         console.log('Creating new watchlist');
 
         var newWatchlist = {
@@ -19,8 +18,7 @@ const WatchlistController = {
         // add to watchlist collection
         db.insertOne(watchlist, newWatchlist, function(data) {
             // update user's watchlist array
-            var update = {$push: {"watchlists": data}};
-            db.updateOne(user, query, update, function() {
+            db.updateOne(user, query, {$push: {"watchlists": data}}, function() {
                 res.redirect("back");
             });
         });
@@ -30,6 +28,18 @@ const WatchlistController = {
         var query = {_id: req.params.idNum};
         console.log('Editing new watchlist');
     },
+
+    addToWatchlist: function(req, res) {
+        console.log("In WatchlistController.addToWatchlist")
+        var watchlistId = ObjectId(req.body.watchlistId);
+        var showId = ObjectId(req.body.showId);
+
+        // add to watchlist the show
+        // If doesn't exist only
+        db.updateOne(watchlist, {"_id": watchlistId}, {$push: {shows: showId}, $inc: {item_count: 1}}, function() {
+            res.redirect("back");
+        });
+    }
 };
 
 

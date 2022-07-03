@@ -38,6 +38,7 @@ app.get('/comment', commentController.comment);
 //For Watchlist
 app.get('/edit-watchlist', isPrivate, watchlistController.editWatchlist);
 app.post('/new-watchlist', isPrivate, watchlistController.newWatchlist);
+app.post('/add-to-watchlist', isPrivate, watchlistController.addToWatchlist);
 
 
 module.exports = app;

@@ -185,6 +185,15 @@ function NewWatchlistOff() {
 }
 
 
+// Completes href of watchlist buttons in add to watchlist
+function addToWatchlist(showId) {
+    AddOverlayOn(); 
+    var watchlists = document.getElementsByClassName("add-to-watchlist-showId");
+    for(var i = 0; i < watchlists.length; i++) {
+        watchlists[i].setAttribute("value", showId);
+        console.log(watchlists[i].getAttribute("value"))
+    }
+} 
 
 
 
