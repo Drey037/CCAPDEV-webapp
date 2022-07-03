@@ -34,7 +34,11 @@ const UserInfoSchema = new mongoose.Schema({
     profile_pic: {
         type: String,
         default: "/images/profile_pic/default.jpg"
-    }
+    },
+    watchlists: [{
+        type: mongoose.Schema.ObjectId, ref: 'Watchlist',
+        required: true
+    }]
 });
 
 const UserInfo = mongoose.model('UserInfo', UserInfoSchema);

@@ -14,7 +14,7 @@ const SearchController = {
 
         var titleSearchArr = [];
         searchQuery.split(" ").forEach(element => {
-            titleSearchArr.push({"title": new RegExp(element)});
+            titleSearchArr.push({"title": new RegExp(element, 'i')});
         });
         var showQuery = {$or: titleSearchArr};
 
