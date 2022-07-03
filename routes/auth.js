@@ -22,8 +22,6 @@ router.post('/login', isPublic, loginValidation, userController.login);
 router.get('/logout', isPrivate, userController.logout);
 
 
-router.get('/get-create-review', reviewController.getCreateReview);
-
 //For Watchlist
 //app.get('/edit-watchlist', isPrivate, watchlistController.editWatchlist);
 //app.get('/new-watchlist', isPrivate, watchlistController.newWatchlist);
