@@ -40,12 +40,14 @@ const SearchController = {
                         response.review = data;
 
                     // Gets user's watchlists
-                    db.findOne(User, {"_id": req.session.user}, null, async function(data) {
-                        var populatedData = await data.populate("watchlists");
-                        response.watchlist = populatedData.watchlists;
-
-                        res.render('search_results', response);
-                    });
+                    if(req.session.user != null) {
+                        db.findOne(User, {"_id": req.session.user}, null, async function(data) {
+                            var populatedData = await data.populate("watchlists");
+                            response.watchlist = populatedData.watchlists;
+    
+                            res.render('search_results', response);
+                        });
+                    }
                 });
                 
             }
@@ -87,12 +89,15 @@ const SearchController = {
                         response.review = data;
 
                     // Gets user's watchlists
-                    db.findOne(User, {"_id": req.session.user}, null, async function(data) {
-                        var populatedData = await data.populate("watchlists");
-                        response.watchlist = populatedData.watchlists;
-
-                        res.render('search_results', response);
-                    });
+                    if(req.session.user != null) {
+                        db.findOne(User, {"_id": req.session.user}, null, async function(data) {
+                            var populatedData = await data.populate("watchlists");
+                            response.watchlist = populatedData.watchlists;
+    
+                            res.render('search_results', response);
+                        });
+                    }
+                    
                 });
             }
         });
