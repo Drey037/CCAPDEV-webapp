@@ -11,11 +11,11 @@ const CommentSchema = new mongoose.Schema({
     },
     likes: {
         type: Number,
-        rquired: true
+        required: true
     },
     dislikes: {
         type: Number,
-        rquired: true
+        required: true
     }
 });
 
