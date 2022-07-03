@@ -14,14 +14,13 @@ const UserInfoSchema = new mongoose.Schema({
         min: 6,
         required: true
     },
-	name: {
-        type: String,
-    },
 	birthday: {
-        type: Date
+        type: Date,
+        required: true
     },
 	gender: {
-        type: String
+        type: String,
+        required: true
     },
     numPosts: {
         type: Number,
