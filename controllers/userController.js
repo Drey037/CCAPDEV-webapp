@@ -116,16 +116,6 @@ const userController = {
         }
     },
 
-    viewProfile: function(req, res) {
-        if (req.session) {
-            db.findOne(userModel, { username: req.session.username }, null, (result) => {
-                res.render('user-pages/user_reviews', {username: result.username, gender: result.gender,
-                    numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
-                    //Add for watchlists and reviews Fk
-            });
-        }
-    },
-
     viewSettings: function(req, res) {
         if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, (result) => {
@@ -135,15 +125,50 @@ const userController = {
         }
     },
 
-    //Should search for watchlists
-    viewWatchlists: function(req, res) {
+    // NOT DONE
+    userReviews: function(req, res) {
         if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, (result) => {
-                res.render('user-pages/user_watchlists', {username: result.username, gender: result.gender,
+                res.render('user-pages/user_reviews', {username: result.username, gender: result.gender,
                     numPosts: result.numPosts, numComments: result.numComments, profile_pic: result.profile_pic, });
                     //Add for watchlists and reviews Fk
             });
         }
+    },
+
+    userWatchlists: function(req, res) {
+        if (req.session) {
+            db.findOne(userModel, { username: req.session.username }, null, async (result) => {
+                var response = {
+                    username: result.username,
+                    gender: result.gender,
+                    numPosts: result.numPosts,
+                    numComments: result.numComments,
+                    profile_pic: result.profile_pic,
+                    watchlist: []
+                };
+
+                var populatedResults = await result.populate('watchlists');
+                var populatedWatchlists = [];
+
+                for(var i = 0; i < populatedResults.watchlists.length; i++) {
+                    populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
+                    populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
+                }
+
+                response.watchlist = populatedWatchlists;
+                
+                res.render('user-pages/user_watchlists', response);
+            });
+        }
+    },
+
+    viewWatchlist: function(req, res) {
+
+    },
+
+    editWatchlist: function(req, res) {
+
     },
 
     saveSettings: function (req, res) {
