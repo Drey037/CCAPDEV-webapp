@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Reel Talk!</title>
+		<base href="/">
 		<link rel="stylesheet" href="css/navbar.css">
 		<link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/edit_watchlist.css">
@@ -44,7 +45,7 @@
 							<h4 class="none-found">This watchlist is empty.</h4>
 						{{/if}}
 
-                        <div class="edit-watchlist-save"><button type="submit">Save</button></div>
+                        <div class="edit-watchlist-save" onclick="location.href='view-watchlist/{{id}}'"><button type="submit">Save</button></div>
                     </form>
                     <button class="edit-watchlist-cancel">Cancel</button>
 

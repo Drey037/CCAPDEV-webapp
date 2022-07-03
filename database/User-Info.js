@@ -37,6 +37,10 @@ const UserInfoSchema = new mongoose.Schema({
     watchlists: [{
         type: mongoose.Schema.ObjectId, ref: 'Watchlist',
         required: true
+    }],
+    reviews: [{
+        type: mongoose.Schema.ObjectId, ref: 'Review',
+        required: true
     }]
 });
 

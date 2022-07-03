@@ -24,8 +24,8 @@ app.get('/search-genre/:category/:genre', SearchController.searchGenre);
 app.get('/account-settings', isPrivate,  userController.viewSettings);
 app.get('/user-reviews', isPrivate, userController.userReviews);    // TODO
 app.get('/user-watchlists', isPrivate,  userController.userWatchlists);
-app.get('/view-watchlist/:watchlistId', userController.viewWatchlist);   // TODO
-app.post('/edit-watchlist/:watchlistId', userController.editWatchlist);  // TODO
+app.get('/view-watchlist/:watchlistId', userController.viewWatchlist);
+app.get('/edit-watchlist/:watchlistId', userController.editWatchlist);  // TODO
 
 
 app.post('/save-settings', isPrivate, userController.saveSettings);

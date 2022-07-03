@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Reel Talk!</title>
+		<base href="/">
 		<link rel="stylesheet" href="css/navbar.css">
 		<link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/edit_watchlist.css">
@@ -38,8 +39,8 @@
 							<h4 class="none-found">This watchlist is empty.</h4>
 						{{/if}}                   
                     </form>
-					<button class="edit-watchlist-cancel" onclick="location.href='edit_watchlist.html'">Edit</button>
-                    <button class="edit-watchlist-cancel" onclick="location.href='User Profile Collections.html'">Back</button>
+					<button class="edit-watchlist-cancel" onclick="location.href='/edit-watchlist/{{id}}'">Edit</button>
+                    <button class="edit-watchlist-cancel" onclick="location.href='/user-watchlists'">Back</button>
                 </div>
 					
 			</div>		
