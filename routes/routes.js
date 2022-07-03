@@ -30,6 +30,8 @@ app.get('/user-watchlists', isPrivate,  userController.userWatchlists);
 app.get('/view-watchlist/:watchlistId', userController.viewWatchlist);
 app.get('/edit-watchlist/:watchlistId', userController.editWatchlist);  // TODO
 
+app.post('/delete-user', isPrivate, userController.deleteUser);
+
 
 app.post('/save-settings', isPrivate, userController.saveSettings);
 

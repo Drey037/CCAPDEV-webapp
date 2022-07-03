@@ -196,6 +196,14 @@ function addToWatchlist(showId) {
 } 
 
 
+function deleteUser() {
+    $.ajax({
+        type: "POST",
+        url: "/delete"
+    });
+} 
+
+
 
 $(document).ready(function () {
     $('#carousel-inner').on('click', '.createReview', function () {
