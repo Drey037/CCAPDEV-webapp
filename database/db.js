@@ -4,7 +4,6 @@ dotenv.config();
 const mongoose = require('mongoose');
 const url = process.env.MONGODB_URI;
 
-
 //const url = 'mongodb://127.0.0.1/ReelTalkDB';     // Will have to change this for when we use MongoDB Atlas
 
 const Comment = require('./Comment');
