@@ -119,6 +119,12 @@ const userController = {
         }
     },
 
+    deleteUser: function(req, res) {
+        db.deleteOne(userModel, {username: req.session.username}, function() {
+            res.redirect('/');
+        })
+    }, 
+
     viewSettings: function(req, res) {
         if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, (result) => {
@@ -133,6 +139,15 @@ const userController = {
     },
 
     // NOT TESTED; NEED REVIEWS
+    viewWatchlist: function(req, res) {
+
+    },
+
+    editWatchlist: function(req, res) {
+
+    },
+
+    // NOT DONE
     userReviews: function(req, res) {
         if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, async (result) => {
@@ -236,12 +251,29 @@ const userController = {
 
     saveSettings: function (req, res) {
         var query = {username: req.session.username};
-        var update = {
-            profile_pic: req.body.profile_pic,
-            username: req.body.username,
-            birthday: req.body.birthday,
-            gender: req.body.gender
-        };
+
+        if (req.files != null) {
+            const {image} = req.files;
+
+            image.mv(path.resolve(__dirname, 'public/images/profile_pic', image.name), (error) => {});
+
+            console.log(req.files);
+
+            var update = {
+                profile_pic: "/images/profile_pic/" + image.name,
+                username: req.body.username,
+                birthday: req.body.birthday,
+                gender: req.body.gender
+            };
+        }
+        else {
+            console.log("There are no files uploaded");
+            var update = {
+                username: req.body.username,
+                birthday: req.body.birthday,
+                gender: req.body.gender
+            };
+        }
 
 
         db.updateOne(userModel, query, update, function() {
