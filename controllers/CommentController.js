@@ -1,5 +1,6 @@
 const Comment = require ('../database/Comment');
 const db = require ('../database/db');
+const Review = require('../database/Review')
 
 
 const CommentController = {
@@ -12,17 +13,36 @@ const CommentController = {
         });
     },
     
+    //TP BE EDITED
     comment: function (req, res) {
-       var reply = req.body.userComment;
-       var doc = {
-        user: req.session.user,
-        comment: reply};
+        console.log(req.body.reviewid);
+        var reply = req.body.comment;
 
-        console.log(req.body.showID);
-        console.log(reply);
-       db.insertOne(Comment, doc, function(result) {
-            res.redirect('/get-review-page/'+ req.body.showID);
-       })
+        var doc = {
+            user: req.session.user,
+            comment: reply
+        };
+
+
+        db.insertOne(Comment, doc, function(result) {
+            //res.redirect('/get-review-page/'+ req.body.showID);
+            db.updateOne(Review, {"_id": req.body.reviewid}, { $push: { comments: result }, numComments: {$size: "$comments"} + 1}, function(out) {
+                var newComment = {
+                    profile_pic: req.session.profile_pic,
+                    username: req.session.username,
+                    content: reply,
+                    dislikes: 0,
+                    likes: 0
+                };
+
+                if (out) {
+                    console.log("Successfully commented");
+                    res.render('./partials/comment', newComment, function(err, html) {
+                        res.send(html);
+                    });
+                }
+            })
+        })
     },
 
     

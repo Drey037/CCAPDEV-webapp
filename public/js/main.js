@@ -246,3 +246,19 @@ function removeFromWatchlist(showId, watchlistId) {
 //         $('#submit').prop('disabled', false);
 //     }
 // });
+
+function addComment(showid, reviewid) {
+    console.log("pressed button");
+
+    var reply = document.getElementById("userComment").value;
+
+    $.ajax({
+        type: "POST",
+        url: "/comment",
+        data: {showid: showid, reviewid: reviewid, comment: reply},
+        success: function(result) {
+            $('#commentsbox').append(result);
+            console.log("SUCCESS");
+        }
+    });
+}
