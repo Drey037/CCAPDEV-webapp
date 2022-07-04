@@ -143,10 +143,6 @@ const userController = {
 
     },
 
-    editWatchlist: function(req, res) {
-
-    },
-
     // NOT DONE
     userReviews: function(req, res) {
         if (req.session) {
@@ -206,33 +202,16 @@ const userController = {
         var watchlistId = ObjectId(req.params.watchlistId);
         db.findOne(watchlist, {"_id": watchlistId}, null, async function(result) {
             var response = {
-                id: req.params.watchlistId,
+                watchlistId: req.params.watchlistId,
                 title: result.title,
                 description: result.description,
                 watchlist_item: [],
-                edit: true
+                edit: false
             };
 
             var populatedShows = await result.populate('shows');
             response.watchlist_item = populatedShows.shows;
             res.render('user-pages/view_watchlist', response);
-        });
-    },
-
-    editWatchlist: function(req, res) {
-        var watchlistId = ObjectId(req.params.watchlistId);
-        db.findOne(watchlist, {"_id": watchlistId}, null, async function(result) {
-            var response = {
-                id: req.params.watchlistId,
-                title: result.title,
-                description: result.description,
-                watchlist_item: [],
-                edit: true
-            };
-
-            var populatedShows = await result.populate('shows');
-            response.watchlist_item = populatedShows.shows;
-            res.render('user-pages/edit_watchlist', response);
         });
     },
 

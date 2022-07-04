@@ -24,9 +24,38 @@ const WatchlistController = {
         });
     },
 
-    editWatchlist: function (req, res) {
-        var query = {_id: req.params.idNum};
-        console.log('Editing new watchlist');
+    editWatchlist: function(req, res) {
+        var watchlistId = ObjectId(req.body.watchlistId);
+        db.findOne(watchlist, {"_id": watchlistId}, null, async function(result) {
+            var response = {
+                watchlistId: req.body.watchlistId,
+                title: result.title,
+                description: result.description,
+                watchlist_item: [],
+                edit: true
+            };
+
+            var populatedShows = await result.populate('shows');
+            response.watchlist_item = populatedShows.shows;
+            res.render('user-pages/edit_watchlist', response);
+        });
+    },
+
+    removeFromWatchlist: function(req, res) {
+        console.log("In WatchlistController.removeFromWatchlist");
+        var watchlistId = ObjectId(req.body.watchlistId);
+        var showId = ObjectId(req.body.showId);
+        db.updateOne(watchlist, {"_id": watchlistId}, {$pull: {shows: showId}, $inc: {item_count: -1}}, function() {});
+    },
+
+    saveWatchlist: function(req, res) {
+        var watchlistId = ObjectId(req.body.watchlistId);
+        var title = req.body.watchlist_name;
+        var description = req.body.watchlist_description;
+
+        db.updateOne(watchlist, {"_id": watchlistId}, {title: title, description: description}, function() {
+            res.redirect('/view-watchlist/' + req.body.watchlistId);
+        });
     },
 
     addToWatchlist: function(req, res) {
@@ -39,7 +68,7 @@ const WatchlistController = {
         db.updateOne(watchlist, {"_id": watchlistId}, {$push: {shows: showId}, $inc: {item_count: 1}}, function() {
             res.redirect("back");
         });
-    }
+    },
 };
 
 

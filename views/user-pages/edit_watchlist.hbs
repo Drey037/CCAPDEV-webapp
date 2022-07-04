@@ -28,32 +28,30 @@
 				<div class="edit-watchlist-wrapper">
 
                     <h1>Edit Your Watchlist</h1>
-                    <form action="/edit-watchlist" id="edit-watchlist-text" method = "post">
+                    <form action="/save-watchlist" id="edit-watchlist-text" method = "post">
                         <p>Watchlist Name:</p>
-                        <input type="text" name="watchlist-name" id="watchlist-name">
+                        <input type="text" name="watchlist_name" id="watchlist-name" value="{{title}}">
                         <p>Watchlist Description (optional):</p>
-                        <textarea name="watchlist-description" id="watchlist-description"></textarea>
+                        <textarea name="watchlist_description" id="watchlist-description">{{description}}</textarea>
+						<input type="hidden" name="watchlistId" value="{{watchlistId}}">
                     
                         <h1>In Your Watchlist</h1>
-
                         <!-- Items in watchlist -->
 						{{#if watchlist_item}}
 							{{#each watchlist_item}}
-								{{> in_watchlist_item}}
+								{{> in_watchlist_item edit=../edit title=this.title genre=this.genre description=this.description year=this.year image=this.image watchlistId=../watchlistId showId=this._id}}
 							{{/each}}
 						{{else}}
 							<h4 class="none-found">This watchlist is empty.</h4>
 						{{/if}}
 
-                        <div class="edit-watchlist-save" onclick="location.href='view-watchlist/{{id}}'"><button type="submit">Save</button></div>
+                        <div class="edit-watchlist-save"><button type="submit">Save</button></div>
                     </form>
-                    <button class="edit-watchlist-cancel">Cancel</button>
-
                 </div>
 					
 			</div>		
 		</div>
 	</div>
-
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
 </html>

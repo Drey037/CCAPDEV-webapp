@@ -227,23 +227,10 @@ $(document).ready(function () {
     });
 });
 
-$('.remove-in-watchlist-item').onclick(function() {
-    // parse title and year
-    // remove from DOM
-    // remove from db
-    
-});
-
-// var refno = $("#refno").val();
-// $.get('/getCheckRefNo', {refno: refno}, function(result) {
-//     if(result.refno == refno) {
-//         $('#refno').css('background-color', 'red');
-//         $('#error').text('Reference number already in the database');
-//         $('#submit').prop('disabled', true);
-//     }
-//     else if(result == "") {
-//         $('#refno').css('background-color', '#E3E3E3');
-//         $('#error').text('');
-//         $('#submit').prop('disabled', false);
-//     }
-// });
+function removeFromWatchlist(showId, watchlistId) {
+    $.ajax({
+        type: "POST",
+        url: "/remove-from-watchlist",
+        data: {showId: showId, watchlistId: watchlistId}
+    });
+}

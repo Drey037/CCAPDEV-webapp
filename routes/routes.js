@@ -28,7 +28,6 @@ app.get('/edit-settings', isPrivate, settingsValidation, userController.editSett
 app.get('/user-reviews', isPrivate, userController.userReviews);    // TODO
 app.get('/user-watchlists', isPrivate,  userController.userWatchlists);
 app.get('/view-watchlist/:watchlistId', userController.viewWatchlist);
-app.get('/edit-watchlist/:watchlistId', userController.editWatchlist);  // TODO
 
 app.post('/delete-user', isPrivate, userController.deleteUser);
 
@@ -43,9 +42,11 @@ app.post('/create-review', isPrivate, reviewController.createReview);
 app.get('/comment', commentController.comment);
 
 //For Watchlist
-app.get('/edit-watchlist', isPrivate, watchlistController.editWatchlist);
+app.post('/edit-watchlist', isPrivate, watchlistController.editWatchlist);
+app.post('/save-watchlist', watchlistController.saveWatchlist);
 app.post('/new-watchlist', isPrivate, watchlistController.newWatchlist);
 app.post('/add-to-watchlist', isPrivate, watchlistController.addToWatchlist);
+app.post('/remove-from-watchlist', watchlistController.removeFromWatchlist);
 
 
 module.exports = app;

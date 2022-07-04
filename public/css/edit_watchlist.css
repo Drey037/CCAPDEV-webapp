@@ -14,6 +14,7 @@
 
 #edit-watchlist-text input[type=text], #edit-watchlist-text textarea {
     width: 100%;
+    min-width: 660px;
     border-style: none;
     border-radius: 5px;
     padding: 10px;
@@ -87,6 +88,13 @@
     outline: none;
     font-weight: 600;
     font-size: 14px;
+}
+
+.edit-watchlist-wrapper h3 {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .edit-watchlist-save {
