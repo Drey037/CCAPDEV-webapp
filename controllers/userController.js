@@ -121,11 +121,17 @@ const userController = {
 
     deleteUser: function(req, res) {
         var username = req.session.username;
-        res.redirect("/logout");
-        
-        db.deleteOne(userModel, {username: username}, function() {
-            res.redirect('/');
-        })
+        //res.redirect("/logout");
+
+        if (req.session) {
+            req.session.destroy(() => {
+                res.clearCookie('connect.sid');
+
+                db.deleteOne(userModel, {username: username}, function() {
+                    res.redirect('/');
+                })
+            });
+        }
     }, 
 
     viewSettings: function(req, res) {
