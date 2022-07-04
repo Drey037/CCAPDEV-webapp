@@ -8,15 +8,23 @@ const ReviewController = {
     getCreateReview: function (req, res) {
         console.log('Opening new Review');
         db.findOne(show, {"_id": req.params.showId}, null, function(result) {
-            console.log(result);
-            res.render('create_review', {username: req.session.username, profile_pic: req.session.profile_pic, title: result.title, year: result.year, image: result.image });
+            res.render('create_review', {showId: req.params.showId, username: req.session.username, profile_pic: req.session.profile_pic, title: result.title, year: result.year, image: result.image });
         });
     },
 
     
     createReview: function (req, res) {
         console.log('Creating new Review');
+        var newReview = {
+            show: ObjectId(req.body.showId),
+            description: req.body.description,
+            user: req.session.user,
+            rating: parseInt(req.body.rating)
+        };
 
+        db.insertOne(review, newReview, function() {
+            res.redirect('/');
+        });
     },
 
     deleteReview: function(req, res) {

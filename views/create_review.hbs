@@ -4,11 +4,12 @@
 		<title>Reel Talk!</title>
 		<base href="/">
 		<link rel="stylesheet" href="css/navbar.css">
-		<link rel="stylesheet" href="css/overlays.css">
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/review_card.css" />
 		<link rel="stylesheet" href="css/watchlist_card.css" />
 		<link rel="stylesheet" href="css/watchlist_sidepane.css" />
+		<link rel="stylesheet" href="css/carousel.css">
+		<link rel="stylesheet" href="css/overlays.css">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/d3e3786cbe.js" crossorigin="anonymous"></script>
 	</head>
@@ -26,23 +27,34 @@
 		<div class="main-wrapper">
 			<h1 class="header-texts">Create a New Review</h1>
 			<div class="main">
-				
-                <div id="new-review">
-                    <div class="poster-selection">
-                        <div class="poster-selection-wrapper">
-                            <img src="{{image}}" alt="Poster">
-                        </div>
-                    </div>
-                    <h2>{{title}} ({{year}})</h2>
-                    <div class="genres">
-                        <p>{{genre}}</p>
-                    </div>
-                    <form action="/create-review" method = "post">
-                    <textarea name="review-narrative" id="review-narrative" placeholder="Write a review here..."></textarea>
-                    <button id="reel-it" type = "submit">Reel It!</button>
-                    </form>
-                    <button class="cancel-review" onclick="location.href=/">Cancel</button>
-                </div>
+
+				<div class="carousel-item-box create-review-item-box">
+					<img src="{{image}}">
+					<div class="carousel-item-info create-review-item-info">
+						<h3>{{title}} ({{year}})</h3>
+						<div class="carousel-item-genres">
+							<p>{{genre}}</p>
+						</div>
+
+						<form action="/create-review" method="post">
+							<textarea name="description" id="review-narrative" placeholder="Write a review here..."></textarea>
+							<input type="hidden" name="showId" value="{{showId}}">
+							<p>Rating:</p>
+							<select name="rating" id="create-review-rating">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+							<div class="carousel-item-buttons">
+								<button id="reel-it" type="submit">Reel It!</button>
+								<button class="cancel-review" onclick="location.href=/">Cancel</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
 					
 			</div>		
 		</div>
