@@ -1,10 +1,10 @@
 <div class="watchlistcard">
     <div class="postpane-overlay-buttons">
-        <button id="watchlist-edit-button" class="postpane-overlay" onclick="location.href='/view-watchlist/{{this._id}}'" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
+        <button id="watchlist-edit-button" class="postpane-overlay" onclick="location.href='/view-watchlist/{{this._id}}/true'" title="Edit Watchlist"><i class="fa-solid fa-pencil"></i></button>
     </div>
     <div class="watchlistcardposterholder">
-        {{#each this.shows}}
-            <img src="{{this.image}}" class="watchlistcard"></img>
+        {{#each this.posters}}
+            <img src="{{this}}" class="watchlistcard"></img>
         {{/each}}
 
         {{#if this.greaterThanFour}}

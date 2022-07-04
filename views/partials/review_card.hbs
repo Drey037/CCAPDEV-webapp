@@ -7,7 +7,11 @@
     
     <!-- Review Bar -->
     <div class="review">
-        <a href="#" title="Visit Profile">{{username}}:</a>
+        {{#if otherUserId}}
+        <a href="/user-reviews/{{otherUserId}}" title="Visit Profile">{{username}}:</a>
+        {{else}}
+        <a href="/user-reviews" title="Visit Profile">{{username}}:</a>
+        {{/if}}
         
         <!-- Star Ratings -->
         <div class="stars">

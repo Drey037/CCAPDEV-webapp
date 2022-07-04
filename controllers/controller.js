@@ -3,11 +3,13 @@ const reviewModel = require('../database/Review');
 const db = require('../database/db');
 const User = require('../database/User-Info.js');
 const Show = require('../database/Show-Info');
+const { ObjectId } = require('mongodb');
 
 const controller = {
     getIndex: function(req, res) {
         db.findMany(reviewModel, {}, null, function(result) {
             var reviews = [];
+            var otherUserId = null;
 
             /*
             for (let i = 0; i , result.length; i++) {
@@ -20,7 +22,6 @@ const controller = {
             }
             */
             db.findOne(User, {"_id": req.session.user}, null, async function(data) {
-                var watchlist = null;
                 if(req.session.user != null) {
                     var populatedData = await data.populate("watchlists");
                     watchlist = populatedData.watchlists;
@@ -28,8 +29,12 @@ const controller = {
 
                 for (let i = 0; i < result.length; i++) {
                     db.findOne(User, {"_id": result[i].user}, null, async function(userData) {
+                        var otherUserId = null;
                         if (userData != null) {
                             var username = userData.username;
+                            var userId = ObjectId(userData._id);
+                            if(req.session.user != userId)
+                                otherUserId = userId;
                         }
                         else {
                             var username = "Deleted User";
@@ -50,7 +55,8 @@ const controller = {
                                 description: description,
                                 username: username,
                                 reviewID: result[i].id,
-                                showID: result[i].show
+                                showID: result[i].show,
+                                otherUserId: otherUserId
                             });
 
                             if (i == result.length-1) {

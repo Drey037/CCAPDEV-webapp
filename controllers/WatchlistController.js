@@ -54,7 +54,7 @@ const WatchlistController = {
         var description = req.body.watchlist_description;
 
         db.updateOne(watchlist, {"_id": watchlistId}, {title: title, description: description}, function() {
-            res.redirect('/view-watchlist/' + req.body.watchlistId);
+            res.redirect('/view-watchlist/' + req.body.watchlistId + "/false");
         });
     },
 

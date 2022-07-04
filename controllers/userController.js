@@ -141,11 +141,6 @@ const userController = {
         }
     },
 
-    // NOT TESTED; NEED REVIEWS
-    viewWatchlist: function(req, res) {
-
-    },
-
     // NOT DONE
     userReviews: function(req, res) {
         if (req.session) {
@@ -193,6 +188,10 @@ const userController = {
                 for(var i = 0; i < populatedResults.watchlists.length; i++) {
                     populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
                     populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
+                    populatedWatchlists[i].posters = [];
+                    for(var j = 0; (j < 4 && j < populatedWatchlists[i].item_count); j++) {
+                        populatedWatchlists[i].posters.push(populatedWatchlists[i].shows[j].image);
+                    }
                 }
 
                 response.watchlist = populatedWatchlists;
@@ -266,6 +265,43 @@ const userController = {
 
         db.updateOne(userModel, query, update, function() {
             res.redirect('/account-settings');
+        });
+    },
+
+    otherUserReviews: function(req, res) {
+        var userId = ObjectId(req.params.userId);
+        var response = {
+            userId: userId
+        }
+        res.render('user-pages-other/user_reviews_other', response);
+    },
+
+    otherUserWatchlists: function(req, res) {
+        var userId = ObjectId(req.params.userId);
+        db.findOne(userModel, { "_id": userId }, null, async (result) => {
+            var response = {
+                username: result.username,
+                gender: result.gender,
+                numPosts: result.numPosts,
+                numComments: result.numComments,
+                profile_pic: result.profile_pic,
+                watchlist: [],
+            };
+
+            var populatedResults = await result.populate('watchlists');
+            var populatedWatchlists = [];
+
+            for(var i = 0; i < populatedResults.watchlists.length; i++) {
+                populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
+                populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
+                populatedWatchlists[i].posters = [];
+                for(var j = 0; (j < 4 && j < populatedWatchlists[i].item_count); j++) {
+                    populatedWatchlists[i].posters.push(populatedWatchlists[i].shows[j].image);
+                }
+            }
+
+            response.watchlist = populatedWatchlists;
+            res.render('user-pages-other/user_watchlists_other', response);
         });
     }
 };

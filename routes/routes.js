@@ -27,7 +27,11 @@ app.get('/edit-settings', isPrivate, settingsValidation, userController.editSett
 
 app.get('/user-reviews', isPrivate, userController.userReviews);    // TODO last
 app.get('/user-watchlists', isPrivate,  userController.userWatchlists);
-app.get('/view-watchlist/:watchlistId', userController.viewWatchlist);
+app.get('/view-watchlist/:watchlistId/:other', userController.viewWatchlist);
+
+// For other users
+app.get('/user-reviews/:userId', userController.otherUserReviews);
+app.get('/user-watchlists/:userId',  userController.otherUserWatchlists);
 
 app.post('/delete-user', isPrivate, userController.deleteUser);
 
@@ -35,7 +39,6 @@ app.post('/delete-user', isPrivate, userController.deleteUser);
 app.post('/save-settings', isPrivate, userController.saveSettings);
 
 //For reviews
-// app.get('/get-create-review', isPrivate, reviewController.getCreateReview);
 app.get('/get-create-review/:showId', isPrivate, reviewController.getCreateReview);
 app.post('/create-review', isPrivate, reviewController.createReview);
 app.get('/get-review-page/:reviewId', reviewController.getReviewPage);
