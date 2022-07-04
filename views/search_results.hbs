@@ -94,7 +94,7 @@
 					<!-- Review Cards -->
 					{{#if review}}
 						{{#each review}}
-							{{> review_card}}
+							{{> review_card username=../username rating=this.rating description=this.description title=this.show.title genre=this.show.genre poster=this.show.image showID=this.show._id}}
 						{{/each}}
 					{{else}}
 						<h4 class="none-found">Oops! No reviews found.</h4>

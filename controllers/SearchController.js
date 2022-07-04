@@ -12,7 +12,15 @@ const SearchController = {
     search: function(req, res) {
         console.log("In SearchController.search");
         var searchQuery = req.query.searchQuery;
-        var response = {active: null, carousel_items: [], review: null, watchlist: [], username: req.session.username, profile_pic: req.session.profile_pic, id: req.session.user};
+        var response = {
+            active: null,
+            carousel_items: [],
+            review: [],
+            watchlist: [],
+            username: req.session.username,
+            profile_pic: req.session.profile_pic,
+            id: req.session.user
+        };
 
         var titleSearchArr = [];
         searchQuery.split(" ").forEach(element => {
@@ -35,9 +43,12 @@ const SearchController = {
                 var reviewQuery = {$or: reviewSearchArr};
     
                 // Gets reviews from each returned title
-                db.findMany(Review, reviewQuery, null, function(data) {
-                    if(data.length > 0)
-                        response.review = data;
+                db.findMany(Review, reviewQuery, null, async function(data) {
+                    if(data.length > 0) {
+                        for(var i = 0; i < data.length; i++) {
+                            response.review.push(await data[i].populate("show"));
+                        }
+                    }
 
                     // Gets user's watchlists
                     db.findOne(User, {"_id": req.session.user}, null, async function(data) {
@@ -60,7 +71,15 @@ const SearchController = {
         console.log("In SearchController.searchGenre");
         var category = req.params.category
         var genre = req.params.genre.toLowerCase();
-        var response = {active: null, carousel_items: [], review: null, watchlist: [], username: req.session.username, profile_pic: req.session.profile_pic, id: req.session.user};
+        var response = {
+            active: null,
+            carousel_items: [],
+            review: [],
+            watchlist: [],
+            username: req.session.username,
+            profile_pic: req.session.profile_pic,
+            id: req.session.user
+        };
 
         if(category == "Movies")
             category = "movie";
@@ -84,9 +103,12 @@ const SearchController = {
                 var reviewQuery = {$or: reviewSearchArr};
     
                 // Gets reviews from each returned title
-                db.findMany(Review, reviewQuery, null, function(data) {
-                    if(data.length > 0)
-                        response.review = data;
+                db.findMany(Review, reviewQuery, null, async function(data) {
+                    if(data.length > 0) {
+                        for(var i = 0; i < data.length; i++) {
+                            response.review.push(await data[i].populate("show"));
+                        }
+                    }
 
                     // Gets user's watchlists
                     if(req.session.user != null) {
