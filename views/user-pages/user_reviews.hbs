@@ -40,8 +40,8 @@
 				<div class="postarea">
 					<!-- Review Cards -->
 					{{#if reviews}}
-						{{#each review}}
-							{{> review_card}}
+						{{#each reviews}}
+							{{> review_card username=../username rating=this.rating description=this.description title=this.show.title genre=this.show.genre poster=this.show.image showID=this.show._id}}
 						{{/each}}
 					{{else}}
 						<h4 class="none-found">You haven't made any reviews yet.</h4>

@@ -25,7 +25,7 @@ app.get('/search-genre/:category/:genre', SearchController.searchGenre);
 app.get('/account-settings', isPrivate,  userController.viewSettings);
 app.get('/edit-settings', isPrivate, settingsValidation, userController.editSettings);
 
-app.get('/user-reviews', isPrivate, userController.userReviews);    // TODO last
+app.get('/user-reviews', isPrivate, userController.userReviews);
 app.get('/user-watchlists', isPrivate,  userController.userWatchlists);
 app.get('/view-watchlist/:watchlistId/:other', userController.viewWatchlist);
 

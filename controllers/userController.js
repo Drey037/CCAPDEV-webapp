@@ -141,32 +141,26 @@ const userController = {
         }
     },
 
-    // NOT DONE
     userReviews: function(req, res) {
         if (req.session) {
-            // db.findOne(userModel, { username: req.session.username }, null, async (result) => {
-            //     var response = {
-            //         username: result.username,
-            //         gender: result.gender,
-            //         numPosts: result.numPosts,
-            //         numComments: result.numComments,
-            //         profile_pic: result.profile_pic,
-            //         reviews: []
-            //     };
+            db.findOne(userModel, { "_id": req.session.user }, null, async (result) => {
+                var response = {
+                    username: result.username,
+                    gender: result.gender,
+                    numPosts: result.numPosts,
+                    numComments: result.numComments,
+                    profile_pic: result.profile_pic,
+                    reviews: []
+                };
 
-            //     var populatedResults = await result.populate('reviews');
-            //     var populatedReviews = [];
+                var populatedResults = await result.populate('reviews');
 
-            //     for(var i = 0; i < result.reviews.length; i++) {
-            //         var review = await populatedResults.reviews[i].populate('show').populate('comments').populate('user');
-            //         populatedReviews.push(review);
-            //     }
-
-            //     response.reviews = populatedReviews;
-
-            //     res.render('user-pages/user_reviews', response);
-            // });
-            res.render('user-pages/user_reviews');
+                for(var i = 0; i < result.reviews.length; i++) {
+                    var populatedReview = await populatedResults.reviews[i].populate('show');
+                    response.reviews.push(populatedReview);
+                }
+                res.render('user-pages/user_reviews', response);
+            });
         }
     },
 
@@ -270,10 +264,27 @@ const userController = {
 
     otherUserReviews: function(req, res) {
         var userId = ObjectId(req.params.userId);
-        var response = {
-            userId: userId
-        }
-        res.render('user-pages-other/user_reviews_other', response);
+        db.findOne(userModel, { "_id": userId }, null, async (result) => {
+            var response = {
+                userId: userId,
+                username: result.username,
+                gender: result.gender,
+                numPosts: result.numPosts,
+                numComments: result.numComments,
+                profile_pic: result.profile_pic,
+                reviews: []
+            };
+
+            console.log(result.reviews);
+
+            var populatedResults = await result.populate('reviews');
+
+            for(var i = 0; i < result.reviews.length; i++) {
+                var populatedReview = await populatedResults.reviews[i].populate('show');
+                response.reviews.push(populatedReview);
+            }
+            res.render('user-pages-other/user_reviews_other', response);
+        });
     },
 
     otherUserWatchlists: function(req, res) {
