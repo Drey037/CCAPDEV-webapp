@@ -58,7 +58,9 @@ const ReviewController = {
                 description: show.description,
                 director: show.director,
                 cast: show.cast,
-                review_content: result.description
+                review_content: result.description,
+                username: req.session.username,
+                profile_pic: req.session.profile_pic
             };
 
             db.findOne(user, {"_id": req.session.user}, null, function(result) {

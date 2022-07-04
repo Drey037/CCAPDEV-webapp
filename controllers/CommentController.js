@@ -13,11 +13,15 @@ const CommentController = {
     },
     
     comment: function (req, res) {
-       var reply = req.body.user-comment;
-       var doc = {user:req.session.user,comment:reply};
-       db.insertOne(Comment, reply, function(result) {
-        res.redirect('/get-review-page/'+req.showID);
+       var reply = req.body.userComment;
+       var doc = {
+        user: req.session.user,
+        comment: reply};
 
+        console.log(req.body.showID);
+        console.log(reply);
+       db.insertOne(Comment, doc, function(result) {
+            res.redirect('/get-review-page/'+ req.body.showID);
        })
     },
 
