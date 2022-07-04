@@ -101,6 +101,14 @@
     margin-top: 50px;
 }
 
+#delete-watchlist {
+    margin-top: 10px;
+}
+
+#delete-watchlist button {
+    background-color: #F05454;
+}
+
 /* For the overlay when hovering over poster */
 .in-watchlist-img-wrapper {
     position: relative;
