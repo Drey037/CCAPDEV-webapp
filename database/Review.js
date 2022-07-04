@@ -7,7 +7,7 @@ const ReviewSchema = new mongoose.Schema({
     },
     comments: [{
         type: mongoose.Schema.ObjectId, ref: 'Comment',
-        required: true
+        //required: true
     }],
     user: {
         type: mongoose.Schema.ObjectId, ref: 'UserInfo',
