@@ -149,6 +149,34 @@ const userController = {
     // NOT DONE
     userReviews: function(req, res) {
         if (req.session) {
+            // db.findOne(userModel, { username: req.session.username }, null, async (result) => {
+            //     var response = {
+            //         username: result.username,
+            //         gender: result.gender,
+            //         numPosts: result.numPosts,
+            //         numComments: result.numComments,
+            //         profile_pic: result.profile_pic,
+            //         reviews: []
+            //     };
+
+            //     var populatedResults = await result.populate('reviews');
+            //     var populatedReviews = [];
+
+            //     for(var i = 0; i < result.reviews.length; i++) {
+            //         var review = await populatedResults.reviews[i].populate('show').populate('comments').populate('user');
+            //         populatedReviews.push(review);
+            //     }
+
+            //     response.reviews = populatedReviews;
+
+            //     res.render('user-pages/user_reviews', response);
+            // });
+            res.render('user-pages/user_reviews');
+        }
+    },
+
+    userWatchlists: function(req, res) {
+        if (req.session) {
             db.findOne(userModel, { username: req.session.username }, null, async (result) => {
                 var response = {
                     username: result.username,
@@ -156,56 +184,22 @@ const userController = {
                     numPosts: result.numPosts,
                     numComments: result.numComments,
                     profile_pic: result.profile_pic,
-                    reviews: []
+                    watchlist: []
                 };
 
-                var populatedResults = await result.populate('reviews');
-                var populatedReviews = [];
+                var populatedResults = await result.populate('watchlists');
+                var populatedWatchlists = [];
 
-                for(var i = 0; i < result.reviews.length; i++) {
-                    var review = await populatedResults.reviews[i].populate('show').populate('comments').populate('user');
-                    populatedReviews.push(review);
+                for(var i = 0; i < populatedResults.watchlists.length; i++) {
+                    populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
+                    populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
                 }
 
-                response.reviews = populatedReviews;
-
-                res.render('user-pages/user_reviews', response);
+                response.watchlist = populatedWatchlists;
+                
+                res.render('user-pages/user_watchlists', response);
             });
         }
-    },
-
-    userWatchlists: function(req, res) {
-        var userId = req.session.user;
-        if(req.params.userId != 'own')
-            userId = ObjectId(req.params.userId);
-
-        var query = {"_id": userId};
-
-        db.findOne(userModel, query, null, async (result) => {
-            var response = {
-                username: result.username,
-                gender: result.gender,
-                numPosts: result.numPosts,
-                numComments: result.numComments,
-                profile_pic: result.profile_pic,
-                watchlist: []
-            };
-
-            var populatedResults = await result.populate('watchlists');
-            var populatedWatchlists = [];
-
-            for(var i = 0; i < populatedResults.watchlists.length; i++) {
-                populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
-                populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
-            }
-
-            response.watchlist = populatedWatchlists;
-            
-            if(req.params.userId == 'own')
-                res.render('user-pages/user_watchlists', response);
-            else
-                res.render('user-pages-other/user_watchlists_other', response);
-        });
     },
 
     viewWatchlist: function(req, res) {

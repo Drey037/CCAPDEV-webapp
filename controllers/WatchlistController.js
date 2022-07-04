@@ -54,7 +54,7 @@ const WatchlistController = {
         var description = req.body.watchlist_description;
 
         db.updateOne(watchlist, {"_id": watchlistId}, {title: title, description: description}, function() {
-            res.redirect('/view-watchlist/' + req.body.watchlistId + '/own');
+            res.redirect('/view-watchlist/' + req.body.watchlistId);
         });
     },
 
@@ -73,7 +73,7 @@ const WatchlistController = {
     deleteWatchlist: function(req, res) {
         var watchlistId = ObjectId(req.params.watchlistId);
         db.deleteOne(watchlist, {"_id": watchlistId}, function() {
-            res.redirect('/user-watchlists/own');
+            res.redirect('/user-watchlists');
         });
     }
 };
