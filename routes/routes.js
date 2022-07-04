@@ -48,6 +48,7 @@ app.post('/save-watchlist', watchlistController.saveWatchlist);
 app.post('/new-watchlist', isPrivate, watchlistController.newWatchlist);
 app.post('/add-to-watchlist', isPrivate, watchlistController.addToWatchlist);
 app.post('/remove-from-watchlist', watchlistController.removeFromWatchlist);
+app.get('/delete-watchlist/:watchlistId', watchlistController.deleteWatchlist);
 
 
 module.exports = app;

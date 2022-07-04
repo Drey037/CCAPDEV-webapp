@@ -69,6 +69,13 @@ const WatchlistController = {
             res.redirect("back");
         });
     },
+
+    deleteWatchlist: function(req, res) {
+        var watchlistId = ObjectId(req.params.watchlistId);
+        db.deleteOne(watchlist, {"_id": watchlistId}, function() {
+            res.redirect('/user-watchlists');
+        });
+    }
 };
 
 
