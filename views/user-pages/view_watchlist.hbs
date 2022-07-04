@@ -18,8 +18,8 @@
     <!-- To add reviews/watchlist tab -->
 
     <div class="usertab">
-			<button id = "usertabbutton-reviews" class="inactive"  onclick= "location.href = '/user-reviews'">Reviews</button>
-			<button id = "usertabbutton-collections" class="active" onclick= "location.href = '/user-watchlists'">Watchlists</button>
+			<button id = "usertabbutton-reviews" class="inactive"  onclick= "location.href = '/user-reviews/own'">Reviews</button>
+			<button id = "usertabbutton-collections" class="active" onclick= "location.href = '/user-watchlists/own'">Watchlists</button>
 	</div>
 
 	<!-- This part is the main page where the posts and stuff are located -->
@@ -41,7 +41,7 @@
 					<form action="/edit-watchlist" method="post">
 						<button class="edit-watchlist-cancel" type="submit" value="{{watchlistId}}" name="watchlistId">Edit</button>
 					</form>
-                    <button class="edit-watchlist-cancel" onclick="location.href='/user-watchlists'">Back</button>
+                    <button class="edit-watchlist-cancel" onclick="location.href='/user-watchlists/own'">Back</button>
                 </div>
 					
 			</div>		

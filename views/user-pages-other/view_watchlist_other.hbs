@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Reel Talk!</title>
+		<base href="/">
 		<link rel="stylesheet" href="css/navbar.css">
 		<link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/edit_watchlist.css">
@@ -21,8 +22,8 @@
     <!-- To add reviews/watchlist tab -->
 
     <div class="usertab">
-			<button id = "usertabbutton-reviews" class="inactive" onclick= "location.href = 'User Profile Reviews.html'">Reviews</button>
-			<button id = "usertabbutton-collections" class="active" onclick= "location.href = 'User Profile Collections.html'">Watchlists</button>
+		<button id = "usertabbutton-reviews" class="inactive"  onclick= "location.href = '/user-reviews/{{userId}}'">Reviews</button>
+		<button id = "usertabbutton-collections" class="active" onclick= "location.href = '/user-watchlists/{{userId}}'">Watchlists</button>
 	</div>
 
 	<!-- This part is the main page where the posts and stuff are located -->
@@ -35,7 +36,7 @@
                     <h3>{{description}}</h3>
                     {{#if watchlist_item}}
 						{{#each watchlist_item}}
-							{{> in_watchlist_item}}
+							{{> in_watchlist_item edit=../edit title=this.title genre=this.genre description=this.description year=this.year image=this.image}}
 						{{/each}}
 					{{else}}
 						<h4 class="none-found">This watchlist is empty.</h4>
