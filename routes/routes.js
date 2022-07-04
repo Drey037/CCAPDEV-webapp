@@ -45,7 +45,7 @@ app.get('/get-review-page/:reviewId', reviewController.getReviewPage);
 
 
 //For comment
-app.get('/comment', commentController.comment);
+app.post('/comment', commentController.comment);
 
 //For Watchlist
 app.post('/edit-watchlist', isPrivate, watchlistController.editWatchlist);
