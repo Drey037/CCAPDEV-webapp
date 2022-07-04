@@ -24,7 +24,7 @@ const controller = {
             db.findOne(User, {"_id": req.session.user}, null, async function(data) {
                 if(req.session.user != null) {
                     var populatedData = await data.populate("watchlists");
-                    watchlist = populatedData.watchlists;
+                    var watchlist = populatedData.watchlists;
                 }
 
                 for (let i = 0; i < result.length; i++) {
