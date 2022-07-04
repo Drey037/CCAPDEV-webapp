@@ -175,34 +175,42 @@ const userController = {
     },
 
     userWatchlists: function(req, res) {
-        if (req.session) {
-            db.findOne(userModel, { username: req.session.username }, null, async (result) => {
-                var response = {
-                    username: result.username,
-                    gender: result.gender,
-                    numPosts: result.numPosts,
-                    numComments: result.numComments,
-                    profile_pic: result.profile_pic,
-                    watchlist: []
-                };
+        var userId = req.session.user;
+        if(req.params.userId != 'own')
+            userId = ObjectId(req.params.userId);
 
-                var populatedResults = await result.populate('watchlists');
-                var populatedWatchlists = [];
+        var query = {"_id": userId};
 
-                for(var i = 0; i < populatedResults.watchlists.length; i++) {
-                    populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
-                    populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
-                }
+        db.findOne(userModel, query, null, async (result) => {
+            var response = {
+                username: result.username,
+                gender: result.gender,
+                numPosts: result.numPosts,
+                numComments: result.numComments,
+                profile_pic: result.profile_pic,
+                watchlist: []
+            };
 
-                response.watchlist = populatedWatchlists;
-                
+            var populatedResults = await result.populate('watchlists');
+            var populatedWatchlists = [];
+
+            for(var i = 0; i < populatedResults.watchlists.length; i++) {
+                populatedWatchlists.push(await populatedResults.watchlists[i].populate('shows'));
+                populatedWatchlists[i].greaterThanFour = (populatedWatchlists[i].item_count > 4);
+            }
+
+            response.watchlist = populatedWatchlists;
+            
+            if(req.params.userId == 'own')
                 res.render('user-pages/user_watchlists', response);
-            });
-        }
+            else
+                res.render('user-pages-other/user_watchlists_other', response);
+        });
     },
 
     viewWatchlist: function(req, res) {
         var watchlistId = ObjectId(req.params.watchlistId);
+        var otherUser = req.params.other == "true";
         db.findOne(watchlist, {"_id": watchlistId}, null, async function(result) {
             var response = {
                 watchlistId: req.params.watchlistId,
@@ -214,7 +222,11 @@ const userController = {
 
             var populatedShows = await result.populate('shows');
             response.watchlist_item = populatedShows.shows;
-            res.render('user-pages/view_watchlist', response);
+
+            if(otherUser)
+                res.render('user-pages-other/view_watchlist_other', response);
+            else
+                res.render('user-pages/view_watchlist', response);
         });
     },
 
