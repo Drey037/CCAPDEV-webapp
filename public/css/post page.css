@@ -99,8 +99,7 @@ textarea.review-comment-textbox {
     resize: none;
     align-self: flex-end;
 
-    margin-right: 10px;
-    margin-top: 10px;
+    margin: 10px;
 
     border-bottom: 2px solid #C4C4C4;
     border-top-style: hidden;
