@@ -6,13 +6,19 @@ const User = require('../database/User-Info.js');
 const controller = {
     getIndex: function(req, res) {
         db.findMany(reviewModel, {}, null, function(result) {
+            var users = await result.populate("user");
+            var shows = await result.populate("show");
             db.findOne(User, {"_id": req.session.user}, null, async function(data) {
                 var watchlist = null;
                 if(req.session.user != null) {
                     var populatedData = await data.populate("watchlists");
                     watchlist = populatedData.watchlists;
                 }
-                res.render('index', {watchlist: watchlist, username: req.session.username, profile_pic: req.session.profile_pic, review: result} );
+
+                
+
+                console.log("Logged in: " + req.session.username);
+                res.render('index', {watchlist: watchlist, username: req.session.username, profile_pic: req.session.profile_pic, review: result, show: shows.show, user: users.user} );
             });
         })
         

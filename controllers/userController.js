@@ -120,7 +120,10 @@ const userController = {
     },
 
     deleteUser: function(req, res) {
-        db.deleteOne(userModel, {username: req.session.username}, function() {
+        var username = req.session.username;
+        res.redirect("/logout");
+        
+        db.deleteOne(userModel, {username: username}, function() {
             res.redirect('/');
         })
     }, 

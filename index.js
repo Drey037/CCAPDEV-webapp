@@ -23,6 +23,17 @@ app.use(fileUpload());
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
+hbs.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < parseInt(n); ++i) {
+        block.data.index = i;
+        block.data.first = i === 0;
+        block.data.last = i === (n - 1);
+        accum += block.fn(this);
+    }
+    return accum;
+});
+
 
 //Session server config
 app.use(session({
