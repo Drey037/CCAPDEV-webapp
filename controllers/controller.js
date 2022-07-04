@@ -5,7 +5,7 @@ const User = require('../database/User-Info.js');
 
 const controller = {
     getIndex: function(req, res) {
-        db.findMany(reviewModel, {}, null, function(result) {
+        db.findMany(reviewModel, {}, null, async function(result) {
             var users = await result.populate("user");
             var shows = await result.populate("show");
             db.findOne(User, {"_id": req.session.user}, null, async function(data) {

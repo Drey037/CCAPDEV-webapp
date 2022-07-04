@@ -1,4 +1,5 @@
 const review = require ('../database/Review');
+const user = require('../database/User-Info');
 const show = require ('../database/Show-Info');
 const db = require ('../database/db');
 const { ObjectId } = require('mongodb');
@@ -22,8 +23,11 @@ const ReviewController = {
             rating: parseInt(req.body.rating)
         };
 
-        db.insertOne(review, newReview, function() {
-            res.redirect('/');
+        db.insertOne(review, newReview, function(result) {
+            db.updateOne(user, {"_id": req.session.user}, {$push: {reviews: result}}, function(){
+                res.redirect('/');
+            })
+            
         });
     },
 
