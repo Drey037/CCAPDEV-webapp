@@ -11,15 +11,13 @@
         
         <!-- Star Ratings -->
         <div class="stars">
-            <div class="star-gold"></div>
-            <div class="star-gold"></div>
-            <div class="star-gold"></div>
-            <div class="star-gold"></div>
-            <div class="star-gold"></div>
+            {{#times rating}}
+                <div class="star-gold"></div>
+            {{/times}}
         </div>
         
         <!-- The review of the post -->
-        <p class="review">{{review_preview}}</p>
+        <p class="review">{{description}}</p>
     </div>
     
     <!-- Title Bar of the review -->
