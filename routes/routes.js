@@ -35,7 +35,8 @@ app.post('/delete-user', isPrivate, userController.deleteUser);
 app.post('/save-settings', isPrivate, userController.saveSettings);
 
 //For reviews
-app.get('/get-create-review', isPrivate, reviewController.getCreateReview);
+// app.get('/get-create-review', isPrivate, reviewController.getCreateReview);
+app.get('/get-create-review/:showId', isPrivate, reviewController.getCreateReview);
 app.post('/create-review', isPrivate, reviewController.createReview);
 
 //For comment

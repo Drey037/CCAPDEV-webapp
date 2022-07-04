@@ -204,28 +204,27 @@ function deleteUser() {
 } 
 
 
+// $(document).ready(function () {
+//     $('#carousel-inner').on('click', '.createReview', function () {
+//         var details = $.trim($(this).parent().siblings('h3').html());
 
-$(document).ready(function () {
-    $('#carousel-inner').on('click', '.createReview', function () {
-        var details = $.trim($(this).parent().siblings('h3').html());
+//         var title = details.split("(")[0];
+//         title = title.substring(0, title.length - 1);
 
-        var title = details.split("(")[0];
-        title = title.substring(0, title.length - 1);
+//         var year = details.split("(")[1];
+//         year = year.split(")")[0];
 
-        var year = details.split("(")[1];
-        year = year.split(")")[0];
-
-        console.log(title);
-        console.log(year);
+//         console.log(title);
+//         console.log(year);
 
         
-        $.ajax({
-            type: "GET",
-            url: "/get-create-review",
-            data: {title: title, year: year},
-        });
-    });
-});
+//         $.ajax({
+//             type: "GET",
+//             url: "/get-create-review",
+//             data: {title: title, year: year},
+//         });
+//     });
+// });
 
 function removeFromWatchlist(showId, watchlistId) {
     $.ajax({

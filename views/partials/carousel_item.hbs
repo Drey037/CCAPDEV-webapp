@@ -9,7 +9,8 @@
             <p>{{description}}</p>
             <div class="carousel-item-buttons">
                 <button onclick="addToWatchlist('{{_id}}')">Add to Watchlist</button>
-                <button class="createReview">Create review</button>
+                {{!-- <button class="createReview">Create review</button> --}}
+                <button class="createReview" onclick="location.href='/get-create-review/{{_id}}'">Create review</button>
             </div>
         </div>
     </div>
