@@ -48,7 +48,9 @@ const controller = {
                                 genre: genre,
                                 poster: poster,
                                 description: description,
-                                username: username
+                                username: username,
+                                reviewID: result[i].id,
+                                showID: result[i].show
                             });
 
                             if (i == result.length-1) {

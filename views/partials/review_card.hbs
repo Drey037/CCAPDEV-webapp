@@ -1,7 +1,7 @@
 <div class="postpane">
     <div class="postpane-overlay-buttons">
         <button class="postpane-overlay" onclick="AddOverlayOn()" title="Add to Watchlist"><i class="fa-solid fa-plus"></i></button>
-        <button class="postpane-overlay" onclick="NewReviewOverlayOn()" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
+        <button class="postpane-overlay" onclick="location.href='get-create-review/{{showID}}'" title="Create a Review"><i class="fa-solid fa-pencil"></i></button>
     </div>
     <img src="{{poster}}" class="reviewpic">
     
@@ -27,7 +27,7 @@
         <ul class="titlebar">
         <li><a href="#">{{genre}}</a></li>
     
-        <button class="comment">Write a Comment</button>
+        <button class="comment" onclick="location.href='/get-review-page/{{reviewID}}'">Write a Comment</button>
     </div>
 
 </div>
