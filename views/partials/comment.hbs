@@ -1,10 +1,10 @@
 <div class="review-comments">
 
-    <img src="{{profile_picture}}" class="user-comment-pp">
+    <img src="{{profile_pic}}" class="user-comment-pp">
     <div class="review-comment-area">
 
         <!-- Username and Date Commented-->
-        <p class="comment-username">{{username}}</p> <p class="comment-date">{{date}}</p>
+        <p class="comment-username">{{username}}</p>
         <br>
 
         <!-- User's Comment -->
@@ -13,9 +13,9 @@
 
         <div class="rating-thumbs">
             <!-- Thumbs up -->
-                <i class="fa fa-thumbs-up fa-3x like" onclick="clickrating('up1')" aria-hidden="true" id="upbutton1"></i></a> <input type="text" class="rating-numbers" id="up1" value="21" readonly/>
+                <i class="fa fa-thumbs-up fa-3x like" onclick="clickrating('up1')" aria-hidden="true" id="upbutton1"></i></a> <input type="text" class="rating-numbers" id="up1" value="{{likes}}" readonly/>
             <!-- Thumbs down -->
-                <i class="fa fa-thumbs-down fa-3x like" onclick="clickrating('down1')" aria-hidden="true" id="downbutton1"></i> <input type="text" class="rating-numbers" id="down1" value="1" readonly/>
+                <i class="fa fa-thumbs-down fa-3x like" onclick="clickrating('down1')" aria-hidden="true" id="downbutton1"></i> <input type="text" class="rating-numbers" id="down1" value="{{dislikes}}" readonly/>
         </div>
     </div>
 </div>

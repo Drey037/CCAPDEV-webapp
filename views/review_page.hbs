@@ -48,30 +48,35 @@
 				</div>
 
 				<!--User will enter the comment here-->
+				{{#if username}}
 				<div class="review-comments-container">
 					<div class="user-comment">
 
 						<img src="{{user_image}}" class="user-comment-pp">
-						<form action="/comment" method = "post">
+						<!-- <form action="/comment" method = "post"> -->
 						<textarea class="review-comment-textbox" placeholder="Write a reply..." name="userComment" id="userComment"></textarea>
-						<button class="reply-comment" type="submit">Reply</button>
-						</form>
+						<button class="reply-comment" onclick="addComment({{{json showid}}}, {{{json reviewid}}})">Reply</button>
+						<!-- </form> -->
 
 					</div>
 				</div>
-
-				{{#if comments}}
-					{{#each comments}}
-						{{> comment}}
-					{{/each}}
-				{{else}}
-					<h4 class="none-found">No comments</h4>
 				{{/if}}
+
+				<div id="commentsbox">
+					{{#if comments}}
+						{{#each comments}}
+							{{> comment}}
+						{{/each}}
+					{{else}}
+						<h4 class="none-found">No comments</h4>
+					{{/if}}
+				</div>
 				
 			</div>
 		</div>
 	</div>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
 	<script src="js/main.js"></script>
 	</body>
 </html>

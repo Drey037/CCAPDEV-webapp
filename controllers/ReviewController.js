@@ -3,6 +3,8 @@ const user = require('../database/User-Info');
 const show = require ('../database/Show-Info');
 const db = require ('../database/db');
 const { ObjectId } = require('mongodb');
+const Comment = require('../database/Comment');
+const { comment } = require('./CommentController');
 
 
 const ReviewController = {
@@ -50,28 +52,79 @@ const ReviewController = {
         db.findOne(review, {"_id": reviewId}, {}, async function(result) {
             var populatedReview = await result.populate("show");
             var show = populatedReview.show;
-            var response = {
-                image: show.image,
-                video: show.video,
-                title: show.title,
-                year: show.year,
-                description: show.description,
-                director: show.director,
-                cast: show.cast,
-                review_content: result.description,
-                username: req.session.username,
-                profile_pic: req.session.profile_pic
-            };
+            var comments = [];
 
-            db.findOne(user, {"_id": req.session.user}, null, function(result) {
-                response.user_image = result.profile_pic;
-                res.render('review_page', response);
-            });
 
-            
-        });
+             console.log(result);
 
-        
+            if (result.comments != null) {
+                for (let i = 0; i < result.comments.length; i++) {
+                    db.findOne(Comment, {"_id": result.comments[i]}, {}, async function(commentResult) {
+                        var user = commentResult.populate("user");
+
+                        if (user == null) {
+                            var username = "Deleted User";
+                            var image = "/images/profile_pic/default.jpg";
+                        }
+                        else {
+                            var username = user.username;
+                            var image = user.profile_pic;
+                        }
+
+                        comments.push ({
+                            username: username,
+                            profile_pic: image,
+                            content: commentResult.comment,
+                        });
+                            
+
+                        var response = {
+                            image: show.image,
+                            video: show.video,
+                            title: show.title,
+                            year: show.year,
+                            description: show.description,
+                            director: show.director,
+                            cast: show.cast,
+                            review_content: result.description,
+                            username: req.session.username,
+                            profile_pic: req.session.profile_pic,
+                            comments: comments
+                        };
+
+                        if (i == result.comments.length) {
+                            db.findOne(user, {"_id": req.session.user}, null, function(result) {
+                                response.user_image = result.profile_pic;
+                                res.render('review_page', response);
+                            });
+                        }
+
+                    });
+                }
+            }
+            else {
+                var response = {
+                    image: show.image,
+                    video: show.video,
+                    title: show.title,
+                    year: show.year,
+                    description: show.description,
+                    director: show.director,
+                    cast: show.cast,
+                    review_content: result.description,
+                    username: req.session.username,
+                    profile_pic: req.session.profile_pic,
+                    showid: show.id,
+                    reviewid: result.id
+                };
+
+                db.findOne(user, {"_id": req.session.user}, null, function(result) {
+                    response.user_image = result.profile_pic;
+                    res.render('review_page', response);
+                });
+
+            }
+        });   
     }
     
 };

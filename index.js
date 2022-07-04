@@ -34,6 +34,10 @@ hbs.registerHelper('times', function(n, block) {
     return accum;
 });
 
+hbs.registerHelper('json', function(context) {
+    return JSON.stringify(context).replace(/"/g, '&quot;');
+});
+
 
 //Session server config
 app.use(session({
