@@ -6,70 +6,72 @@ const Show = require('../database/Show-Info');
 const { ObjectId } = require('mongodb');
 
 const controller = {
-    getIndex: function(req, res) {
-        db.findMany(reviewModel, {}, null, function(result) {
-            var reviews = [];
+    getIndex: async function(req, res) {
+        let indexData = {
+            username: req.session.user,
+            profile_pic: req.session.profile_pic,
+            reviews: [],
+            watchlists: [],
+        };
+
+        // Gets all reviews
+        var raw_reviews = [];
+        await db.findMany(reviewModel, {}, null, function(result) {
+            raw_reviews = result;
             var otherUserId = null;
+        });
 
-            /*
-            for (let i = 0; i , result.length; i++) {
-                db.findOne(reviewModel, {"_id": result[i].id}, null, async function(reviewData) {
-
-                    var populatedData = await data.populate("watchlists");
-                    watchlist = populatedData.watchlists;
-                    reviews.push(userData);
-                });
+        // Gets logged in user
+        await db.findOne(User, {"_id": req.session.user}, null, async function(data) {
+            if(req.session.user != null) {
+                var populatedData = await data.populate("watchlists");
+                indexData.watchlists = populatedData.watchlists;
             }
-            */
-            db.findOne(User, {"_id": req.session.user}, null, async function(data) {
-                if(req.session.user != null) {
-                    var populatedData = await data.populate("watchlists");
-                    var watchlist = populatedData.watchlists;
+        });
+
+        // Gets User data of each review
+        var username = '';
+        for (let i = 0; i < raw_reviews.length; i++) {
+            await db.findOne(User, {"_id": raw_reviews[i].user}, null, function(userData) {
+                var otherUserId = null;
+                if (userData != null) {
+                    username = userData.username;
+                    var userId = ObjectId(userData._id);
+                    if(req.session.user != userId)
+                        otherUserId = userId;
+                }
+                else {
+                    username = "Deleted User";
                 }
 
-                for (let i = 0; i < result.length; i++) {
-                    db.findOne(User, {"_id": result[i].user}, null, async function(userData) {
-                        var otherUserId = null;
-                        if (userData != null) {
-                            var username = userData.username;
-                            var userId = ObjectId(userData._id);
-                            if(req.session.user != userId)
-                                otherUserId = userId;
-                        }
-                        else {
-                            var username = "Deleted User";
-                        }
-    
-                        db.findOne(Show, {"_id": result[i].show}, null, async function(showData) {
-                            var title = showData.title;
-                            var genre = showData.genre;
-                            var poster = showData.image;
-
-                            var description = result[i].description;
-                            description = description.substring(0, 200) + "...View more";
-    
-                            reviews.push({
-                                title: title,
-                                genre: genre,
-                                poster: poster,
-                                description: description,
-                                username: username,
-                                reviewID: result[i].id,
-                                showID: result[i].show,
-                                otherUserId: otherUserId
-                            });
-
-                            if (i == result.length-1) {
-                                console.log("Number of reviews is " + reviews.length);
-                                console.log("Logged in: " + req.session.username);
-                                res.render('index', {watchlist: watchlist, username: req.session.username, profile_pic: req.session.profile_pic, review: reviews} );
-                                //res.render('index', {watchlist: watchlist, username: req.session.username, profile_pic: req.session.profile_pic, review: result} );
-                            }
-                        });
-                    });
-                }
             });
-        })
+
+            // Gets Show data of each review
+            await db.findOne(Show, {"_id": raw_reviews[i].show}, null, async function(showData) {
+                var title = showData.title;
+                var genre = showData.genre;
+                var poster = showData.image;
+
+                var description = raw_reviews[i].description;
+                description = description.substring(0, 200) + "...View more";
+
+                indexData.reviews.push({
+                    title: title,
+                    genre: genre,
+                    poster: poster,
+                    description: description,
+                    username: username,
+                    reviewID: raw_reviews[i].id,
+                    showID: raw_reviews[i].show,
+                    otherUserId: otherUserId
+                });
+            });
+            
+        }
+            
+        console.log("Number of reviews is " + raw_reviews.length);
+        console.log("Logged in: " + req.session.username);
+        res.render('index', indexData);
         
     },
 

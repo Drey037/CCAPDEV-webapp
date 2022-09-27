@@ -3,10 +3,10 @@
 
     <div id="watchlist-container">
         <ul>
-            {{#if watchlist}}
+            {{#if watchlists}}
                 <form action="/add-to-watchlist" method="post">
                     <input class="add-to-watchlist-showId" type="hidden" name="showId">
-                {{#each watchlist}}
+                {{#each watchlists}}
                     <button name="watchlistId" value="{{this._id}}" class="watchlist add-to-watchlist-item"><p>{{this.title}}</p></button>
                 {{/each}}
                 </form>

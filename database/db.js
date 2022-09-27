@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const mongoose = require('mongoose');
-const url = process.env.MONGODB_URI;
+const url = process.env.MONGODB_LOCAL;
 
 //const url = 'mongodb://127.0.0.1/ReelTalkDB';     // Will have to change this for when we use MongoDB Atlas
 
@@ -46,7 +46,7 @@ const database = {
         });
     },
 
-    findOne: function(model, query, projection, callback) {
+    findOne: async function(model, query, projection, callback) {
         model.findOne(query, projection, function(error, result) {
             if(error) {
                 console.log(error);
@@ -56,9 +56,10 @@ const database = {
         });
     },
 
-    findMany: function(model, query, projection, callback) {
+    findMany: async function(model, query, projection, callback) {
         model.find(query, projection, function(error, result) {
             if(error) return callback(false);
+            console.log(typeof result);
             return callback(result);
         });
     },

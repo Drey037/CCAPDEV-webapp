@@ -42,7 +42,7 @@ hbs.registerHelper('json', function(context) {
 //Session server config
 app.use(session({
     secret: 'sefg93bfg3ut',
-    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
+    store: MongoStore.create({mongoUrl: process.env.MONGODB_LOCAL}),
     resave: false,
     saveUninitialized: true,
     cookies: {secure: false, maxAge: 1000 * 60 * 60 * 24 * 7}
