@@ -67,7 +67,7 @@ const SearchController = {
         
     },
 
-    searchGenre: function(req, res) {
+    searchGenre: async function(req, res) {
         console.log("In SearchController.searchGenre");
         var category = req.params.category
         var genre = req.params.genre.toLowerCase();
@@ -89,40 +89,34 @@ const SearchController = {
             category = "anime"
 
         // get all movie/show/anime of this genre
-        db.findMany(ShowInfo, {category: category, genre: genre}, null, function(data) {
-            if(data.length > 0) {
-                response.active = data[0];
-                if(data.length > 1)
-                    response.carousel_items = data.slice(1, data.length);
+        var found_shows = await ShowInfo.find({category: category, genre: genre});
+        
+        if(found_shows.length > 0) {
+            response.active = found_shows[0];
+            if(found_shows.length > 1)
+                response.carousel_items = found_shows.slice(1, found_shows.length);
+        }
 
-                var foundTitles = [response.active].concat(response.carousel_items);
-                var reviewSearchArr = [];
-                foundTitles.forEach(element => {
-                    reviewSearchArr.push({"show": element._id});
-                });
-                var reviewQuery = {$or: reviewSearchArr};
-    
-                // Gets reviews from each returned title
-                db.findMany(Review, reviewQuery, null, async function(data) {
-                    if(data.length > 0) {
-                        for(var i = 0; i < data.length; i++) {
-                            response.review.push(await data[i].populate("show"));
-                        }
-                    }
-
-                    // Gets user's watchlists
-                    if(req.session.user != null) {
-                        db.findOne(User, {"_id": req.session.user}, null, async function(data) {
-                            var populatedData = await data.populate("watchlists");
-                            response.watchlist = populatedData.watchlists;
-    
-                            res.render('search_results', response);
-                        });
-                    }
-                    
-                });
-            }
+        var reviewSearchArr = [];
+        found_shows.forEach(element => {
+            reviewSearchArr.push({"show": element._id});
         });
+
+        // Gets reviews from each returned title
+        var found_reviews = await Review.find({$or: reviewSearchArr});
+        if(found_reviews.length > 0) {
+            for(var i = 0; i < found_reviews.length; i++)
+                response.review.push(await found_reviews[i].populate("show"));
+        }
+
+        // Gets user's watchlists
+        if(req.session.user != null) {
+            var found_user = await User.findById(req.session.user);
+            var populatedData = await found_user.populate("watchlists");
+            response.watchlist = populatedData.watchlists;
+        }
+
+        res.render('search_results', response);
     }
 };
 
