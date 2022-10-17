@@ -233,25 +233,9 @@ function removeFromWatchlist(showId, watchlistId) {
     
 //});
 
-// var refno = $("#refno").val();
-// $.get('/getCheckRefNo', {refno: refno}, function(result) {
-//     if(result.refno == refno) {
-//         $('#refno').css('background-color', 'red');
-//         $('#error').text('Reference number already in the database');
-//         $('#submit').prop('disabled', true);
-//     }
-//     else if(result == "") {
-//         $('#refno').css('background-color', '#E3E3E3');
-//         $('#error').text('');
-//         $('#submit').prop('disabled', false);
-//     }
-// });
-
 function addComment(showid, reviewid) {
     console.log("pressed button");
-
     var reply = document.getElementById("userComment").value;
-
     $.ajax({
         type: "POST",
         url: "/comment",
