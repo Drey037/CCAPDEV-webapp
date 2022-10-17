@@ -8,7 +8,7 @@ const { ObjectId } = require('mongodb');
 const controller = {
     getIndex: async function(req, res) {
         let response = {
-            username: null,
+            username: '',
             profile_pic: req.session.profile_pic,
             reviews: [],
             watchlists: [],

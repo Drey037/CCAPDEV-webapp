@@ -52,11 +52,11 @@
 				<div class="review-comments-container">
 					<div class="user-comment">
 
-						<img src="{{profile_pic}}" class="user-comment-pp">
-						<form>
-							<textarea class="review-comment-textbox" placeholder="Write a reply..." name="userComment" id="userComment"></textarea>
-							<button class="reply-comment" id="commentSubmit" onclick="addComment({{showId}}, {{reviewId}})">Reply</button>
-						</form>
+						<img src="{{user_image}}" class="user-comment-pp">
+						<!-- <form action="/comment" method = "post"> -->
+						<textarea class="review-comment-textbox" placeholder="Write a reply..." name="userComment" id="userComment"></textarea>
+						<button class="reply-comment" onclick="addComment({{{json showid}}}, {{{json reviewid}}})">Reply</button>
+						<!-- </form> -->
 
 					</div>
 				</div>
