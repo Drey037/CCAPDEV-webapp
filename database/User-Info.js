@@ -35,12 +35,10 @@ const UserInfoSchema = new mongoose.Schema({
         default: "/images/profile_pic/default.jpg"
     },
     watchlists: [{
-        type: mongoose.Schema.ObjectId, ref: 'Watchlist',
-        required: true
+        type: mongoose.Schema.ObjectId, ref: 'Watchlist'
     }],
     reviews: [{
-        type: mongoose.Schema.ObjectId, ref: 'Review',
-        required: true
+        type: mongoose.Schema.ObjectId, ref: 'Review'
     }]
 });
 
