@@ -43,6 +43,7 @@ hbs.registerHelper('json', function(context) {
 app.use(session({
     secret: 'sefg93bfg3ut',
     store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
+    //store: MongoStore.create({mongoUrl: 'mongodb://localhost:27017/reelTalkDB'}),
     resave: false,
     saveUninitialized: true,
     cookies: {secure: false, maxAge: 1000 * 60 * 60 * 24 * 7}
@@ -67,3 +68,4 @@ const port = 3000;
 app.listen(process.env.PORT || port, function() {
     console.log('Node server is running on port ' + port + '...');
 });
+
